@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Main", "DKClinic.WinformUI\DKClinic.Main.csproj", "{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Data", "DKClinic.Data\DKClinic.Data.csproj", "{6A675453-7F64-4DAE-A80E-FD53641495B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.UnitTest", "DKClinic.UnitTest\DKClinic.UnitTest.csproj", "{DE04A0F2-CF13-4EF2-A299-256CA668D262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Customer", "DKClinic.CustomerScene\DKClinic.Customer.csproj", "{50053506-213F-411B-AFE6-E6026C685A36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Employee", "DKClinic.Employee\DKClinic.Employee.csproj", "{F040B52A-5588-4261-9D8D-457481560FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Employee", "DKClinic.EmployeeScene\DKClinic.Employee.csproj", "{B40A885C-4983-46E2-BF05-6163A9A5AB32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Customer", "DKClinic.Customer\DKClinic.Customer.csproj", "{712021E2-3966-4748-BC96-DB2322F857B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A675453-7F64-4DAE-A80E-FD53641495B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A675453-7F64-4DAE-A80E-FD53641495B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A675453-7F64-4DAE-A80E-FD53641495B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,14 +25,14 @@ Global
 		{DE04A0F2-CF13-4EF2-A299-256CA668D262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE04A0F2-CF13-4EF2-A299-256CA668D262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE04A0F2-CF13-4EF2-A299-256CA668D262}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50053506-213F-411B-AFE6-E6026C685A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50053506-213F-411B-AFE6-E6026C685A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50053506-213F-411B-AFE6-E6026C685A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50053506-213F-411B-AFE6-E6026C685A36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B40A885C-4983-46E2-BF05-6163A9A5AB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B40A885C-4983-46E2-BF05-6163A9A5AB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B40A885C-4983-46E2-BF05-6163A9A5AB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B40A885C-4983-46E2-BF05-6163A9A5AB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F040B52A-5588-4261-9D8D-457481560FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F040B52A-5588-4261-9D8D-457481560FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F040B52A-5588-4261-9D8D-457481560FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F040B52A-5588-4261-9D8D-457481560FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712021E2-3966-4748-BC96-DB2322F857B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712021E2-3966-4748-BC96-DB2322F857B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712021E2-3966-4748-BC96-DB2322F857B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712021E2-3966-4748-BC96-DB2322F857B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseDao.cs" />
-    <Compile Include="Base\SingleKeyDao.cs" />
+    <Compile Include="WinformUtility.cs" />
+    <None Include="Base\BaseDao.cs" />
+    <None Include="Base\SingleKeyDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

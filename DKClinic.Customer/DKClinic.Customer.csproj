@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D903B3C-4B6D-4168-A9EF-FBEDBCDA6C95}</ProjectGuid>
+    <ProjectGuid>{712021E2-3966-4748-BC96-DB2322F857B7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DKClinic.WinformUI</RootNamespace>
-    <AssemblyName>DKClinic.WinformUI</AssemblyName>
+    <RootNamespace>DKClinic.Customer</RootNamespace>
+    <AssemblyName>DKClinic.Customer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,9 +52,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainProgram.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinformUtility.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,20 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DKClinic.CustomerScene\DKClinic.Customer.csproj">
-      <Project>{50053506-213f-411b-afe6-e6026c685a36}</Project>
-      <Name>DKClinic.Customer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DKClinic.Data\DKClinic.Data.csproj">
-      <Project>{6a675453-7f64-4dae-a80e-fd53641495b4}</Project>
-      <Name>DKClinic.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DKClinic.EmployeeScene\DKClinic.Employee.csproj">
-      <Project>{b40a885c-4983-46e2-bf05-6163a9a5ab32}</Project>
-      <Name>DKClinic.Employee</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
