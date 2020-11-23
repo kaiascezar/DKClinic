@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DKClinic.Data;
+using System;
 using System.Windows.Forms;
 
 namespace DKClinic.Customer
@@ -16,6 +14,7 @@ namespace DKClinic.Customer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DKClinicEntities.Initialize();
             Application.Run(new Form1());
         }
     }
