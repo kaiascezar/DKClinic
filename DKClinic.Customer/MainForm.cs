@@ -18,8 +18,8 @@ namespace DKClinic.Customer
             InitializeComponent();
             MainControl = pnlMain.Controls;
 
-            BaseUC control = new UserControl1();
-            CallUserControl(control);
+            
+            
 
             //pnlTop.Enabled = false;
             //pnlBottom.Enabled = false;

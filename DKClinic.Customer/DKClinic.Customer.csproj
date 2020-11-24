@@ -96,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ctmInputDetail.resx">
       <DependentUpon>ctmInputDetail.cs</DependentUpon>
@@ -119,6 +120,12 @@
       <Project>{6a675453-7f64-4dae-a80e-fd53641495b4}</Project>
       <Name>DKClinic.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DKClinicbackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DKClinicbackground1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
