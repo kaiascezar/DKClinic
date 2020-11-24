@@ -61,7 +61,7 @@ namespace DKClinic.Customer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 40);
             this.label1.TabIndex = 1;
-            this.label1.Text = "성 명";
+            this.label1.Text = "이 름";
             // 
             // btnCancel
             // 
