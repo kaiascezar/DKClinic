@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DKClinic.Data
 {
-    class BaseDao<T> where T : class
+    public class BaseDao<T> where T : class
     {
         public int GetCount()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DKClinicEntities.Create())
             {
                 return context.Set<T>().Count();
             }
@@ -18,7 +18,7 @@ namespace DKClinic.Data
 
         public List<T> GetAll()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DKClinicEntities.Create())
             {
                 return context.Set<T>().ToList();
             }
@@ -26,7 +26,7 @@ namespace DKClinic.Data
 
         public void Insert(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DKClinicEntities.Create())
             {
                 context.Set<T>().Add(entity);
 
@@ -36,7 +36,7 @@ namespace DKClinic.Data
 
         public void Update(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DKClinicEntities.Create())
             {
                 context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 
@@ -46,7 +46,7 @@ namespace DKClinic.Data
 
         public void Delete(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DKClinicEntities.Create())
             {
                 context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DKClinic.Data;
 
 namespace DKClinic.Employee
 {
@@ -16,6 +17,7 @@ namespace DKClinic.Employee
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DKClinicEntities.Initialize();
             Application.Run(new Form1());
         }
     }

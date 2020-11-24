@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,14 +51,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUC.Designer.cs">
+      <DependentUpon>BaseUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DbContextCreator.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\Dao.cs" />
+    <Compile Include="Dao\DepartmentDao.cs" />
+    <Compile Include="Dao\EmployeeDao.cs" />
+    <Compile Include="Dao\GenderDao.cs" />
+    <Compile Include="Dao\PositionDao.cs" />
+    <Compile Include="Dao\QuestionDao.cs" />
+    <Compile Include="Dao\QuestionnareDao.cs" />
+    <Compile Include="Dao\ResponseDao.cs" />
+    <Compile Include="Department.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DKClinic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DKClinic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DKClinic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DKClinic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DKClinic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partials\DKClinicEntities.cs" />
+    <Compile Include="Position.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Question.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Questionnare.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Response.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
     <Compile Include="WinformUtility.cs" />
-    <None Include="Base\BaseDao.cs" />
-    <None Include="Base\SingleKeyDao.cs" />
+    <None Include="App.Config" />
+    <Compile Include="Base\BaseDao.cs" />
+    <Compile Include="Base\SingleKeyDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EntityDeploy Include="DKClinic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DKClinic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DKClinic.edmx.diagram">
+      <DependentUpon>DKClinic.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DKClinic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DKClinic.Context.cs</LastGenOutput>
+      <DependentUpon>DKClinic.edmx</DependentUpon>
+    </Content>
+    <Content Include="DKClinic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DKClinic.edmx</DependentUpon>
+      <LastGenOutput>DKClinic.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dao\" />
-    <Folder Include="Partials\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
