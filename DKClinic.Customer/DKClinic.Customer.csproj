@@ -53,11 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctmQuestionnare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctmQuestionnare.Designer.cs">
+      <DependentUpon>ctmQuestionnare.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultipleChoice.Designer.cs">
+      <DependentUpon>MultipleChoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +85,24 @@
     <Compile Include="ctmDepChoice.Designer.cs">
       <DependentUpon>ctmDepChoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseQuestion.Designer.cs">
+      <DependentUpon>BaseQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShortAnswer.Designer.cs">
+      <DependentUpon>ShortAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeestFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeestFrom.Designer.cs">
+      <DependentUpon>TeestFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="ctmDepChoice.resx">
       <DependentUpon>ctmDepChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctmQuestionnare.resx">
+      <DependentUpon>ctmQuestionnare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -96,6 +129,15 @@
     </Compile>
     <EmbeddedResource Include="ctmInputDetail.resx">
       <DependentUpon>ctmInputDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseQuestion.resx">
+      <DependentUpon>BaseQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortAnswer.resx">
+      <DependentUpon>ShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeestFrom.resx">
+      <DependentUpon>TeestFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
