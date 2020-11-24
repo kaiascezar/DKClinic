@@ -23,7 +23,7 @@ namespace DKClinic.Customer
             int gender;
 
             name = tbxName.Text;
-            birthdate = tbxBirthdate.Text;
+            birthdate = tbxBairthdate.Text;
             cellphone = tbxCellphone.Text;
 
             if (rbtMale.Checked == true) //male : 1  female : 2

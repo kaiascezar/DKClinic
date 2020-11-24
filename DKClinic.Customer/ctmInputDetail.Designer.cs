@@ -35,11 +35,11 @@ namespace DKClinic.Customer
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbxName = new System.Windows.Forms.RichTextBox();
-            this.tbxBirthdate = new System.Windows.Forms.RichTextBox();
-            this.tbxCellphone = new System.Windows.Forms.RichTextBox();
             this.rbtMale = new System.Windows.Forms.RadioButton();
             this.rbtFemale = new System.Windows.Forms.RadioButton();
+            this.tbxName = new System.Windows.Forms.TextBox();
+            this.tbxBirthdate = new System.Windows.Forms.TextBox();
+            this.tbxCellphone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnOK
@@ -104,33 +104,6 @@ namespace DKClinic.Customer
             this.label4.TabIndex = 5;
             this.label4.Text = "연락처";
             // 
-            // tbxName
-            // 
-            this.tbxName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxName.Location = new System.Drawing.Point(601, 99);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(300, 50);
-            this.tbxName.TabIndex = 7;
-            this.tbxName.Text = "";
-            // 
-            // tbxBirthdate
-            // 
-            this.tbxBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxBirthdate.Location = new System.Drawing.Point(601, 191);
-            this.tbxBirthdate.Name = "tbxBirthdate";
-            this.tbxBirthdate.Size = new System.Drawing.Size(300, 50);
-            this.tbxBirthdate.TabIndex = 8;
-            this.tbxBirthdate.Text = "";
-            // 
-            // tbxCellphone
-            // 
-            this.tbxCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxCellphone.Location = new System.Drawing.Point(601, 373);
-            this.tbxCellphone.Name = "tbxCellphone";
-            this.tbxCellphone.Size = new System.Drawing.Size(300, 50);
-            this.tbxCellphone.TabIndex = 9;
-            this.tbxCellphone.Text = "";
-            // 
             // rbtMale
             // 
             this.rbtMale.AutoSize = true;
@@ -155,16 +128,40 @@ namespace DKClinic.Customer
             this.rbtFemale.Text = "여";
             this.rbtFemale.UseVisualStyleBackColor = true;
             // 
+            // tbxName
+            // 
+            this.tbxName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbxName.Location = new System.Drawing.Point(601, 96);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(300, 53);
+            this.tbxName.TabIndex = 12;
+            // 
+            // tbxBirthdate
+            // 
+            this.tbxBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbxBirthdate.Location = new System.Drawing.Point(601, 188);
+            this.tbxBirthdate.Name = "tbxBirthdate";
+            this.tbxBirthdate.Size = new System.Drawing.Size(300, 53);
+            this.tbxBirthdate.TabIndex = 13;
+            // 
+            // tbxCellphone
+            // 
+            this.tbxCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbxCellphone.Location = new System.Drawing.Point(601, 370);
+            this.tbxCellphone.Name = "tbxCellphone";
+            this.tbxCellphone.Size = new System.Drawing.Size(300, 53);
+            this.tbxCellphone.TabIndex = 14;
+            // 
             // ctmInputDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.rbtFemale);
-            this.Controls.Add(this.rbtMale);
             this.Controls.Add(this.tbxCellphone);
             this.Controls.Add(this.tbxBirthdate);
             this.Controls.Add(this.tbxName);
+            this.Controls.Add(this.rbtFemale);
+            this.Controls.Add(this.rbtMale);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -186,10 +183,10 @@ namespace DKClinic.Customer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox tbxName;
-        private System.Windows.Forms.RichTextBox tbxBirthdate;
-        private System.Windows.Forms.RichTextBox tbxCellphone;
         private System.Windows.Forms.RadioButton rbtMale;
         private System.Windows.Forms.RadioButton rbtFemale;
+        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.TextBox tbxBirthdate;
+        private System.Windows.Forms.TextBox tbxCellphone;
     }
 }

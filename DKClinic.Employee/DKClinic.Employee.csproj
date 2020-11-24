@@ -65,11 +65,18 @@
     <Compile Include="empLogin.Designer.cs">
       <DependentUpon>empLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="empModifyQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>empModifyQuestion.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empUpdateCtmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empUpdateCtmInfo.Designer.cs">
+      <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
@@ -91,8 +98,11 @@
     <EmbeddedResource Include="empLogin.resx">
       <DependentUpon>empLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="empModifyQuestion.resx">
+      <DependentUpon>empModifyQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empUpdateCtmInfo.resx">
+      <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
