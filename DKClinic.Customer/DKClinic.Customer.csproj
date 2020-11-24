@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctmLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctmLogin.Designer.cs">
+      <DependentUpon>ctmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +79,11 @@
     <Compile Include="ctmDepChoice.Designer.cs">
       <DependentUpon>ctmDepChoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ctmDepChoice.resx">
       <DependentUpon>ctmDepChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctmLogin.resx">
+      <DependentUpon>ctmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -96,9 +99,6 @@
     </Compile>
     <EmbeddedResource Include="ctmInputDetail.resx">
       <DependentUpon>ctmInputDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
