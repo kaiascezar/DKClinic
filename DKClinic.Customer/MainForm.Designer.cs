@@ -107,7 +107,7 @@ namespace DKClinic.Customer
             // 
             // pnlMain
             // 
-            this.pnlMain.BackgroundImage = global::DKClinic.Customer.Properties.Resources.DKClinicbackground1;
+            //this.pnlMain.BackgroundImage = global::DKClinic.Customer.Properties.Resources.DKClinicbackground1;
             this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 50);

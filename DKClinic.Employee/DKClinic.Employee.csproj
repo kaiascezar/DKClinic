@@ -65,8 +65,9 @@
     <Compile Include="empLogin.Designer.cs">
       <DependentUpon>empLogin.cs</DependentUpon>
     </Compile>
-	  <Compile Include="empModifyQuestion.cs">
-	  </Compile>
+    <Compile Include="empModifyQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="empManageCtm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,9 +85,6 @@
     </Compile>
     <Compile Include="empManageQuestion.Designer.cs">
       <DependentUpon>empManageQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
       <DependentUpon>empModifyQuestion.cs</DependentUpon>
@@ -133,9 +131,9 @@
     <EmbeddedResource Include="empModifyQuestion.resx">
       <DependentUpon>empModifyQuestion.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="empUpdateCtmInfo.resx">
-		  <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="empUpdateCtmInfo.resx">
+      <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="empManageCtm.resx">
       <DependentUpon>empManageCtm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empManageQuestionare.resx">
       <DependentUpon>empManageQuestionare.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="empUpdateEmpInfo.resx">
       <DependentUpon>empUpdateEmpInfo.cs</DependentUpon>

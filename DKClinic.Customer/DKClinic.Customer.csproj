@@ -109,12 +109,6 @@
     <Compile Include="TeestFrom.Designer.cs">
       <DependentUpon>TeestFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ctmDepChoice.resx">
       <DependentUpon>ctmDepChoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,9 +146,6 @@
     <EmbeddedResource Include="TeestFrom.resx">
       <DependentUpon>TeestFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,9 +165,6 @@
       <Project>{6a675453-7f64-4dae-a80e-fd53641495b4}</Project>
       <Name>DKClinic.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DKClinicbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DKClinicbackground1.jpg" />

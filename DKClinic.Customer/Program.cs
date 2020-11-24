@@ -15,7 +15,7 @@ namespace DKClinic.Customer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DKClinicEntities.Initialize();
-            Application.Run(new TeestFrom());
+            Application.Run(new MainForm());
         }
     }
 }
