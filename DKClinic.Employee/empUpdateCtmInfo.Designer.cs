@@ -29,9 +29,9 @@ namespace DKClinic.Employee
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxCellphone = new System.Windows.Forms.TextBox();
-            this.tbxBirthdate = new System.Windows.Forms.TextBox();
-            this.tbxName = new System.Windows.Forms.TextBox();
+            this.txbCellphone = new System.Windows.Forms.TextBox();
+            this.txbBirthdate = new System.Windows.Forms.TextBox();
+            this.txbName = new System.Windows.Forms.TextBox();
             this.rbtFemale = new System.Windows.Forms.RadioButton();
             this.rbtMale = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,29 +43,29 @@ namespace DKClinic.Employee
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tbxCellphone
+            // txbCellphone
             // 
-            this.tbxCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxCellphone.Location = new System.Drawing.Point(457, 423);
-            this.tbxCellphone.Name = "tbxCellphone";
-            this.tbxCellphone.Size = new System.Drawing.Size(300, 53);
-            this.tbxCellphone.TabIndex = 25;
+            this.txbCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbCellphone.Location = new System.Drawing.Point(457, 423);
+            this.txbCellphone.Name = "txbCellphone";
+            this.txbCellphone.Size = new System.Drawing.Size(300, 53);
+            this.txbCellphone.TabIndex = 25;
             // 
-            // tbxBirthdate
+            // txbBirthdate
             // 
-            this.tbxBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxBirthdate.Location = new System.Drawing.Point(457, 241);
-            this.tbxBirthdate.Name = "tbxBirthdate";
-            this.tbxBirthdate.Size = new System.Drawing.Size(300, 53);
-            this.tbxBirthdate.TabIndex = 24;
+            this.txbBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbBirthdate.Location = new System.Drawing.Point(457, 241);
+            this.txbBirthdate.Name = "txbBirthdate";
+            this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
+            this.txbBirthdate.TabIndex = 24;
             // 
-            // tbxName
+            // txbName
             // 
-            this.tbxName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxName.Location = new System.Drawing.Point(457, 149);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(300, 53);
-            this.tbxName.TabIndex = 23;
+            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbName.Location = new System.Drawing.Point(457, 149);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(300, 53);
+            this.txbName.TabIndex = 23;
             // 
             // rbtFemale
             // 
@@ -139,7 +139,7 @@ namespace DKClinic.Employee
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 40);
             this.label1.TabIndex = 16;
-            this.label1.Text = "성 명";
+            this.label1.Text = "이 름";
             // 
             // btnOK
             // 
@@ -167,9 +167,9 @@ namespace DKClinic.Employee
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbxCellphone);
-            this.Controls.Add(this.tbxBirthdate);
-            this.Controls.Add(this.tbxName);
+            this.Controls.Add(this.txbCellphone);
+            this.Controls.Add(this.txbBirthdate);
+            this.Controls.Add(this.txbName);
             this.Controls.Add(this.rbtFemale);
             this.Controls.Add(this.rbtMale);
             this.Controls.Add(this.label4);
@@ -187,9 +187,9 @@ namespace DKClinic.Employee
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxCellphone;
-        private System.Windows.Forms.TextBox tbxBirthdate;
-        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.TextBox txbCellphone;
+        private System.Windows.Forms.TextBox txbBirthdate;
+        private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.RadioButton rbtFemale;
         private System.Windows.Forms.RadioButton rbtMale;
         private System.Windows.Forms.Label label4;
