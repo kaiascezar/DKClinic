@@ -59,6 +59,12 @@
     <Compile Include="ctmQuestionnare.Designer.cs">
       <DependentUpon>ctmQuestionnare.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctmLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctmLogin.Designer.cs">
+      <DependentUpon>ctmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     <EmbeddedResource Include="ctmQuestionnare.resx">
       <DependentUpon>ctmQuestionnare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctmDepChoice.resx">
+      <DependentUpon>ctmDepChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctmLogin.resx">
+      <DependentUpon>ctmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +138,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ctmInputDetail.resx">
       <DependentUpon>ctmInputDetail.cs</DependentUpon>
@@ -161,6 +174,12 @@
       <Project>{6a675453-7f64-4dae-a80e-fd53641495b4}</Project>
       <Name>DKClinic.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DKClinicbackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DKClinicbackground1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

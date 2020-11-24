@@ -38,7 +38,7 @@ namespace DKClinic.Customer
             // btnMG
             // 
             this.btnMG.BackColor = System.Drawing.Color.Lime;
-            this.btnMG.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMG.Font = new System.Drawing.Font("Gulim", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMG.Location = new System.Drawing.Point(60, 60);
             this.btnMG.Name = "btnMG";
             this.btnMG.Size = new System.Drawing.Size(500, 200);
@@ -49,7 +49,7 @@ namespace DKClinic.Customer
             // btnNU
             // 
             this.btnNU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnNU.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNU.Font = new System.Drawing.Font("Gulim", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNU.Location = new System.Drawing.Point(670, 60);
             this.btnNU.Name = "btnNU";
             this.btnNU.Size = new System.Drawing.Size(500, 200);
@@ -60,7 +60,7 @@ namespace DKClinic.Customer
             // btnFM
             // 
             this.btnFM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnFM.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFM.Font = new System.Drawing.Font("Gulim", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFM.Location = new System.Drawing.Point(670, 380);
             this.btnFM.Name = "btnFM";
             this.btnFM.Size = new System.Drawing.Size(500, 200);
@@ -71,7 +71,7 @@ namespace DKClinic.Customer
             // btnDR
             // 
             this.btnDR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnDR.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDR.Font = new System.Drawing.Font("Gulim", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDR.Location = new System.Drawing.Point(60, 380);
             this.btnDR.Name = "btnDR";
             this.btnDR.Size = new System.Drawing.Size(500, 200);
@@ -83,12 +83,13 @@ namespace DKClinic.Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnFM);
             this.Controls.Add(this.btnDR);
             this.Controls.Add(this.btnNU);
             this.Controls.Add(this.btnMG);
             this.Name = "ctmDepChoice";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1260, 670);
             this.ResumeLayout(false);
 
         }

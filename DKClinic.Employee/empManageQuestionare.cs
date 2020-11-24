@@ -10,11 +10,7 @@ using System.Windows.Forms;
 
 namespace DKClinic.Employee
 {
-    public partial class Form1 : Form
+    public partial class empManageQuestionare : UserControl
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
     }
 }

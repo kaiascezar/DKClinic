@@ -36,57 +36,63 @@ namespace DKClinic.Employee
             this.label2 = new System.Windows.Forms.Label();
             this.btnChangePw = new System.Windows.Forms.Button();
             this.txbPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+
+            this.label1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(405, 117);
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "이름";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbName
             // 
-            this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+
+            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbName.Location = new System.Drawing.Point(541, 114);
+
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(350, 53);
             this.txbName.TabIndex = 1;
             // 
             // btnOK
             // 
-            this.btnOK.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.Location = new System.Drawing.Point(400, 490);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(181, 95);
+            this.btnOK.Size = new System.Drawing.Size(180, 95);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.Location = new System.Drawing.Point(710, 490);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(181, 95);
+            this.btnCancel.Size = new System.Drawing.Size(180, 95);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(405, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 50);
             this.label2.TabIndex = 2;
-            this.label2.Text = "암호";
+            this.label2.Text = "PW";
             // 
             // btnChangePw
             // 
-            this.btnChangePw.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChangePw.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnChangePw.Location = new System.Drawing.Point(400, 414);
             this.btnChangePw.Name = "btnChangePw";
             this.btnChangePw.Size = new System.Drawing.Size(491, 54);
@@ -97,17 +103,29 @@ namespace DKClinic.Employee
             // 
             // txbPassword
             // 
-            this.txbPassword.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbPassword.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbPassword.Location = new System.Drawing.Point(541, 238);
+
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(350, 53);
             this.txbPassword.TabIndex = 3;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(400, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(491, 54);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "직원 로그인";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // empLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.btnChangePw);
             this.Controls.Add(this.label2);
@@ -131,5 +149,6 @@ namespace DKClinic.Employee
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnChangePw;
         private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.Label label3;
     }
 }
