@@ -29,13 +29,23 @@ namespace DKClinic.Customer
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctmInputDetail1 = new DKClinic.Customer.ctmInputDetail();
             this.SuspendLayout();
+            // 
+            // ctmInputDetail1
+            // 
+            this.ctmInputDetail1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctmInputDetail1.Location = new System.Drawing.Point(0, 0);
+            this.ctmInputDetail1.Name = "ctmInputDetail1";
+            this.ctmInputDetail1.Size = new System.Drawing.Size(1262, 773);
+            this.ctmInputDetail1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 773);
+            this.Controls.Add(this.ctmInputDetail1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -43,6 +53,8 @@ namespace DKClinic.Customer
         }
 
         #endregion
+
+        private ctmInputDetail ctmInputDetail1;
     }
 }
 

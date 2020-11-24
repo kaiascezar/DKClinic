@@ -16,5 +16,7 @@ namespace DKClinic.Customer
         {
             InitializeComponent();
         }
+
+
     }
 }
