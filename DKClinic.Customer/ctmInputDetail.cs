@@ -22,9 +22,9 @@ namespace DKClinic.Customer
             string name, birthdate, cellphone;
             int gender;
 
-            name = tbxName.Text;
-            birthdate = tbxBairthdate.Text;
-            cellphone = tbxCellphone.Text;
+            name = txbName.Text;
+            birthdate = txbBairthdate.Text;
+            cellphone = txbCellphone.Text;
 
             if (rbtMale.Checked == true) //male : 1  female : 2
                 gender = 1;

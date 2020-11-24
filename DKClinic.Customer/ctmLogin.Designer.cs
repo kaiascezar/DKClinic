@@ -29,32 +29,14 @@ namespace DKClinic.Customer
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxBirthdate = new System.Windows.Forms.RichTextBox();
-            this.tbxName = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txbName = new System.Windows.Forms.TextBox();
+            this.txbBirthdate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // tbxBirthdate
-            // 
-            this.tbxBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxBirthdate.Location = new System.Drawing.Point(585, 329);
-            this.tbxBirthdate.Name = "tbxBirthdate";
-            this.tbxBirthdate.Size = new System.Drawing.Size(300, 50);
-            this.tbxBirthdate.TabIndex = 19;
-            this.tbxBirthdate.Text = "";
-            // 
-            // tbxName
-            // 
-            this.tbxName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbxName.Location = new System.Drawing.Point(585, 237);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(300, 50);
-            this.tbxName.TabIndex = 18;
-            this.tbxName.Text = "";
             // 
             // label2
             // 
@@ -106,14 +88,30 @@ namespace DKClinic.Customer
             this.label3.TabIndex = 20;
             this.label3.Text = "기본정보 입력";
             // 
+            // txbName
+            // 
+            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbName.Location = new System.Drawing.Point(585, 234);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(300, 53);
+            this.txbName.TabIndex = 21;
+            // 
+            // txbBirthdate
+            // 
+            this.txbBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbBirthdate.Location = new System.Drawing.Point(585, 326);
+            this.txbBirthdate.Name = "txbBirthdate";
+            this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
+            this.txbBirthdate.TabIndex = 22;
+            // 
             // ctmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txbBirthdate);
+            this.Controls.Add(this.txbName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbxBirthdate);
-            this.Controls.Add(this.tbxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
@@ -126,13 +124,12 @@ namespace DKClinic.Customer
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox tbxBirthdate;
-        private System.Windows.Forms.RichTextBox tbxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txbName;
+        private System.Windows.Forms.TextBox txbBirthdate;
     }
 }
