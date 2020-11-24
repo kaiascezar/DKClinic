@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DKClinic.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,18 +16,37 @@ namespace DKClinic.Customer
         public MainForm()
         {
             InitializeComponent();
+            MainControl = pnlMain.Controls;
+
+            BaseUC control = new UserControl1();
+            CallUserControl(control);
+
+            //pnlTop.Enabled = false;
+            //pnlBottom.Enabled = false;
+
+            lblTime.Text = DateTime.Now.ToString();
         }
 
+        public Control.ControlCollection MainControl { get; set; }
+
+        public void CallUserControl(BaseUC control)
+        {
+            if (MainControl.Count > 0)
+                MainControl.Clear();
+
+            control.Dock = DockStyle.Fill;
+            MainControl.Add(control);
+            lblTitle.Text = control.Title;
+        }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (pnlMain.Controls.Count > 0)
-                pnlMain.Controls.Clear();
+            if (MainControl.Count > 0)
+                MainControl.Clear();
+        }
 
-            UserControl1 control1 = new UserControl1();
-            control1.Dock = DockStyle.Fill;
-            //control1.
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
-
-    
 }

@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DKClinic.Data;
 
 namespace DKClinic.Customer
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserControl1 : BaseUC
     {
         public UserControl1()
         {
             InitializeComponent();
+            Title = "테스트 컨트롤";
         }
     }
 }

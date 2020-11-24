@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DKClinic.Data
 {
-    public abstract partial class BaseUC : UserControl
+    public partial class BaseUC : UserControl
     {
         public BaseUC()
         {
             InitializeComponent();
         }
 
-        public abstract string Title { get; set; }
+        public string Title { get; set; }
     }
 }
