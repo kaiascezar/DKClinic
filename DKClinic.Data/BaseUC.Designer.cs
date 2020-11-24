@@ -1,5 +1,5 @@
 ﻿
-namespace DKClinic.Customer
+namespace DKClinic.Data
 {
     partial class BaseUC
     {

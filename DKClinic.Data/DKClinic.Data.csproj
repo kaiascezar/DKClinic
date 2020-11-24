@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUC.Designer.cs">
+      <DependentUpon>BaseUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\DbContextCreator.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>DKClinic.tt</DependentUpon>

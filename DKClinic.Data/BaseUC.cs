@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DKClinic.Customer
+namespace DKClinic.Data
 {
     public abstract partial class BaseUC : UserControl
     {
