@@ -171,7 +171,7 @@ namespace DKClinic.Customer
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
             this.Name = "ctmInputDetail";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1260, 670);
             this.ResumeLayout(false);
             this.PerformLayout();
 
