@@ -65,7 +65,27 @@
     <Compile Include="empLogin.Designer.cs">
       <DependentUpon>empLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="empModifyQuestion.cs">
+	  <Compile Include="empModifyQuestion.cs">
+	  </Compile>
+    <Compile Include="empManageCtm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="empManageCtm.Designer.cs">
+      <DependentUpon>empManageCtm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="empManageEmp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="empManageEmp.Designer.cs">
+      <DependentUpon>empManageEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="empManageQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="empManageQuestion.Designer.cs">
+      <DependentUpon>empManageQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
@@ -77,6 +97,12 @@
     </Compile>
     <Compile Include="empUpdateCtmInfo.Designer.cs">
       <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="empUpdateEmpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empUpdateEmpInfo.Designer.cs">
+      <DependentUpon>empUpdateEmpInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
@@ -92,6 +118,12 @@
     <Compile Include="empSelectFunction.Designer.cs">
       <DependentUpon>empSelectFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="empManageQuestionare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="empManageQuestionare.Designer.cs">
+      <DependentUpon>empManageQuestionare.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="empChangePw.resx">
       <DependentUpon>empChangePw.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,8 +133,26 @@
     <EmbeddedResource Include="empModifyQuestion.resx">
       <DependentUpon>empModifyQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="empUpdateCtmInfo.resx">
-      <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
+	  <EmbeddedResource Include="empUpdateCtmInfo.resx">
+		  <DependentUpon>empUpdateCtmInfo.cs</DependentUpon>
+	  </EmbeddedResource>
+    <EmbeddedResource Include="empManageCtm.resx">
+      <DependentUpon>empManageCtm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empManageEmp.resx">
+      <DependentUpon>empManageEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empManageQuestion.resx">
+      <DependentUpon>empManageQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empManageQuestionare.resx">
+      <DependentUpon>empManageQuestionare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empUpdateEmpInfo.resx">
+      <DependentUpon>empUpdateEmpInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

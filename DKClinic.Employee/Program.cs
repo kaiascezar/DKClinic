@@ -19,6 +19,7 @@ namespace DKClinic.Employee
             Application.SetCompatibleTextRenderingDefault(false);
             DKClinicEntities.Initialize();
             Application.Run(new TestForm());
+            //풀리퀘스트용 주석
         }
     }
 }
