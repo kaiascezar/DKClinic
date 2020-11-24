@@ -9,5 +9,7 @@ namespace DKClinic.Customer
             InitializeComponent();
             Title = "테스트 컨트롤";
         }
+
+
     }
 }
