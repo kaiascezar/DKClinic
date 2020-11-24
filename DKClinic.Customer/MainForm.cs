@@ -23,8 +23,6 @@ namespace DKClinic.Customer
 
             //pnlTop.Enabled = false;
             //pnlBottom.Enabled = false;
-
-            lblTime.Text = DateTime.Now.ToString();
         }
 
         public Control.ControlCollection MainControl { get; set; }
@@ -47,6 +45,11 @@ namespace DKClinic.Customer
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString();
         }
     }
 }

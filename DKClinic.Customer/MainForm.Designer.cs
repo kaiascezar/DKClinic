@@ -29,6 +29,7 @@ namespace DKClinic.Customer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -36,8 +37,10 @@ namespace DKClinic.Customer
             this.lblTime = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +115,10 @@ namespace DKClinic.Customer
             this.pnlMain.Size = new System.Drawing.Size(1262, 673);
             this.pnlMain.TabIndex = 3;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -174,6 +181,7 @@ namespace DKClinic.Customer
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
