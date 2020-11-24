@@ -110,6 +110,7 @@ namespace DKClinic.Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbxBirthdate);
             this.Controls.Add(this.tbxName);
