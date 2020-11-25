@@ -13,7 +13,6 @@ namespace DKClinic.CustomerProgram
 {
     public partial class CustomerLoginControl : BaseUC
     {
-        Data.Customer customer = new Data.Customer();
         public CustomerLoginControl()
         {
             InitializeComponent();
@@ -21,15 +20,16 @@ namespace DKClinic.CustomerProgram
         
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Data.Customer customer = Dao.Customer.Find(txbName.Text, txbBirthdate.Text);
+            Customer customer = Dao.Customer.Find(txbName.Text, txbBirthdate.Text);
 
             if (customer == null)
             {
+                customer = new Customer();
                 customer.Name = txbName.Text;
                 customer.Birthdate = txbBirthdate.Text;
             }
             
-            CustomerInputDetailControl ctmInputDetail1 = new CustomerInputDetailControl();
+            CustomerInputDetailControl ctmInputDetail = new CustomerInputDetailControl();
 
             if (customer.CustomerID != 0)
             {
@@ -39,9 +39,9 @@ namespace DKClinic.CustomerProgram
             {
                 MessageBox.Show("환영합니다. 처음 방문하셨습니다.");
             }
-            OnLoginToDetail(customer, ctmInputDetail1);
+            OnLoginToDetail(customer, ctmInputDetail);
         }
-
+        
         #region LoginToDetail event things for C# 3.0
         public event EventHandler<LoginToDetailEventArgs> LoginToDetail;
 
@@ -51,9 +51,9 @@ namespace DKClinic.CustomerProgram
                 LoginToDetail(this, e);
         }
 
-        private LoginToDetailEventArgs OnLoginToDetail(Data.Customer customer, CustomerInputDetailControl ctmInputDetail1)
+        private LoginToDetailEventArgs OnLoginToDetail(Customer customer, CustomerInputDetailControl ctmInputDetail)
         {
-            LoginToDetailEventArgs args = new LoginToDetailEventArgs(customer, ctmInputDetail1);
+            LoginToDetailEventArgs args = new LoginToDetailEventArgs(customer, ctmInputDetail);
             OnLoginToDetail(args);
 
             return args;
@@ -69,19 +69,25 @@ namespace DKClinic.CustomerProgram
 
         public class LoginToDetailEventArgs : EventArgs
         {
-            public Data.Customer Customer { get; set; }
-            public CustomerInputDetailControl CtmInputDetail1 { get; set; }
+            public Customer Customer { get; set; }
+            public CustomerInputDetailControl CtmInputDetail { get; set; }
 
             public LoginToDetailEventArgs()
             {
             }
 
-            public LoginToDetailEventArgs(Data.Customer customer, CustomerInputDetailControl ctmInputDetail1)
+            public LoginToDetailEventArgs(Customer customer, CustomerInputDetailControl ctmInputDetail)
             {
                 Customer = customer;
-                CtmInputDetail1 = ctmInputDetail1;
+                CtmInputDetail = ctmInputDetail;
             }
         }
         #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txbName.Clear();
+            txbBirthdate.Clear();
+        }
     }
 }

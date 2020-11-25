@@ -57,6 +57,7 @@ namespace DKClinic.CustomerProgram
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -105,7 +106,7 @@ namespace DKClinic.CustomerProgram
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
             this.txbBirthdate.TabIndex = 22;
             // 
-            // ctmLogin
+            // CustomerLoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +118,7 @@ namespace DKClinic.CustomerProgram
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
-            this.Name = "ctmLogin";
+            this.Name = "CustomerLoginControl";
             this.Size = new System.Drawing.Size(1260, 670);
             this.ResumeLayout(false);
             this.PerformLayout();

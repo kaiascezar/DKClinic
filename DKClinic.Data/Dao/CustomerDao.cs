@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace DKClinic.Data
@@ -12,9 +13,13 @@ namespace DKClinic.Data
             return x => x.CustomerID == key;
         }
 
-        public Customer Find(string text1, string text2)
+        public Customer Find(string name, string birthdate)
         {
-            throw new NotImplementedException();
+            using (var context = DKClinicEntities.Create())
+            {
+                return context.Customers.Where(x => x.Name == name && x.Birthdate == birthdate)
+                                        .FirstOrDefault();
+            }
         }
     }
 }
