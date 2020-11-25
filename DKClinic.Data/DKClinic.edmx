@@ -11,8 +11,7 @@
           </Key>
           <Property Name="CustomerID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Birthdate" Type="datetime" Nullable="false" />
+          <Property Name="Birthdate" Type="nvarchar" MaxLength="50" />
           <Property Name="GenderID" Type="int" Nullable="false" />
           <Property Name="Cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -24,17 +23,26 @@
           <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Count" Type="int" />
         </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="QuestionnareID" />
+          </Key>
+          <Property Name="QuestionnareID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
           <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Birthdate" Type="datetime" Nullable="false" />
+          <Property Name="Birthdate" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GenderID" Type="int" Nullable="false" />
           <Property Name="Cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PositionID" Type="int" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -94,6 +102,20 @@
             </Principal>
             <Dependent Role="Customer">
               <PropertyRef Name="GenderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnosis_Questionnare">
+          <End Role="Questionnare" Type="Self.Questionnare" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Diagnosis" Type="Self.Diagnosis" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questionnare">
+              <PropertyRef Name="QuestionnareID" />
+            </Principal>
+            <Dependent Role="Diagnosis">
+              <PropertyRef Name="QuestionnareID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -222,6 +244,7 @@
         <EntityContainer Name="DKClinicModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diagnosis" EntityType="Self.Diagnosis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
@@ -231,6 +254,10 @@
           <AssociationSet Name="FK_Customer_Gender" Association="Self.FK_Customer_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnosis_Questionnare" Association="Self.FK_Diagnosis_Questionnare">
+            <End Role="Questionnare" EntitySet="Questionnare" />
+            <End Role="Diagnosis" EntitySet="Diagnosis" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Class" Association="Self.FK_Employee_Class">
             <End Role="Position" EntitySet="Position" />
@@ -280,8 +307,7 @@
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
           <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Customer_Gender" FromRole="Customer" ToRole="Gender" />
@@ -298,17 +324,27 @@
           <NavigationProperty Name="Questions" Relationship="Self.FK_Question_Speciality" FromRole="Department" ToRole="Question" />
           <NavigationProperty Name="Questionnares" Relationship="Self.FK_Questionnare_Speciality" FromRole="Department" ToRole="Questionnare" />
         </EntityType>
+        <EntityType Name="Diagnosi">
+          <Key>
+            <PropertyRef Name="QuestionnareID" />
+          </Key>
+          <Property Name="QuestionnareID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Questionnare" Relationship="Self.FK_Diagnosis_Questionnare" FromRole="Diagnosis" ToRole="Questionnare" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
           <Property Name="EmployeeID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
           <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PositionID" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Speciality" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Class" FromRole="Employee" ToRole="Position" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
@@ -358,6 +394,7 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Questionnare_Customer" FromRole="Questionnare" ToRole="Customer" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Questionnare_Speciality" FromRole="Questionnare" ToRole="Department" />
+          <NavigationProperty Name="Diagnosi" Relationship="Self.FK_Diagnosis_Questionnare" FromRole="Questionnare" ToRole="Diagnosis" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Questionnare_Employee" FromRole="Questionnare" ToRole="Employee" />
           <NavigationProperty Name="Responses" Relationship="Self.FK_Response_Questionnare" FromRole="Questionnare" ToRole="Response" />
         </EntityType>
@@ -442,6 +479,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Diagnosis_Questionnare">
+          <End Role="Questionnare" Type="Self.Questionnare" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Diagnosis" Type="Self.Diagnosi" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questionnare">
+              <PropertyRef Name="QuestionnareID" />
+            </Principal>
+            <Dependent Role="Diagnosis">
+              <PropertyRef Name="QuestionnareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Employee_Class">
           <End Role="Position" Type="Self.Position" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -511,6 +562,7 @@
         <EntityContainer Name="DKClinicEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Diagnosis" EntityType="Self.Diagnosi" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Genders" EntityType="Self.Gender" />
           <EntitySet Name="Positions" EntityType="Self.Position" />
@@ -536,6 +588,10 @@
           <AssociationSet Name="FK_Questionnare_Speciality" Association="Self.FK_Questionnare_Speciality">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Questionnare" EntitySet="Questionnares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnosis_Questionnare" Association="Self.FK_Diagnosis_Questionnare">
+            <End Role="Questionnare" EntitySet="Questionnares" />
+            <End Role="Diagnosis" EntitySet="Diagnosis" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Class" Association="Self.FK_Employee_Class">
             <End Role="Position" EntitySet="Positions" />
@@ -569,7 +625,6 @@
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
                 <ScalarProperty Name="GenderID" ColumnName="GenderID" />
                 <ScalarProperty Name="Cellphone" ColumnName="Cellphone" />
@@ -585,6 +640,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Diagnosis">
+            <EntityTypeMapping TypeName="DKClinicModel.Diagnosi">
+              <MappingFragment StoreEntitySet="Diagnosis">
+                <ScalarProperty Name="QuestionnareID" ColumnName="QuestionnareID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="DKClinicModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
@@ -595,6 +659,7 @@
                 <ScalarProperty Name="Cellphone" ColumnName="Cellphone" />
                 <ScalarProperty Name="PositionID" ColumnName="PositionID" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

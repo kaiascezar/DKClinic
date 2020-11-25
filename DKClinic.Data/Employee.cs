@@ -22,11 +22,12 @@ namespace DKClinic.Data
     
         public int EmployeeID { get; set; }
         public string Name { get; set; }
-        public System.DateTime Birthdate { get; set; }
+        public string Birthdate { get; set; }
         public int GenderID { get; set; }
         public string Cellphone { get; set; }
         public int PositionID { get; set; }
         public int DepartmentID { get; set; }
+        public string Password { get; set; }
     
         public virtual Department Department { get; set; }
         public virtual Position Position { get; set; }

@@ -1,5 +1,6 @@
 ﻿using DKClinic.Data;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DKClinic.Customer
@@ -29,8 +30,8 @@ namespace DKClinic.Customer
             // 1-주관식, 2-객관식, 3-객관식다중선택
             using (var context = DKClinicEntities.Create())
             {
-                int questionCount = context.Departments.Where(x => x.DepartmentID == departmentId);
-                questionList = context.Questions.Where(x => x.DepartmentID == departmentId && x.Index <= questionCount);
+                //int questionCount = context.Departments.Where(x => x.DepartmentID == departmentId);
+                //questionList = context.Questions.Where(x => x.DepartmentID == departmentId && x.Index <= questionCount);
                 
                 foreach(var question in questionList)
                 {

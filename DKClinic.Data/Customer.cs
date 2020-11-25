@@ -22,8 +22,7 @@ namespace DKClinic.Data
     
         public int CustomerID { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
-        public System.DateTime Birthdate { get; set; }
+        public string Birthdate { get; set; }
         public int GenderID { get; set; }
         public string Cellphone { get; set; }
     

@@ -73,6 +73,9 @@
     <Compile Include="Department.cs">
       <DependentUpon>DKClinic.tt</DependentUpon>
     </Compile>
+    <Compile Include="Diagnosi.cs">
+      <DependentUpon>DKClinic.tt</DependentUpon>
+    </Compile>
     <Compile Include="DKClinic.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,21 +124,20 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DKClinic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DKClinic.Context.cs</LastGenOutput>
       <DependentUpon>DKClinic.edmx</DependentUpon>
+      <LastGenOutput>DKClinic.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DKClinic.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DKClinic.edmx</DependentUpon>
       <LastGenOutput>DKClinic.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
