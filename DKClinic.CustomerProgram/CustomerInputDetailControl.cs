@@ -33,37 +33,29 @@ namespace DKClinic.CustomerProgram
             }
         }
 
-        public CustomerInputDetailControl()
+        public CustomerInputDetailControl(Customer returnedcustomer)
         {
             InitializeComponent();
-            
-            customerClass = new Data.Customer(); // create customer obj
-            int customerID = customerClass.CustomerID;
-            MessageBox.Show($"customID: {customerID}");
 
-
+            customer = returnedcustomer;
             // 초기 화면출력
-            txbName.Text = customerClass.Name; // 이름 띄우기
-            txbBirthdate.Text = customerClass.Birthdate; // 생년월일 띄우기
+            txbName.Text = customer.Name; // 이름 띄우기
+            txbBirthdate.Text = customer.Birthdate; // 생년월일 띄우기
 
-            customerID = 0;
-
-            if (customerID == 0) // 회원일때
+            if (customer.CustomerID != 0) // 회원
             {
                 //수정기능 잠금
                 ModifyLock(true);
 
                 //기존 데이터 load
-                txbName.Text = customerClass.Name;
-                txbBirthdate.Text = customerClass.Birthdate;
-                txbCellphone.Text = customerClass.Cellphone;
+                txbCellphone.Text = customer.Cellphone;
                 
-                if(customerClass.GenderID == 1) // genderid 1이면 남자
+                if(customer.GenderID == 1) // genderid 1이면 남자
                 {
                     rbtMale.Checked = true;
                     rbtFemale.Checked = false;
                 }
-                else if(customerClass.GenderID == 2) //genderid 2면 여자
+                else if(customer.GenderID == 2) //genderid 2면 여자
                 {
                     rbtMale.Checked = false;
                     rbtFemale.Checked = true;
@@ -75,39 +67,44 @@ namespace DKClinic.CustomerProgram
                 //작성기능 열림
                 ModifyLock(false);
             }
-
-
-            
         }
         
-        Data.Customer customerClass; 
+        public Customer customer { get; set; } 
         
         
         private void btnOK_Click(object sender, EventArgs e)
         {
-            CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
+            if (WinformUtility.AskSure("입력한 내용이 맞습니까?"))//확인 msgbox
+            {
+                CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
 
-            if (MessageBox.Show("입력하신 내용이 맞습니까?","내용확인",MessageBoxButtons.YesNo) == DialogResult.Yes)//확인 msgbox
-            {
-                OnctmDetail(customerClass, ctmDepChoice); //이벤트 생성
-                //ctmDepChoice1.Show();
-                MessageBox.Show($"ctmDepChoice1.Show()");
-               
-            }
-            else
-            {
-                MessageBox.Show($"Canceled");
-            }           
+                //입력값 클래스로 넘기기
+                customer.Name  = txbName.Text;
+                customer.Birthdate = txbBirthdate.Text;
+                customer.Cellphone = txbCellphone.Text;
+                
+                if (rbtMale.Checked == true) // 남성:1
+                    customer.GenderID = 1;
+                else if(rbtFemale.Checked == true) // 여성:2
+                    customer.GenderID = 2;
+
+                OnctmDetail(customer, ctmDepChoice); //이벤트 생성
+
+                MessageBox.Show($"{customer.Name}\n{customer.Birthdate}\n{customer.GenderID}\n{customer.Cellphone}");
+            }          
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Canceled");
+            CustomerLoginControl customerlogin = new CustomerLoginControl();
+
+            //MessageBox.Show($"Canceled");
+            OnbtnCancelClicked(customerlogin);
+
+            // 이전 화면으로 돌아가는 새로운 이벤트 추가
         }
 
-
-
-        //이벤트 생성코드
+        //customer class와 다음 컨트롤 값 넘기는 이벤트 생성코드
         #region ctmDetail event things for C# 3.0
         public event EventHandler<ctmDetailEventArgs> ctmDetail;
 
@@ -149,6 +146,5 @@ namespace DKClinic.CustomerProgram
             }
         }
         #endregion
-
     }
 }

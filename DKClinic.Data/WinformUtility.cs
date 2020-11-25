@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace DKClinic.Main
+namespace DKClinic.Data
 {
     public static class WinformUtility
     {
