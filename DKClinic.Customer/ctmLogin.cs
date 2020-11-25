@@ -49,7 +49,7 @@ namespace DKClinic.Customer
                 NewCustomer(this, e);
         }
 
-        private NewCustomerEventArgs OnNewCustomer(Data.Cusomer customer, ctmInputDetail ctmInputDetail1)
+        private NewCustomerEventArgs OnNewCustomer(Data.Customer customer, ctmInputDetail ctmInputDetail1)
         {
             NewCustomerEventArgs args = new NewCustomerEventArgs(customer, ctmInputDetail1);
             OnNewCustomer(args);
@@ -67,14 +67,14 @@ namespace DKClinic.Customer
 
         public class NewCustomerEventArgs : EventArgs
         {
-            public Data.Cusomer Customer { get; set; }
+            public Data.Customer Customer { get; set; }
             public ctmInputDetail CtmInputDetail1 { get; set; }
 
             public NewCustomerEventArgs()
             {
             }
 
-            public NewCustomerEventArgs(Data.Cusomer customer, ctmInputDetail ctmInputDetail1)
+            public NewCustomerEventArgs(Data.Customer customer, ctmInputDetail ctmInputDetail1)
             {
                 Customer = customer;
                 CtmInputDetail1 = ctmInputDetail1;
