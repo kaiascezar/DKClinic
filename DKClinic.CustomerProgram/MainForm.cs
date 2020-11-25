@@ -14,7 +14,7 @@ namespace DKClinic.CustomerProgram
     public partial class MainForm : Form
     {
         public Customer ConnectedCustomer { get; set; }
-        public Questionnare CreatedQuestionnare { get; set; }
+        public Questionnare CreatedQuestionnare { get; set; } = new Questionnare();
         public Control.ControlCollection MainControl { get; set; }
 
         public MainForm()
@@ -87,6 +87,7 @@ namespace DKClinic.CustomerProgram
             CreatedQuestionnare.DepartmentID = e.Department.DepartmentID;
 
             // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
+            
 
             // departmentChoice 불러오기
             CallUserControl(e.CustQuestionnare);
