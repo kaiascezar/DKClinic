@@ -33,7 +33,6 @@ namespace DKClinic.CustomerProgram
             }
         }
 
-
         private void InputItemSend ()
         {
                 CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
@@ -50,6 +49,12 @@ namespace DKClinic.CustomerProgram
 
                 OnctmDetail(customer, ctmDepChoice); //이벤트 생성
         } // 입력값 전달 함수
+
+        private void BirthdateValidationCheck(string date)
+        {
+            int transint = Convert.ToInt32(date);
+            if(transint)
+        }
 
         public CustomerInputDetailControl()
         {
@@ -100,8 +105,14 @@ namespace DKClinic.CustomerProgram
         {
             if (customer.CustomerID == 0) // 회원이 아닐때 수정 내용 확인 msgbox 팝업
             {
-                if (WinformUtility.AskSure("입력한 내용이 맞습니까?"))//확인 msgbox
+                if (WinformUtility.AskSure("입력한 내용이 맞습니까?")) //확인 msgbox
+                {
+                    if () //유효성 검사 
+                    {
+
+                    }
                     InputItemSend();
+                }
             }
             else //회원일때는 팝업 없이 전달
             {
