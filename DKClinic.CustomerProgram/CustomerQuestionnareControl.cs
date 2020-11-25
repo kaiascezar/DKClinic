@@ -20,12 +20,14 @@ namespace DKClinic.CustomerProgram
 
         public CustomerQuestionnareControl(int departmentId) : this()
         {
+            _questionCount = Dao.Department.GetQuestionCount(departmentId);
+            
             CreateQuestionControlList(departmentId);
         }
 
         private void CreateQuestionControlList(int departmentId)
         {
-            List<Question> questionList = GetQuestions(departmentId);
+            List<Question> questionList = Dao.Question.GetQuestions(departmentId);
 
             // 불러온 문제 중에서 버전이 제일 높은 문제를 UC로 출력
             // 1-주관식, 2-객관식, 3-객관식다중선택
@@ -68,21 +70,6 @@ namespace DKClinic.CustomerProgram
         {
             List<Question> list = questionList.FindAll(x => x.Index == index);
             return list.OrderByDescending(x => x.Version).ToList()[0];
-        }
-
-        // 병과ID값으로 문제 개수와 문제를 불러온다, 문제를 불러올 떄 문제 개수를 넘는건 버린다
-        private List<Question> GetQuestions(int departmentId)
-        {
-            using (var context = DKClinicEntities.Create())
-            {
-                Department dep = Dao.Department.GetByPK(departmentId);
-                _questionCount = (int)dep.Count;
-
-                var query = from x in context.Questions
-                            where x.DepartmentID == departmentId && x.Index <= _questionCount
-                            select x;
-                return query.ToList();
-            }
         }
 
         public void AddQuestionControl(BaseQuestionControl question)
