@@ -15,21 +15,6 @@ namespace DKClinic.CustomerProgram
         public TeestFrom()
         {
             InitializeComponent();
-            CustomerQuestionnareControl q = new CustomerQuestionnareControl();
-            Controls.Add(q);
-            q.Dock = DockStyle.Fill;
-
-            MultipleChoiceControl question = new MultipleChoiceControl();
-            question.CreateChoiceSingle(6, "1번,2번,3번,4번,5번,6번");
-            q.AddQuestionControl(question);
-
-            MultipleChoiceControl question2 = new MultipleChoiceControl();
-            question2.CreateChoiceMultiple(6, "1번,2번,3번,4번,5번,6번");
-            q.AddQuestionControl(question2);
-
-            ShortAnswerControl question3 = new ShortAnswerControl();
-            question3.CreateAnswer();
-            q.AddQuestionControl(question3);
         }
     }
 }

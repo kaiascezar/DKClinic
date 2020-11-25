@@ -17,9 +17,11 @@ namespace DKClinic.CustomerProgram
             InitializeComponent();
         }
 
-        public void CreateChoiceSingle(int count, string text)
+        public void CreateChoiceSingle(string question, int count, string choices)
         {
-            string[] texts = text.Split(',');
+            lblQuestion.Text = question;
+
+            string[] texts = choices.Split(',');
             for(int i = 0; i < count; i++)
             {
                 RadioButton rb = new RadioButton();
@@ -32,9 +34,11 @@ namespace DKClinic.CustomerProgram
             }
         }
 
-        public void CreateChoiceMultiple(int count, string text)
+        public void CreateChoiceMultiple(string question, int count, string chioces)
         {
-            string[] texts = text.Split(',');
+            lblQuestion.Text = question;
+
+            string[] texts = chioces.Split(',');
             for (int i = 0; i < count; i++)
             {
                 CheckBox cb = new CheckBox();

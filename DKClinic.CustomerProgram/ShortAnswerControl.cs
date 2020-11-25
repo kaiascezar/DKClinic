@@ -10,8 +10,10 @@ namespace DKClinic.CustomerProgram
             InitializeComponent();
         }
 
-        public void CreateAnswer()
+        public void CreateAnswer(string question)
         {
+            lblQuestion.Text = question;
+
             RichTextBox txb = new RichTextBox();
             txb.Location = new Point(5, 5);
             txb.Size = new Size(600, 60);
