@@ -29,7 +29,7 @@ namespace DKClinic.CustomerProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctmInputDetail1 = new DKClinic.Customer.ctmInputDetail();
+            this.ctmInputDetail1 = new DKClinic.CustomerProgram.CustomerInputDetailControl();
             this.SuspendLayout();
             // 
             // ctmInputDetail1
@@ -55,6 +55,6 @@ namespace DKClinic.CustomerProgram
 
         #endregion
 
-        private ctmInputDetail ctmInputDetail1;
+        private CustomerInputDetailControl ctmInputDetail1;
     }
 }
