@@ -1,4 +1,5 @@
 ﻿using DKClinic.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,6 +8,10 @@ namespace DKClinic.Customer
 {
     public partial class ctmQuestionnare : BaseUC
     {
+        public List<BaseQuestion> QuestionControls { get; set; }
+        public List<Response> Responses { get; set; }
+        private int _questionCount = 0;
+
         public ctmQuestionnare()
         {
             InitializeComponent();
@@ -15,55 +20,78 @@ namespace DKClinic.Customer
 
         public ctmQuestionnare(int departmentId) : this()
         {
-            //MultipleChoice question = new MultipleChoice();
-            //question.CreateChoiceSingle(6, "1번,2번,3번,4번,5번,6번");
-            //q.AddQuestionControl(question);
+            CreateQuestionControlList(departmentId);
+        }
 
-            //MultipleChoice question2 = new MultipleChoice();
-            //question2.CreateChoiceMultiple(6, "1번,2번,3번,4번,5번,6번");
-            //q.AddQuestionControl(question2);
+        private void CreateQuestionControlList(int departmentId)
+        {
+            List<Question> questionList = GetQuestions(departmentId);
 
-            //ShortAnswer question3 = new ShortAnswer();
-            //question3.CreateAnswer();
-            //q.AddQuestionControl(question3);
-
+            // 불러온 문제 중에서 버전이 제일 높은 문제를 UC로 출력
             // 1-주관식, 2-객관식, 3-객관식다중선택
-            using (var context = DKClinicEntities.Create())
+            for (int i = 0; i < _questionCount; i++)
             {
-                //int questionCount = context.Departments.Where(x => x.DepartmentID == departmentId);
-                //questionList = context.Questions.Where(x => x.DepartmentID == departmentId && x.Index <= questionCount);
-                
-                foreach(var question in questionList)
-                {
-                    if(question.Type == 1)
-                    {
-                        ShortAnswer q = new ShortAnswer();
-                        q.CreateAnswer();
-                        AddQuestionControl(q);
-                    }
-                    else if(question.Type == 2)
-                    { 
-                    }
-                    else
-                    {
-                    }
-                }
+                Question question = CheckVersion(questionList, i);
+
+                CreateQuestionControl(question);
             }
         }
 
-        public List<Question> questionList { get; set; }
-        public List<BaseQuestion> questionUcList { get; set; }
+        // 해당 문제 데이터를 이용해 UC를 생성한다
+        private void CreateQuestionControl(Question question)
+        {
+            BaseQuestion baseQuestion;
 
-        private int _questionCount = 0;
+            if (question.Type == 1)
+            {
+                baseQuestion = new ShortAnswer();
+                ((ShortAnswer)baseQuestion).CreateAnswer();
+            }
+            else if (question.Type == 2)
+            {
+                baseQuestion = new MultipleChoice();
+                ((MultipleChoice)baseQuestion).
+                    CreateChoiceSingle((int)question.ChoiceCount, question.Choices);
+            }
+            else
+            {
+                baseQuestion = new MultipleChoice();
+                ((MultipleChoice)baseQuestion).
+                    CreateChoiceMultiple((int)question.ChoiceCount, question.Choices);
+            }
+            AddQuestionControl(baseQuestion);
+            Responses.Add(new Response() { QuestionID = question.QuestionID });
+        }
 
-        // DB연결하면 여기서 문제를 불러오도록 세팅한다
+        // 해당 번호의 문제들만 뽑아, version이 제일 높은 문제를 뽑는다
+        private Question CheckVersion(List<Question> questionList, int index)
+        {
+            List<Question> list = questionList.FindAll(x => x.Index == index);
+            return list.OrderByDescending(x => x.Version).ToList()[0];
+        }
+
+        // 병과ID값으로 문제 개수와 문제를 불러온다, 문제를 불러올 떄 문제 개수를 넘는건 버린다
+        private List<Question> GetQuestions(int departmentId)
+        {
+            using (var context = DKClinicEntities.Create())
+            {
+                Department dep = Dao.Department.GetByPK(departmentId);
+                _questionCount = (int)dep.Count;
+
+                var query = from x in context.Questions
+                            where x.DepartmentID == departmentId && x.Index <= _questionCount
+                            select x;
+                return query.ToList();
+            }
+        }
+
         public void AddQuestionControl(BaseQuestion question)
         {
             _questionCount++;
 
             question.Dock = DockStyle.Bottom;
             pnlBoard.Controls.Add(question);
-            questionUcList.Add(question);
+            QuestionControls.Add(question);
         }
     }
 }
