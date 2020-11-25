@@ -13,6 +13,10 @@ namespace DKClinic.CustomerProgram
 {
     public partial class MainForm : Form
     {
+        public Customer ConnectedCustomer { get; set; }
+        public Questionnare CreatedQuestionnare { get; set; }
+        public Control.ControlCollection MainControl { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,11 +30,11 @@ namespace DKClinic.CustomerProgram
 
             // 시작 화면인 로그인 화면 출력
             CustomerLoginControl customerLoginControl = new CustomerLoginControl();
-            customerLoginControl.LoginToDetail += CustomerLoginControl_LoginToDetail1;
+            customerLoginControl.LoginToDetail += CustomerLoginControl_LoginToDetail;
             CallUserControl(customerLoginControl);
         }
 
-        private void CustomerLoginControl_LoginToDetail1(object sender, CustomerLoginControl.LoginToDetailEventArgs e)
+        private void CustomerLoginControl_LoginToDetail(object sender, CustomerLoginControl.LoginToDetailEventArgs e)
         {
             // 고객 정보를 저장하자
             ConnectedCustomer = e.Customer;
@@ -42,16 +46,20 @@ namespace DKClinic.CustomerProgram
             // 하단에 접속된 고객 이름 출력
             lblStatus.Text = "고객 " + ConnectedCustomer.Name + "님 로그인중...";
 
-            // inputDetail 불러오자
-            
-            // CustomerInputDetailControl 이벤트 추가 시 여기에 추가
-
+            // CustomerInputDetailControl 이벤트 핸들러 등록
+            e.CtmInputDetail.ctmDetail += CustomerInputDetailControl_ctmDetail;
             CallUserControl(e.CtmInputDetail);
         }
 
-        public Customer ConnectedCustomer { get; set; }
-        public Questionnare CreatedQuestionnare { get; set; }
-        public Control.ControlCollection MainControl { get; set; }
+        private void CustomerInputDetailControl_ctmDetail(object sender, CustomerInputDetailControl.ctmDetailEventArgs e)
+        {
+            ConnectedCustomer = e.RefCustomerClass;
+
+            // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
+
+            // departmentChoice 불러오기
+            CallUserControl(e.RefCtmDepChoice);
+        }
 
         public void CallUserControl(BaseUC control)
         {
@@ -62,6 +70,7 @@ namespace DKClinic.CustomerProgram
             MainControl.Add(control);
             lblTitle.Text = control.Title;
         }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (MainControl.Count > 0)
@@ -76,15 +85,6 @@ namespace DKClinic.CustomerProgram
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString();
-        }
-
-        public void event2(EventArgs e)
-        {
-            // 고객 정보를 저장하자
-            ConnectedCustomer = new Data.Customer();
-
-            // depChoice 불러오자
-            CallUserControl(new BaseUC());
         }
     }
 }
