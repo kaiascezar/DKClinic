@@ -24,12 +24,32 @@ namespace DKClinic.CustomerProgram
             pnlTop.Visible = false;
             pnlBottom.Visible = false;
 
-            // 시작 화면인 로그인 화면(ctmLogin)출력
-            CustomerLoginControl login = new CustomerLoginControl();
-            CallUserControl(login);
+            // 시작 화면인 로그인 화면 출력
+            CustomerLoginControl customerLoginControl = new CustomerLoginControl();
+            customerLoginControl.LoginToDetail += CustomerLoginControl_LoginToDetail1;
+            CallUserControl(customerLoginControl);
         }
 
-        public Data.Customer ConnectedCustomer { get; set; }
+        private void CustomerLoginControl_LoginToDetail1(object sender, CustomerLoginControl.LoginToDetailEventArgs e)
+        {
+            // 고객 정보를 저장하자
+            ConnectedCustomer = e.Customer;
+
+            // Top, Bottom툴바 출력
+            pnlTop.Visible = true;
+            pnlBottom.Visible = true;
+
+            // 하단에 접속된 고객 이름 출력
+            lblStatus.Text = "고객 " + ConnectedCustomer.Name + "님 로그인중...";
+
+            // inputDetail 불러오자
+            
+            // CustomerInputDetailControl 이벤트 추가 시 여기에 추가
+
+            CallUserControl(e.CtmInputDetail1);
+        }
+
+        public Customer ConnectedCustomer { get; set; }
         public Questionnare CreatedQuestionnare { get; set; }
         public Control.ControlCollection MainControl { get; set; }
 
@@ -56,22 +76,6 @@ namespace DKClinic.CustomerProgram
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString();
-        }
-
-        public void event1(EventArgs e)
-        {
-            // 고객 정보를 저장하자
-            ConnectedCustomer = new Data.Customer();
-
-            // Top, Bottom툴바 출력
-            pnlTop.Visible = false;
-            pnlBottom.Visible = false;
-
-            // 하단에 접속된 고객 이름 출력
-            lblStatus.Text = "고객 " + ConnectedCustomer.Name + "님 로그인중...";
-
-            // inputDetail 불러오자
-            CallUserControl(new BaseUC());
         }
 
         public void event2(EventArgs e)
