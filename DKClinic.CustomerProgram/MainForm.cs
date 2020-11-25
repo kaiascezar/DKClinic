@@ -48,8 +48,6 @@ namespace DKClinic.CustomerProgram
 
             // CustomerInputDetailControl 이벤트 핸들러 등록
             e.CtmInputDetail.ctmDetail += CustomerInputDetailControl_ctmDetail;
-
-            // inputDetail 불러오자
             CallUserControl(e.CtmInputDetail);
         }
 
