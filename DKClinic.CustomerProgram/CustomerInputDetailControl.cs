@@ -33,10 +33,29 @@ namespace DKClinic.CustomerProgram
             }
         }
 
+
+        private void InputItemSend ()
+        {
+                CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
+
+                //입력값 클래스로 넘기기
+                customer.Name = txbName.Text;
+                customer.Birthdate = txbBirthdate.Text;
+                customer.Cellphone = txbCellphone.Text;
+
+                if (rbtMale.Checked == true) // 남성:1
+                    customer.GenderID = 1;
+                else if (rbtFemale.Checked == true) // 여성:2
+                    customer.GenderID = 2;
+
+                OnctmDetail(customer, ctmDepChoice); //이벤트 생성
+        } // 입력값 전달 함수
+
         public CustomerInputDetailControl()
         {
             InitializeComponent();
         }
+
 
         public CustomerInputDetailControl(Customer returnedcustomer)
         {
@@ -79,24 +98,15 @@ namespace DKClinic.CustomerProgram
         
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (WinformUtility.AskSure("입력한 내용이 맞습니까?"))//확인 msgbox
+            if (customer.CustomerID == 0) // 회원이 아닐때 수정 내용 확인 msgbox 팝업
             {
-                CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
-
-                //입력값 클래스로 넘기기
-                customer.Name  = txbName.Text;
-                customer.Birthdate = txbBirthdate.Text;
-                customer.Cellphone = txbCellphone.Text;
-                
-                if (rbtMale.Checked == true) // 남성:1
-                    customer.GenderID = 1;
-                else if(rbtFemale.Checked == true) // 여성:2
-                    customer.GenderID = 2;
-
-                OnctmDetail(customer, ctmDepChoice); //이벤트 생성
-
-                MessageBox.Show($"{customer.Name}\n{customer.Birthdate}\n{customer.GenderID}\n{customer.Cellphone}");
-            }          
+                if (WinformUtility.AskSure("입력한 내용이 맞습니까?"))//확인 msgbox
+                    InputItemSend();
+            }
+            else //회원일때는 팝업 없이 전달
+            {
+                InputItemSend();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
