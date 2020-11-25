@@ -46,7 +46,7 @@ namespace DKClinic.CustomerProgram
             
             // CustomerInputDetailControl 이벤트 추가 시 여기에 추가
 
-            CallUserControl(e.CtmInputDetail1);
+            CallUserControl(e.CtmInputDetail);
         }
 
         public Customer ConnectedCustomer { get; set; }
