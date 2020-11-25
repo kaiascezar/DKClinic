@@ -29,7 +29,7 @@ namespace DKClinic.CustomerProgram
                 customer.Birthdate = txbBirthdate.Text;
             }
             
-            CustomerInputDetailControl ctmInputDetail = new CustomerInputDetailControl(/*customer*/);
+            CustomerInputDetailControl ctmInputDetail = new CustomerInputDetailControl(customer);
 
             if (customer.CustomerID != 0)
             {
