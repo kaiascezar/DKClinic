@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DKClinic.Customer
 {
-    public partial class ctmInputDetail : BaseUC
+    public partial class CustomerInputDetailControl : BaseUC
     {
-        public ctmInputDetail()
+        public CustomerInputDetailControl()
         {
             InitializeComponent();
         }

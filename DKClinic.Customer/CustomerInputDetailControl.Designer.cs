@@ -1,7 +1,7 @@
 ﻿
 namespace DKClinic.Customer
 {
-    partial class ctmInputDetail
+    partial class CustomerInputDetailControl
     {
         /// <summary> 
         /// Required designer variable.
