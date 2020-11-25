@@ -115,9 +115,6 @@
     <EmbeddedResource Include="ctmQuestionnare.resx">
       <DependentUpon>ctmQuestionnare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctmDepChoice.resx">
-      <DependentUpon>ctmDepChoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ctmLogin.resx">
       <DependentUpon>ctmLogin.cs</DependentUpon>
     </EmbeddedResource>
