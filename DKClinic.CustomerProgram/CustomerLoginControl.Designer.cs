@@ -45,7 +45,7 @@ namespace DKClinic.CustomerProgram
             this.label2.Location = new System.Drawing.Point(377, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 40);
-            this.label2.TabIndex = 15;
+            this.label2.TabIndex = 0;
             this.label2.Text = "생년월일";
             // 
             // btnCancel
@@ -54,7 +54,7 @@ namespace DKClinic.CustomerProgram
             this.btnCancel.Location = new System.Drawing.Point(693, 483);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(181, 95);
-            this.btnCancel.TabIndex = 14;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -66,7 +66,7 @@ namespace DKClinic.CustomerProgram
             this.label1.Location = new System.Drawing.Point(406, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 40);
-            this.label1.TabIndex = 13;
+            this.label1.TabIndex = 0;
             this.label1.Text = "이 름";
             // 
             // btnOK
@@ -75,7 +75,7 @@ namespace DKClinic.CustomerProgram
             this.btnOK.Location = new System.Drawing.Point(383, 483);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(181, 95);
-            this.btnOK.TabIndex = 12;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -87,7 +87,7 @@ namespace DKClinic.CustomerProgram
             this.label3.Location = new System.Drawing.Point(432, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(405, 60);
-            this.label3.TabIndex = 20;
+            this.label3.TabIndex = 0;
             this.label3.Text = "기본정보 입력";
             // 
             // txbName
