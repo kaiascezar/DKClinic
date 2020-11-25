@@ -33,6 +33,7 @@ namespace DKClinic.CustomerProgram
             }
         }
 
+
         private void InputItemSend ()
         {
                 CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
@@ -49,6 +50,12 @@ namespace DKClinic.CustomerProgram
 
                 OnctmDetail(customer, ctmDepChoice); //이벤트 생성
         } // 입력값 전달 함수
+
+        public CustomerInputDetailControl()
+        {
+            InitializeComponent();
+        }
+
 
         public CustomerInputDetailControl(Customer returnedcustomer)
         {
