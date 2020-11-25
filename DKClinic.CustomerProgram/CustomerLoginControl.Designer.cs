@@ -51,11 +51,11 @@ namespace DKClinic.CustomerProgram
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(693, 483);
+            this.btnCancel.Location = new System.Drawing.Point(673, 483);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(181, 95);
+            this.btnCancel.Size = new System.Drawing.Size(201, 95);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "취소";
+            this.btnCancel.Text = "입력 취소";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 

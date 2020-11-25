@@ -20,6 +20,12 @@ namespace DKClinic.CustomerProgram
         
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txbName.Text == "" || txbBirthdate.Text == "")
+            {
+                MessageBox.Show("항목을 입력해주세요");
+                return;
+            }
+
             Customer customer = Dao.Customer.Find(txbName.Text, txbBirthdate.Text);
 
             if (customer == null)
