@@ -13,41 +13,91 @@ namespace DKClinic.CustomerProgram
 {
     public partial class CustomerInputDetailControl : BaseUC
     {
+        private void ModifyLock(bool mode) // 수정잠금기능 함수
+        {
+            if (mode == true)
+            {
+                txbName.ReadOnly = true;
+                txbBirthdate.ReadOnly = true;
+                txbCellphone.ReadOnly = true;
+                rbtMale.Enabled = false;
+                rbtFemale.Enabled = false;
+            }
+            else if (mode == false)
+            {
+                txbName.ReadOnly = false;
+                txbBirthdate.ReadOnly = false;
+                txbCellphone.ReadOnly = false;
+                rbtMale.Enabled = true;
+                rbtFemale.Enabled = true;
+            }
+        }
+
         public CustomerInputDetailControl()
         {
             InitializeComponent();
-        }
+            
+            customerClass = new Data.Customer(); // create customer obj
+            int customerID = customerClass.CustomerID;
+            MessageBox.Show($"customID: {customerID}");
 
-        Data.Customer ctm = new Data.Customer(); // create customer obj
+
+            // 초기 화면출력
+            txbName.Text = customerClass.Name; // 이름 띄우기
+            txbBirthdate.Text = customerClass.Birthdate; // 생년월일 띄우기
+
+            customerID = 0;
+
+            if (customerID == 0) // 회원일때
+            {
+                //수정기능 잠금
+                ModifyLock(true);
+
+                //기존 데이터 load
+                txbName.Text = customerClass.Name;
+                txbBirthdate.Text = customerClass.Birthdate;
+                txbCellphone.Text = customerClass.Cellphone;
+                
+                if(customerClass.GenderID == 1) // genderid 1이면 남자
+                {
+                    rbtMale.Checked = true;
+                    rbtFemale.Checked = false;
+                }
+                else if(customerClass.GenderID == 2) //genderid 2면 여자
+                {
+                    rbtMale.Checked = false;
+                    rbtFemale.Checked = true;
+                }
+                
+            }
+            else // 비회원일때
+            {
+                //작성기능 열림
+                ModifyLock(false);
+            }
 
 
-        protected bool checkCustomerID(Data.Customer ctm)
-        {
-            int ctmid = ctm.CustomerID;
-
-            if (ctmid == 0)
-                return false;
-            else
-                return true;           
+            
         }
         
-
+        Data.Customer customerClass; 
+        
+        
         private void btnOK_Click(object sender, EventArgs e)
         {
-            
-            
-            //string name, birthdate, cellphone;
-            //int gender;
+            CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
 
-            //CustomerInfo.name = txbName.Text;
-            //birthdate = txbBirthdate.Text;
-            //cellphone = txbCellphone.Text;
-
-            //if (rbtMale.Checked == true) //male : 1  female : 2
-            //    gender = 1;
-            //else
-            //    gender = 2;
-            //MessageBox.Show($"{name}\n{birthdate}\n{gender}\n{cellphone}");
+            if (MessageBox.Show("입력하신 내용이 맞습니까?","내용확인",MessageBoxButtons.YesNo) == DialogResult.Yes)//확인 msgbox
+            {
+                OnctmDetail(customerClass, ctmDepChoice); //이벤트 생성
+                //ctmDepChoice1.Show();
+                MessageBox.Show($"ctmDepChoice1.Show()");
+               
+            }
+            else
+            {
+                MessageBox.Show($"Canceled");
+            }           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -56,46 +106,49 @@ namespace DKClinic.CustomerProgram
         }
 
 
-        //#region ctmDetail event things for C# 3.0
-        //    public event EventHandler<ctmDetailEventArgs> ctmDetail;
 
-        //    protected virtual void OnctmDetail(ctmDetailEventArgs e)
-        //    {
-        //        if (ctmDetail != null)
-        //            ctmDetail(this, e);
-        //    }
+        //이벤트 생성코드
+        #region ctmDetail event things for C# 3.0
+        public event EventHandler<ctmDetailEventArgs> ctmDetail;
 
-        //    private ctmDetailEventArgs OnctmDetail(ref customerClass  , ref ctmDepChoice )
-        //    {
-        //        ctmDetailEventArgs args = new ctmDetailEventArgs(customerClass, ctmDepChoice);
-        //        OnctmDetail(args);
+        protected virtual void OnctmDetail(ctmDetailEventArgs e)
+        {
+            if (ctmDetail != null)
+                ctmDetail(this, e);
+        }
 
-        //        return args;
-        //    }
+        private ctmDetailEventArgs OnctmDetail(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
+        {
+            ctmDetailEventArgs args = new ctmDetailEventArgs(refCustomerClass, refCtmDepChoice);
+            OnctmDetail(args);
 
-        //    private ctmDetailEventArgs OnctmDetailForOut()
-        //    {
-        //        ctmDetailEventArgs args = new ctmDetailEventArgs();
-        //        OnctmDetail(args);
+            return args;
+        }
 
-        //        return args;
-        //    }
+        private ctmDetailEventArgs OnctmDetailForOut()
+        {
+            ctmDetailEventArgs args = new ctmDetailEventArgs();
+            OnctmDetail(args);
 
-        //    public class ctmDetailEventArgs : EventArgs
-        //    {
-        //        public ref CustomerClass { get; set;}
-        //        public ref CtmDepChoice { get; set;}
+            return args;
+        }
 
-        //        public ctmDetailEventArgs()
-        //        {
-        //        }
+        public class ctmDetailEventArgs : EventArgs
+        {
+            public Data.Customer RefCustomerClass { get; set; }
+            public CustomerDepartmentChoiceControl RefCtmDepChoice { get; set; }
 
-        //        public ctmDetailEventArgs(ref customerClass  , ref ctmDepChoice )
-        //        {
-        //            CustomerClass = customerClass;
-        //            CtmDepChoice = ctmDepChoice;
-        //        }
-        //    }
-        //#endregion
+            public ctmDetailEventArgs()
+            {
+            }
+
+            public ctmDetailEventArgs(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
+            {
+                RefCustomerClass = refCustomerClass;
+                RefCtmDepChoice = refCtmDepChoice;
+            }
+        }
+        #endregion
+
     }
 }
