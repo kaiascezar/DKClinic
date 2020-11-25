@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Data", "DKClinic.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.UnitTest", "DKClinic.UnitTest\DKClinic.UnitTest.csproj", "{DE04A0F2-CF13-4EF2-A299-256CA668D262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Employee", "DKClinic.Employee\DKClinic.Employee.csproj", "{F040B52A-5588-4261-9D8D-457481560FF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.EmployeeProgram", "DKClinic.EmployeeProgram\DKClinic.EmployeeProgram.csproj", "{F040B52A-5588-4261-9D8D-457481560FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.Customer", "DKClinic.Customer\DKClinic.Customer.csproj", "{712021E2-3966-4748-BC96-DB2322F857B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKClinic.CustomerProgram", "DKClinic.CustomerProgram\DKClinic.CustomerProgram.csproj", "{712021E2-3966-4748-BC96-DB2322F857B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
