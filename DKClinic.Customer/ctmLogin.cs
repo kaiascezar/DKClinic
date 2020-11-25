@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DKClinic.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DKClinic.Customer
 {
-    public partial class ctmLogin : UserControl
+    public partial class ctmLogin : BaseUC
     {
         public ctmLogin()
         {

@@ -7,6 +7,7 @@ namespace DKClinic.Data
         public BaseUC()
         {
             InitializeComponent();
+            Title = string.Empty;
         }
 
         public string Title { get; set; }
