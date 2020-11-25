@@ -33,6 +33,11 @@ namespace DKClinic.CustomerProgram
             }
         }
 
+        public CustomerInputDetailControl()
+        {
+            InitializeComponent();
+        }
+
         public CustomerInputDetailControl(Customer returnedcustomer)
         {
             InitializeComponent();

@@ -29,7 +29,7 @@ namespace DKClinic.CustomerProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctmInputDetail1 = new DKClinic.CustomerProgram.CustomerInputDetailControl();
+            this.ctmInputDetail1 = new CustomerInputDetailControl();
             this.SuspendLayout();
             // 
             // ctmInputDetail1
