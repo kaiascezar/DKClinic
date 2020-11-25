@@ -13,7 +13,7 @@ namespace DKClinic.Customer
 {
     public partial class ctmLogin : BaseUC
     {
-        Data.Customer Customer = new Data.Customer();
+        Data.Customer customer = new Data.Customer();
         public ctmLogin()
         {
             InitializeComponent();
@@ -21,60 +21,62 @@ namespace DKClinic.Customer
         
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Customer.Name = txbName.Text;
-            //Customer.Birthdate = txbBirthdate.Text;
-            ctmInputDetail ctmInputDetail1 = new ctmInputDetail();
+            Data.Customer customer = Dao.Customer.Find(txbName.Text, txbBirthdate.Text);
 
-            if (Customer.Name == "abc")
+            if (customer == null)
+            {
+                customer.Name = txbName.Text;
+                customer.Birthdate = txbBirthdate.Text;
+            }
+            
+            CustomerInputDetailControl ctmInputDetail1 = new CustomerInputDetailControl();
+
+            if (customer.CustomerID != 0)
             {
                 MessageBox.Show("방문기록이 있습니다.");
-                ctmInputDetail1.Show();
             }
             else
             {
                 MessageBox.Show("환영합니다. 처음 방문하셨습니다.");
-                ctmInputDetail1.Show();
             }
-
-            //OnNewCustomer(Customer, ctmInputDetail1);
-            
+            OnLoginToDetail(customer, ctmInputDetail1);
         }
 
-        #region NewCustomer event things for C# 3.0
-        public event EventHandler<NewCustomerEventArgs> NewCustomer;
+        #region LoginToDetail event things for C# 3.0
+        public event EventHandler<LoginToDetailEventArgs> LoginToDetail;
 
-        protected virtual void OnNewCustomer(NewCustomerEventArgs e)
+        protected virtual void OnLoginToDetail(LoginToDetailEventArgs e)
         {
-            if (NewCustomer != null)
-                NewCustomer(this, e);
+            if (LoginToDetail != null)
+                LoginToDetail(this, e);
         }
 
-        private NewCustomerEventArgs OnNewCustomer(Data.Cusomer customer, ctmInputDetail ctmInputDetail1)
+        private LoginToDetailEventArgs OnLoginToDetail(Data.Customer customer, CustomerInputDetailControl ctmInputDetail1)
         {
-            NewCustomerEventArgs args = new NewCustomerEventArgs(customer, ctmInputDetail1);
-            OnNewCustomer(args);
+            LoginToDetailEventArgs args = new LoginToDetailEventArgs(customer, ctmInputDetail1);
+            OnLoginToDetail(args);
 
             return args;
         }
 
-        private NewCustomerEventArgs OnNewCustomerForOut()
+        private LoginToDetailEventArgs OnLoginToDetailForOut()
         {
-            NewCustomerEventArgs args = new NewCustomerEventArgs();
-            OnNewCustomer(args);
+            LoginToDetailEventArgs args = new LoginToDetailEventArgs();
+            OnLoginToDetail(args);
 
             return args;
         }
 
-        public class NewCustomerEventArgs : EventArgs
+        public class LoginToDetailEventArgs : EventArgs
         {
-            public Data.Cusomer Customer { get; set; }
-            public ctmInputDetail CtmInputDetail1 { get; set; }
+            public Data.Customer Customer { get; set; }
+            public CustomerInputDetailControl CtmInputDetail1 { get; set; }
 
-            public NewCustomerEventArgs()
+            public LoginToDetailEventArgs()
             {
             }
 
-            public NewCustomerEventArgs(Data.Cusomer customer, ctmInputDetail ctmInputDetail1)
+            public LoginToDetailEventArgs(Data.Customer customer, CustomerInputDetailControl ctmInputDetail1)
             {
                 Customer = customer;
                 CtmInputDetail1 = ctmInputDetail1;

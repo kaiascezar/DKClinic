@@ -11,5 +11,10 @@ namespace DKClinic.Data
         {
             return x => x.CustomerID == key;
         }
+
+        public Customer Find(string text1, string text2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

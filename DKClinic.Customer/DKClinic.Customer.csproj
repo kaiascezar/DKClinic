@@ -79,11 +79,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ctmInputDetail.cs">
+    <Compile Include="CustomerInputDetailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctmInputDetail.Designer.cs">
-      <DependentUpon>ctmInputDetail.cs</DependentUpon>
+    <Compile Include="CustomerInputDetailControl.Designer.cs">
+      <DependentUpon>CustomerInputDetailControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ctmDepChoice.cs">
       <SubType>UserControl</SubType>
@@ -131,8 +131,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ctmInputDetail.resx">
-      <DependentUpon>ctmInputDetail.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerInputDetailControl.resx">
+      <DependentUpon>CustomerInputDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseQuestion.resx">
       <DependentUpon>BaseQuestion.cs</DependentUpon>
