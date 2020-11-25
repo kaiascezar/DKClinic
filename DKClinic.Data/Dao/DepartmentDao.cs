@@ -11,5 +11,10 @@ namespace DKClinic.Data
         {
             return x => x.DepartmentID == key;
         }
+
+        public int GetQuestionCount(int key)
+        {
+            return (int)Dao.Department.GetByPK(key).Count;
+        }
     }
 }
