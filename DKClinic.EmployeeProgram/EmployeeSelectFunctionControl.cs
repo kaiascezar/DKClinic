@@ -21,6 +21,27 @@ namespace DKClinic.EmployeeProgram
         
         public EmployeeSelectFunctionControl(Employee employee) : this()
         {
+            if (employee.PositionID == 1) // 관리자 : all
+            {
+                btnManageQuestionnare.Enabled = true;
+                btnManageQuestion.Enabled = true;
+                btnManageCtm.Enabled = true;
+                btnManageEmp.Enabled = true;
+            }
+            else if (employee.PositionID == 2) // 의사 : 문진표, 질문, 환자 
+            {
+                btnManageQuestionnare.Enabled = true;
+                btnManageQuestion.Enabled = true;
+                btnManageCtm.Enabled = true;
+                btnManageEmp.Enabled = false;
+            }
+            else if (employee.PositionID == 3) // 간호사 : 문진표(진단X), 환자
+            {
+                btnManageQuestionnare.Enabled = true;
+                btnManageQuestion.Enabled = false;
+                btnManageCtm.Enabled = true;
+                btnManageEmp.Enabled = false;
+            }
         }
 
         private void btnFunction_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@ namespace DKClinic.EmployeeProgram
             }
 
             //다음 유저컨트롤 전달용
-            EmployeeSelectFunctionControl empsltfunControl = new EmployeeSelectFunctionControl(/*employee*/);
+            EmployeeSelectFunctionControl empsltfunControl = new EmployeeSelectFunctionControl(employee);
             //이벤트 발생
             OnLoginToFunction(employee, empsltfunControl);
         }
