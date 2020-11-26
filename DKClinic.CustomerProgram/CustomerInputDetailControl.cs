@@ -13,9 +13,69 @@ namespace DKClinic.CustomerProgram
 {
     public partial class CustomerInputDetailControl : BaseUC
     {
-        private void ModifyLock(bool mode) // 수정잠금기능 함수
+        private void ValidationFailMessage()
         {
-            if (mode == true)
+            MessageBox.Show("생년월일을 정확하게 입력해 주세요", "Warning");
+        }
+
+        //이름, 생년월일 tbx 중 빈칸 있을 시 입력요청 메세지 박스 호출, 생년월일 유효성 검사
+        private bool IsValidationError(string text1, string text2)
+        {
+            //입력값 없을 경우
+            if (text1 == "" || text2 == "")
+            {
+                MessageBox.Show("항목을 입력해주세요", "Warning");
+                return true;
+            }
+
+            if (text2.Length < 6)
+            {
+                ValidationFailMessage();
+                return true;
+            }
+
+            int month = int.Parse(text2) % 10000 / 100;
+            int day = int.Parse(text2) % 100;
+
+            //월,일이 틀릴 경우
+            if (month < 1 || month > 12 || day < 1 || day > 31)
+            {
+                ValidationFailMessage();
+                return true;
+            }
+            //일이 틀릴 경우
+            if (month % 2 == 0 && month < 7)
+            {
+                if (month == 2)
+                {
+                    if (day > 28)
+                    {
+                        ValidationFailMessage();
+                        return true;
+                    }
+                }
+                else if (day > 30)
+                {
+                    ValidationFailMessage();
+                    return true;
+                }
+            }
+            else if (month == 9 && month == 11)
+            {
+                if (day > 30)
+                {
+                    ValidationFailMessage();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // 수정잠금기능 함수
+        private void ModifyLock(int customerID) 
+        {
+            if (customerID != 0) // 회원
             {
                 txbName.ReadOnly = true;
                 txbBirthdate.ReadOnly = true;
@@ -23,7 +83,15 @@ namespace DKClinic.CustomerProgram
                 rbtMale.Enabled = false;
                 rbtFemale.Enabled = false;
             }
-            else if (mode == false)
+            else if (customerID == 0) // 비회원
+            {
+                txbName.ReadOnly = true;
+                txbBirthdate.ReadOnly = true;
+                txbCellphone.ReadOnly = false;
+                rbtMale.Enabled = true;
+                rbtFemale.Enabled = true;
+            }
+            else if (customerID == 999999999) // 모두 수정 가능
             {
                 txbName.ReadOnly = false;
                 txbBirthdate.ReadOnly = false;
@@ -33,6 +101,7 @@ namespace DKClinic.CustomerProgram
             }
         }
 
+        // 입력값 전달 함수
         private void InputItemSend ()
         {
                 CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
@@ -47,13 +116,7 @@ namespace DKClinic.CustomerProgram
                 else if (rbtFemale.Checked == true) // 여성:2
                     customer.GenderID = 2;
 
-                OnctmDetail(customer, ctmDepChoice); //이벤트 생성
-        } // 입력값 전달 함수
-
-        private void BirthdateValidationCheck(string date)
-        {
-            int transint = Convert.ToInt32(date);
-            //if(transint)
+                OnDetailToDepartment(customer, ctmDepChoice); //이벤트 생성
         }
 
         public CustomerInputDetailControl()
@@ -74,7 +137,7 @@ namespace DKClinic.CustomerProgram
             if (customer.CustomerID != 0) // 회원
             {
                 //수정기능 잠금
-                ModifyLock(true);
+                ModifyLock(customer.CustomerID);
 
                 //기존 데이터 load
                 txbCellphone.Text = customer.Cellphone;
@@ -93,8 +156,8 @@ namespace DKClinic.CustomerProgram
             }
             else // 비회원일때
             {
-                //작성기능 열림
-                ModifyLock(false);
+                //비회원 작성기능 열림
+                ModifyLock(customer.CustomerID);
             }
         }
         
@@ -107,21 +170,30 @@ namespace DKClinic.CustomerProgram
             {
                 if (WinformUtility.AskSure("입력한 내용이 맞습니까?")) //확인 msgbox
                 {
-                    //if () //유효성 검사 
-                    {
-
-                    }
+                    //입력 유효성 검사
+                    if (IsValidationError(txbName.Text, txbBirthdate.Text))
+                        return;
+                    else if (IsBlankGenderAndCellphone(rbtMale, rbtFemale, txbCellphone.Text))
+                        return;
                     InputItemSend();
-                    //{
-                    //
-                    //}
-                    //InputItemSend();
                 }
             }
             else //회원일때는 팝업 없이 전달
             {
                 InputItemSend();
             }
+        }
+
+        //성별과 연락처 빈칸일 때 오류 매새지 출력
+        private bool IsBlankGenderAndCellphone(RadioButton rbtMale, RadioButton rbtFemale, string text)
+        {
+            if ((rbtMale.Checked == false && rbtFemale.Checked == false) || txbCellphone.Text == "")
+            {
+                MessageBox.Show("항목을 입력해주세요", "Warning");
+                return true;
+            }
+            else
+                return false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -135,41 +207,41 @@ namespace DKClinic.CustomerProgram
         }
 
         //customer class와 다음 컨트롤 값 넘기는 이벤트 생성코드
-        #region ctmDetail event things for C# 3.0
-        public event EventHandler<ctmDetailEventArgs> ctmDetail;
+        #region DetailToDepartment event things for C# 3.0
+        public event EventHandler<DetailToDepartmentEventArgs> ctmDetail;
 
-        protected virtual void OnctmDetail(ctmDetailEventArgs e)
+        protected virtual void OnDetailToDepartment(DetailToDepartmentEventArgs e)
         {
             if (ctmDetail != null)
                 ctmDetail(this, e);
         }
 
-        private ctmDetailEventArgs OnctmDetail(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
+        private DetailToDepartmentEventArgs OnDetailToDepartment(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
         {
-            ctmDetailEventArgs args = new ctmDetailEventArgs(refCustomerClass, refCtmDepChoice);
-            OnctmDetail(args);
+            DetailToDepartmentEventArgs args = new DetailToDepartmentEventArgs(refCustomerClass, refCtmDepChoice);
+            OnDetailToDepartment(args);
 
             return args;
         }
 
-        private ctmDetailEventArgs OnctmDetailForOut()
+        private DetailToDepartmentEventArgs OnDetailToDepartmentForOut()
         {
-            ctmDetailEventArgs args = new ctmDetailEventArgs();
-            OnctmDetail(args);
+            DetailToDepartmentEventArgs args = new DetailToDepartmentEventArgs();
+            OnDetailToDepartment(args);
 
             return args;
         }
 
-        public class ctmDetailEventArgs : EventArgs
+        public class DetailToDepartmentEventArgs : EventArgs
         {
             public Data.Customer RefCustomerClass { get; set; }
             public CustomerDepartmentChoiceControl RefCtmDepChoice { get; set; }
 
-            public ctmDetailEventArgs()
+            public DetailToDepartmentEventArgs()
             {
             }
 
-            public ctmDetailEventArgs(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
+            public DetailToDepartmentEventArgs(Data.Customer refCustomerClass, CustomerDepartmentChoiceControl refCtmDepChoice)
             {
                 RefCustomerClass = refCustomerClass;
                 RefCtmDepChoice = refCtmDepChoice;
