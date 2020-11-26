@@ -92,6 +92,7 @@ namespace DKClinic.EmployeeProgram
             EmployeeChangePasswordForm empChangePw = new EmployeeChangePasswordForm();
             empChangePw.ShowDialog();
         }
+
         //취소소버튼 = 입력값 초기화
         private void btnCancel_Click(object sender, EventArgs e)
         {
