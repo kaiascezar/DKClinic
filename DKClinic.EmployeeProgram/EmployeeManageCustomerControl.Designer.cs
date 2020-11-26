@@ -29,6 +29,7 @@ namespace DKClinic.EmployeeProgram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -36,11 +37,13 @@ namespace DKClinic.EmployeeProgram
             this.label1 = new System.Windows.Forms.Label();
             this.txbName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtmList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGoBack
@@ -80,12 +83,14 @@ namespace DKClinic.EmployeeProgram
             // 
             this.dgvCtmList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCtmList.AutoGenerateColumns = false;
             this.dgvCtmList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCtmList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
+            this.nameDataGridViewTextBoxColumn,
+            this.birthdateDataGridViewTextBoxColumn,
+            this.cellphoneDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn});
+            this.dgvCtmList.DataSource = this.customerBindingSource;
             this.dgvCtmList.Location = new System.Drawing.Point(100, 10);
             this.dgvCtmList.Name = "dgvCtmList";
             this.dgvCtmList.RowHeadersWidth = 51;
@@ -124,35 +129,43 @@ namespace DKClinic.EmployeeProgram
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // customerBindingSource
             // 
-            this.Column1.HeaderText = "이름";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
+            this.customerBindingSource.DataSource = typeof(DKClinic.Data.Customer);
             // 
-            // Column2
+            // nameDataGridViewTextBoxColumn
             // 
-            this.Column2.HeaderText = "생년월일";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Column3
+            // birthdateDataGridViewTextBoxColumn
             // 
-            this.Column3.HeaderText = "성별";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 162;
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Column4
+            // cellphoneDataGridViewTextBoxColumn
             // 
-            this.Column4.HeaderText = "연락처";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 400;
+            this.cellphoneDataGridViewTextBoxColumn.DataPropertyName = "Cellphone";
+            this.cellphoneDataGridViewTextBoxColumn.HeaderText = "Cellphone";
+            this.cellphoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cellphoneDataGridViewTextBoxColumn.Name = "cellphoneDataGridViewTextBoxColumn";
+            this.cellphoneDataGridViewTextBoxColumn.Width = 125;
             // 
-            // empManageCtm
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // EmployeeManageCustomerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,9 +176,10 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvCtmList);
-            this.Name = "empManageCtm";
+            this.Name = "EmployeeManageCustomerControl";
             this.Size = new System.Drawing.Size(1262, 673);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtmList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,9 +194,10 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellphoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customerBindingSource;
     }
 }
