@@ -122,13 +122,12 @@ namespace DKClinic.CustomerProgram
         public CustomerInputDetailControl()
         {
             InitializeComponent();
+            Title = "추가정보 입력";
         }
 
 
-        public CustomerInputDetailControl(Customer returnedcustomer)
+        public CustomerInputDetailControl(Customer returnedcustomer) : this()
         {
-            InitializeComponent();
-
             customer = returnedcustomer;
             // 초기 화면출력
             txbName.Text = customer.Name; // 이름 띄우기

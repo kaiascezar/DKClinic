@@ -16,6 +16,32 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageQuestionnareControl()
         {
             InitializeComponent();
+            ReloadGridView();
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            OnbtnCancelClicked(employeeSelectFunctionControl);
+        }
+
+        private void btnOpenResponse_Click(object sender, EventArgs e)
+        {
+            Questionnare questionnare = bdsQuestionnare.Current as Questionnare;
+            //EmployeeModifyQuestionnareForm employeeModifyQuestionnareForm = new EmployeeModifyQuestionnareForm(questionnare.QuestionnareID);
+            // 이벤트 핸들러 연결
+            // 필요한거 하자
+            //employeeModifyQuestionnareForm.ShowDialog();
+        }
+
+        private void connectedeventhandler(object sender, EventArgs e)
+        {
+            ReloadGridView();
+        }
+
+        private void ReloadGridView()
+        {
+            bdsQuestionnare.DataSource = Dao.Questionnare.GetWithDepartmentAndCustomerName();
         }
     }
 }

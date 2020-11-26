@@ -59,6 +59,12 @@
     <Compile Include="EmployeeChangePasswordForm.Designer.cs">
       <DependentUpon>EmployeeChangePasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeCheckResponseDiagnosisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeCheckResponseDiagnosisForm.Designer.cs">
+      <DependentUpon>EmployeeCheckResponseDiagnosisForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeLoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="EmployeeModifyQuestionForm.Designer.cs">
       <DependentUpon>EmployeeModifyQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModifyQuestionnaireForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModifyQuestionnaireForm.Designer.cs">
+      <DependentUpon>EmployeeModifyQuestionnaireForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeUpdateCustomerInfoForm.cs">
       <SubType>Form</SubType>
@@ -130,11 +142,17 @@
     <EmbeddedResource Include="EmployeeChangePasswordForm.resx">
       <DependentUpon>EmployeeChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeCheckResponseDiagnosisForm.resx">
+      <DependentUpon>EmployeeCheckResponseDiagnosisForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLoginControl.resx">
       <DependentUpon>EmployeeLoginControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModifyQuestionForm.resx">
       <DependentUpon>EmployeeModifyQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModifyQuestionnaireForm.resx">
+      <DependentUpon>EmployeeModifyQuestionnaireForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeUpdateCustomerInfoForm.resx">
       <DependentUpon>EmployeeUpdateCustomerInfoForm.cs</DependentUpon>
@@ -175,6 +193,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DKClinic.Data.Customer.datasource" />
+    <None Include="Properties\DataSources\DKClinic.Data.Questionnare.datasource" />
     <None Include="Properties\DataSources\DKClinic.Data.Employee.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

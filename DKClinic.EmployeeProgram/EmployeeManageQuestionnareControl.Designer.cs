@@ -29,53 +29,43 @@ namespace DKClinic.EmployeeProgram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvQuestionnareList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsQuestionnare = new System.Windows.Forms.BindingSource(this.components);
             this.btnOpenResponse = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuestionnare)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvQuestionnareList
             // 
             this.dgvQuestionnareList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvQuestionnareList.AutoGenerateColumns = false;
+            this.dgvQuestionnareList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionnareList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionnareList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.dateDataGridViewTextBoxColumn,
+            this.CustomerName,
+            this.DepartmentName});
+            this.dgvQuestionnareList.DataSource = this.bdsQuestionnare;
             this.dgvQuestionnareList.Location = new System.Drawing.Point(100, 10);
             this.dgvQuestionnareList.Name = "dgvQuestionnareList";
             this.dgvQuestionnareList.RowHeadersWidth = 51;
             this.dgvQuestionnareList.RowTemplate.Height = 27;
             this.dgvQuestionnareList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvQuestionnareList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestionnareList.Size = new System.Drawing.Size(1062, 500);
             this.dgvQuestionnareList.TabIndex = 0;
             // 
-            // Column1
+            // bdsQuestionnare
             // 
-            this.Column1.HeaderText = "No.";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 162;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "환자 이름";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 450;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "작성 날짜";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 450;
+            this.bdsQuestionnare.DataSource = typeof(DKClinic.Data.Questionnare);
             // 
             // btnOpenResponse
             // 
@@ -87,6 +77,7 @@ namespace DKClinic.EmployeeProgram
             this.btnOpenResponse.TabIndex = 1;
             this.btnOpenResponse.Text = "열람 / 진단서 작성";
             this.btnOpenResponse.UseVisualStyleBackColor = true;
+            this.btnOpenResponse.Click += new System.EventHandler(this.btnOpenResponse_Click);
             // 
             // btnDelete
             // 
@@ -109,8 +100,30 @@ namespace DKClinic.EmployeeProgram
             this.btnGoBack.TabIndex = 3;
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // EmployeeManageQuestionareControl
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "CustomerName";
+            this.CustomerName.MinimumWidth = 6;
+            this.CustomerName.Name = "CustomerName";
+            // 
+            // DepartmentName
+            // 
+            this.DepartmentName.DataPropertyName = "DepartmentName";
+            this.DepartmentName.HeaderText = "DepartmentName";
+            this.DepartmentName.MinimumWidth = 6;
+            this.DepartmentName.Name = "DepartmentName";
+            // 
+            // EmployeeManageQuestionnareControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,9 +131,10 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOpenResponse);
             this.Controls.Add(this.dgvQuestionnareList);
-            this.Name = "EmployeeManageQuestionareControl";
+            this.Name = "EmployeeManageQuestionnareControl";
             this.Size = new System.Drawing.Size(1262, 673);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuestionnare)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,8 +145,9 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.Button btnOpenResponse;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnGoBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.BindingSource bdsQuestionnare;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentName;
     }
 }
