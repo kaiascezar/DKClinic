@@ -26,6 +26,7 @@ namespace DKClinic.CustomerProgram
                 rb.Font = new Font("Gulim", 14F);
                 rb.Text = texts[i];
                 rb.Tag = i + 1;
+                rb.TabStop = false;
                 pnlAnswer.Controls.Add(rb);
             }
 
@@ -46,6 +47,7 @@ namespace DKClinic.CustomerProgram
                 cb.Font = new Font("Gulim", 14F);
                 cb.Text = texts[i];
                 cb.Tag = i + 1;
+                cb.TabStop = false;
                 pnlAnswer.Controls.Add(cb);
             }
 

@@ -53,8 +53,8 @@ namespace DKClinic.CustomerProgram
             button.Size = new System.Drawing.Size(200, 80);
             button.TabIndex = 3;
             button.Text = "입력완료";
-            button.UseVisualStyleBackColor = true;
             button.Click += new EventHandler(btnConfirm_Click);
+            
             panel.Controls.Add(button);
         }
 
@@ -172,5 +172,25 @@ namespace DKClinic.CustomerProgram
             }
         }
         #endregion
+
+        private void pnlBoard_MouseDown(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(pnlBoard.Focused.ToString());
+        }
+
+        private void pnlBoard_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(pnlBoard.Focused.ToString());
+        }
+
+        private void pnlBoard_Scroll(object sender, ScrollEventArgs e)
+        {
+            MessageBox.Show(pnlBoard.Focused.ToString());
+        }
+
+        private void pnlBoard_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(pnlBoard.Focused.ToString());
+        }
     }
 }
