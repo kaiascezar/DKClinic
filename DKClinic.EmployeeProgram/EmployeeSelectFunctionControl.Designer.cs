@@ -29,23 +29,24 @@ namespace DKClinic.EmployeeProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnManageQuestionare = new System.Windows.Forms.Button();
+            this.btnManageQuestionnare = new System.Windows.Forms.Button();
             this.btnManageEmp = new System.Windows.Forms.Button();
             this.btnManageCtm = new System.Windows.Forms.Button();
             this.btnManageQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnManageQuestionare
+            // btnManageQuestionnare
             // 
-            this.btnManageQuestionare.BackColor = System.Drawing.Color.Aqua;
-            this.btnManageQuestionare.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnManageQuestionare.Location = new System.Drawing.Point(80, 80);
-            this.btnManageQuestionare.Name = "btnManageQuestionare";
-            this.btnManageQuestionare.Size = new System.Drawing.Size(500, 200);
-            this.btnManageQuestionare.TabIndex = 0;
-            this.btnManageQuestionare.Text = "문진표 관리";
-            this.btnManageQuestionare.UseVisualStyleBackColor = false;
-            this.btnManageQuestionare.Click += new System.EventHandler(this.btnManageQuestionare_Click);
+            this.btnManageQuestionnare.BackColor = System.Drawing.Color.Aqua;
+            this.btnManageQuestionnare.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnManageQuestionnare.Location = new System.Drawing.Point(80, 80);
+            this.btnManageQuestionnare.Name = "btnManageQuestionnare";
+            this.btnManageQuestionnare.Size = new System.Drawing.Size(500, 200);
+            this.btnManageQuestionnare.TabIndex = 0;
+            this.btnManageQuestionnare.Tag = "1";
+            this.btnManageQuestionnare.Text = "문진표 관리";
+            this.btnManageQuestionnare.UseVisualStyleBackColor = false;
+            this.btnManageQuestionnare.Click += new System.EventHandler(this.btnFunction_Click);
             // 
             // btnManageEmp
             // 
@@ -54,10 +55,11 @@ namespace DKClinic.EmployeeProgram
             this.btnManageEmp.Location = new System.Drawing.Point(686, 400);
             this.btnManageEmp.Name = "btnManageEmp";
             this.btnManageEmp.Size = new System.Drawing.Size(500, 200);
-            this.btnManageEmp.TabIndex = 1;
+            this.btnManageEmp.TabIndex = 3;
+            this.btnManageEmp.Tag = "4";
             this.btnManageEmp.Text = "직원 관리";
             this.btnManageEmp.UseVisualStyleBackColor = false;
-            this.btnManageEmp.Click += new System.EventHandler(this.btnManageEmp_Click);
+            this.btnManageEmp.Click += new System.EventHandler(this.btnFunction_Click);
             // 
             // btnManageCtm
             // 
@@ -67,9 +69,10 @@ namespace DKClinic.EmployeeProgram
             this.btnManageCtm.Name = "btnManageCtm";
             this.btnManageCtm.Size = new System.Drawing.Size(500, 200);
             this.btnManageCtm.TabIndex = 2;
+            this.btnManageCtm.Tag = "3";
             this.btnManageCtm.Text = "환자 관리";
             this.btnManageCtm.UseVisualStyleBackColor = false;
-            this.btnManageCtm.Click += new System.EventHandler(this.btnManageCtm_Click);
+            this.btnManageCtm.Click += new System.EventHandler(this.btnFunction_Click);
             // 
             // btnManageQuestion
             // 
@@ -78,10 +81,11 @@ namespace DKClinic.EmployeeProgram
             this.btnManageQuestion.Location = new System.Drawing.Point(686, 80);
             this.btnManageQuestion.Name = "btnManageQuestion";
             this.btnManageQuestion.Size = new System.Drawing.Size(500, 200);
-            this.btnManageQuestion.TabIndex = 3;
+            this.btnManageQuestion.TabIndex = 1;
+            this.btnManageQuestion.Tag = "2";
             this.btnManageQuestion.Text = "문진표 질문 관리";
             this.btnManageQuestion.UseVisualStyleBackColor = false;
-            this.btnManageQuestion.Click += new System.EventHandler(this.btnManageQuestion_Click);
+            this.btnManageQuestion.Click += new System.EventHandler(this.btnFunction_Click);
             // 
             // EmployeeSelectFunctionControl
             // 
@@ -90,7 +94,7 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnManageQuestion);
             this.Controls.Add(this.btnManageCtm);
             this.Controls.Add(this.btnManageEmp);
-            this.Controls.Add(this.btnManageQuestionare);
+            this.Controls.Add(this.btnManageQuestionnare);
             this.Name = "EmployeeSelectFunctionControl";
             this.Size = new System.Drawing.Size(1262, 673);
             this.ResumeLayout(false);
@@ -99,7 +103,7 @@ namespace DKClinic.EmployeeProgram
 
         #endregion
 
-        private System.Windows.Forms.Button btnManageQuestionare;
+        private System.Windows.Forms.Button btnManageQuestionnare;
         private System.Windows.Forms.Button btnManageEmp;
         private System.Windows.Forms.Button btnManageCtm;
         private System.Windows.Forms.Button btnManageQuestion;

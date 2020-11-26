@@ -89,7 +89,6 @@
     <Compile Include="EmployeeModifyQuestionForm.Designer.cs">
       <DependentUpon>EmployeeModifyQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeSelectDepartmentClass.cs" />
     <Compile Include="EmployeeUpdateCustomerInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +121,11 @@
     <Compile Include="EmployeeSelectFunctionControl.Designer.cs">
       <DependentUpon>EmployeeSelectFunctionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManageQuestionareControl.cs">
+    <Compile Include="EmployeeManageQuestionnareControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EmployeeManageQuestionareControl.Designer.cs">
-      <DependentUpon>EmployeeManageQuestionareControl.cs</DependentUpon>
+    <Compile Include="EmployeeManageQuestionnareControl.Designer.cs">
+      <DependentUpon>EmployeeManageQuestionnareControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EmployeeChangePasswordForm.resx">
       <DependentUpon>EmployeeChangePasswordForm.cs</DependentUpon>
@@ -149,8 +148,8 @@
     <EmbeddedResource Include="EmployeeManageQuestionControl.resx">
       <DependentUpon>EmployeeManageQuestionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeManageQuestionareControl.resx">
-      <DependentUpon>EmployeeManageQuestionareControl.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeManageQuestionnareControl.resx">
+      <DependentUpon>EmployeeManageQuestionnareControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeUpdateInfoForm.resx">
       <DependentUpon>EmployeeUpdateInfoForm.cs</DependentUpon>

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DKClinic.EmployeeProgram
 {
-    public partial class EmployeeManageQuestionareControl : BaseUC
+    public partial class EmployeeManageQuestionnareControl : BaseUC
     {
-        public EmployeeManageQuestionareControl()
+        public EmployeeManageQuestionnareControl()
         {
             InitializeComponent();
         }
