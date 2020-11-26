@@ -12,21 +12,32 @@ namespace DKClinic.CustomerProgram
             InitializeComponent();
         }
 
+        public MultipleChoiceControl(int number) : this()
+        {
+            lblQuestion.Text = number.ToString() + ". ";
+        }
+
         public void CreateChoiceSingle(string question, int count, string choices)
         {
-            lblQuestion.Text = question;
+            lblQuestion.Text += question;
+
+            this.Size = new Size(800, count * 40 + 110);
+            pnlAnswer.Size = new Size(800, count * 40 + 10);
 
             string[] texts = choices.Split(',');
             for(int i = 0; i < count; i++)
             {
-                RadioButton rb = new RadioButton();
-                rb.Location = new Point(i * 120 + 30, 10);
-                rb.AutoSize = false;
-                rb.Size = new Size(80, 30);
-                rb.Font = new Font("Gulim", 14F);
-                rb.Text = texts[i];
-                rb.Tag = i + 1;
-                rb.TabStop = false;
+                RadioButton rb = new RadioButton
+                {
+                    Location = new Point(30, i * 40 + 10),
+                    AutoSize = false,
+                    Size = new Size(700, 30),
+                    Font = new Font("Gulim", 14F),
+                    Text = texts[i],
+                    Tag = i + 1,
+                    TabStop = false,
+                    
+                };
                 pnlAnswer.Controls.Add(rb);
             }
 
@@ -35,15 +46,18 @@ namespace DKClinic.CustomerProgram
 
         public void CreateChoiceMultiple(string question, int count, string chioces)
         {
-            lblQuestion.Text = question;
+            lblQuestion.Text += question;
+
+            this.Size = new Size(800, count * 40 + 110);
+            pnlAnswer.Size = new Size(800, count * 40 + 10);
 
             string[] texts = chioces.Split(',');
             for (int i = 0; i < count; i++)
             {
                 CheckBox cb = new CheckBox();
-                cb.Location = new Point(i * 120 + 30, 10);
+                cb.Location = new Point(30, i * 40 + 10);
                 cb.AutoSize = false;
-                cb.Size = new Size(80, 30);
+                cb.Size = new Size(700, 30);
                 cb.Font = new Font("Gulim", 14F);
                 cb.Text = texts[i];
                 cb.Tag = i + 1;

@@ -82,29 +82,29 @@ namespace DKClinic.CustomerProgram
             {
                 Question question = CheckVersion(questionList, i+1);
 
-                CreateQuestionControl(question);
+                CreateQuestionControl(question, i+1);
             }
         }
 
         // 해당 문제 데이터를 이용해 문제 컨트롤을 생성한다
-        public void CreateQuestionControl(Question question)
+        public void CreateQuestionControl(Question question, int number)
         {
             BaseQuestionControl baseQuestion;
 
             if (question.Type == 1)
             {
-                baseQuestion = new ShortAnswerControl();
+                baseQuestion = new ShortAnswerControl(number);
                 ((ShortAnswerControl)baseQuestion).CreateAnswer(question.Item);
             }
             else if (question.Type == 2)
             {
-                baseQuestion = new MultipleChoiceControl();
+                baseQuestion = new MultipleChoiceControl(number);
                 ((MultipleChoiceControl)baseQuestion).
                     CreateChoiceSingle(question.Item, (int)question.ChoiceCount, question.Choices);
             }
             else
             {
-                baseQuestion = new MultipleChoiceControl();
+                baseQuestion = new MultipleChoiceControl(number);
                 ((MultipleChoiceControl)baseQuestion).
                     CreateChoiceMultiple(question.Item, (int)question.ChoiceCount, question.Choices);
             }

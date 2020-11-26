@@ -10,9 +10,14 @@ namespace DKClinic.CustomerProgram
             InitializeComponent();
         }
 
+        public ShortAnswerControl(int number) : this()
+        {
+            lblQuestion.Text = number.ToString() + ". ";
+        }
+
         public void CreateAnswer(string question)
         {
-            lblQuestion.Text = question;
+            lblQuestion.Text = lblQuestion.Text + question;
 
             RichTextBox txb = new RichTextBox();
             txb.Location = new Point(5, 5);

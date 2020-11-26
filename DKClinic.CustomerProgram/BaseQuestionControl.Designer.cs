@@ -39,6 +39,7 @@ namespace DKClinic.CustomerProgram
             this.lblQuestion.Location = new System.Drawing.Point(0, 0);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(0);
             this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.lblQuestion.Size = new System.Drawing.Size(800, 100);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

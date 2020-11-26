@@ -35,14 +35,14 @@
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Birthdate" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GenderID" Type="int" Nullable="false" />
           <Property Name="Cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PositionID" Type="int" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -62,7 +62,7 @@
           <Key>
             <PropertyRef Name="QuestionID" />
           </Key>
-          <Property Name="QuestionID" Type="int" Nullable="false" />
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
           <Property Name="Index" Type="int" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
@@ -343,7 +343,7 @@
           <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PositionID" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Speciality" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Class" FromRole="Employee" ToRole="Position" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
