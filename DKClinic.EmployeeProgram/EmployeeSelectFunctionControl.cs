@@ -16,31 +16,68 @@ namespace DKClinic.EmployeeProgram
         public EmployeeSelectFunctionControl()
         {
             InitializeComponent();
+            Title = "작업 선택";
         }
-
         
-        
-        
-        
-
-        private void btnManageQuestionare_Click(object sender, EventArgs e)
+        public EmployeeSelectFunctionControl(Employee employee) : this()
         {
-            EmployeeManageQuestionareControl empmngQuestionnareCtrl = new EmployeeManageQuestionareControl();
         }
 
-        private void btnManageQuestion_Click(object sender, EventArgs e)
+        private void btnFunction_Click(object sender, EventArgs e)
         {
-            EmployeeManageQuestionControl emplmngQuestionCtrl = new EmployeeManageQuestionControl();
+            BaseUC baseUC;
+
+            string buttonName = ((Button)sender).Name;
+            if (buttonName == "btnManageQuestionnare")
+                baseUC = new EmployeeManageQuestionnareControl();
+            else if (buttonName == "btnManageQuestion")
+                baseUC = new EmployeeManageQuestionControl();
+            else if (buttonName == "btnManageCtm")
+                baseUC = new EmployeeManageCustomerControl();
+            else if (buttonName == "btnManageEmp")
+                baseUC = new EmployeeManageControl();
+
+            OnSelectToFunction(baseUC);
         }
 
-        private void btnManageCtm_Click(object sender, EventArgs e)
+        #region SelectToFunction event things for C# 3.0
+        public event EventHandler<SelectToFunctionEventArgs> SelectToFunction;
+
+        protected virtual void OnSelectToFunction(SelectToFunctionEventArgs e)
         {
-            EmployeeManageCustomerControl emplmngCustomerCtrl = new EmployeeManageCustomerControl();
+            if (SelectToFunction != null)
+                SelectToFunction(this, e);
         }
 
-        private void btnManageEmp_Click(object sender, EventArgs e)
+        private SelectToFunctionEventArgs OnSelectToFunction(BaseUC baseUC)
         {
-            EmployeeManageControl empmngCtrl = new EmployeeManageControl();
+            SelectToFunctionEventArgs args = new SelectToFunctionEventArgs(baseUC);
+            OnSelectToFunction(args);
+
+            return args;
         }
+
+        private SelectToFunctionEventArgs OnSelectToFunctionForOut()
+        {
+            SelectToFunctionEventArgs args = new SelectToFunctionEventArgs();
+            OnSelectToFunction(args);
+
+            return args;
+        }
+
+        public class SelectToFunctionEventArgs : EventArgs
+        {
+            public BaseUC BaseUC { get; set; }
+
+            public SelectToFunctionEventArgs()
+            {
+            }
+
+            public SelectToFunctionEventArgs(BaseUC baseUC)
+            {
+                BaseUC = baseUC;
+            }
+        }
+        #endregion
     }
 }

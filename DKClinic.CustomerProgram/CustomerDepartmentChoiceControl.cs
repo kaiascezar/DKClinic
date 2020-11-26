@@ -16,9 +16,8 @@ namespace DKClinic.CustomerProgram
         public CustomerDepartmentChoiceControl()
         {
             InitializeComponent();
+            Title = "진료과 선택";
         }
-
-        
 
         private void btnMG_Click(object sender, EventArgs e)
         {

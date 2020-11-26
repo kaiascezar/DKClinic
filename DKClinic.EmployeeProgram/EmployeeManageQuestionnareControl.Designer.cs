@@ -1,7 +1,7 @@
 ﻿
 namespace DKClinic.EmployeeProgram
 {
-    partial class EmployeeManageQuestionareControl
+    partial class EmployeeManageQuestionnareControl
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -29,32 +29,53 @@ namespace DKClinic.EmployeeProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvQuestionareList = new System.Windows.Forms.DataGridView();
-            this.btnOpenResponse = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnGoBack = new System.Windows.Forms.Button();
+            this.dgvQuestionnareList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionareList)).BeginInit();
+            this.btnOpenResponse = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvQuestionareList
+            // dgvQuestionnareList
             // 
-            this.dgvQuestionareList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvQuestionnareList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvQuestionareList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestionareList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvQuestionnareList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuestionnareList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgvQuestionareList.Location = new System.Drawing.Point(100, 10);
-            this.dgvQuestionareList.Name = "dgvQuestionareList";
-            this.dgvQuestionareList.RowHeadersWidth = 51;
-            this.dgvQuestionareList.RowTemplate.Height = 27;
-            this.dgvQuestionareList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvQuestionareList.Size = new System.Drawing.Size(1062, 500);
-            this.dgvQuestionareList.TabIndex = 0;
+            this.dgvQuestionnareList.Location = new System.Drawing.Point(100, 10);
+            this.dgvQuestionnareList.Name = "dgvQuestionnareList";
+            this.dgvQuestionnareList.RowHeadersWidth = 51;
+            this.dgvQuestionnareList.RowTemplate.Height = 27;
+            this.dgvQuestionnareList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvQuestionnareList.Size = new System.Drawing.Size(1062, 500);
+            this.dgvQuestionnareList.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No.";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 162;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "환자 이름";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 450;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "작성 날짜";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 450;
             // 
             // btnOpenResponse
             // 
@@ -89,45 +110,24 @@ namespace DKClinic.EmployeeProgram
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No.";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 162;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "환자 이름";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 450;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "작성 날짜";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 450;
-            // 
-            // empManageQuestionare
+            // EmployeeManageQuestionareControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOpenResponse);
-            this.Controls.Add(this.dgvQuestionareList);
-            this.Name = "empManageQuestionare";
+            this.Controls.Add(this.dgvQuestionnareList);
+            this.Name = "EmployeeManageQuestionareControl";
             this.Size = new System.Drawing.Size(1262, 673);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionareList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvQuestionareList;
+        private System.Windows.Forms.DataGridView dgvQuestionnareList;
         private System.Windows.Forms.Button btnOpenResponse;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnGoBack;

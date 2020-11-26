@@ -39,12 +39,13 @@ namespace DKClinic.EmployeeProgram
             this.txbNewPw = new System.Windows.Forms.TextBox();
             this.txbNewPwCheck = new System.Windows.Forms.TextBox();
             this.txbOldPw = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(190, 95);
+            this.label1.Location = new System.Drawing.Point(190, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 50);
             this.label1.TabIndex = 0;
@@ -54,7 +55,7 @@ namespace DKClinic.EmployeeProgram
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(190, 455);
+            this.label2.Location = new System.Drawing.Point(190, 480);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 50);
             this.label2.TabIndex = 0;
@@ -64,7 +65,7 @@ namespace DKClinic.EmployeeProgram
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(190, 335);
+            this.label3.Location = new System.Drawing.Point(190, 360);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 50);
             this.label3.TabIndex = 0;
@@ -74,7 +75,7 @@ namespace DKClinic.EmployeeProgram
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(190, 215);
+            this.label4.Location = new System.Drawing.Point(190, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 50);
             this.label4.TabIndex = 0;
@@ -106,7 +107,7 @@ namespace DKClinic.EmployeeProgram
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbName.Location = new System.Drawing.Point(466, 95);
+            this.txbName.Location = new System.Drawing.Point(466, 120);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(350, 53);
             this.txbName.TabIndex = 1;
@@ -114,7 +115,7 @@ namespace DKClinic.EmployeeProgram
             // txbNewPw
             // 
             this.txbNewPw.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbNewPw.Location = new System.Drawing.Point(466, 335);
+            this.txbNewPw.Location = new System.Drawing.Point(466, 360);
             this.txbNewPw.Name = "txbNewPw";
             this.txbNewPw.PasswordChar = '*';
             this.txbNewPw.Size = new System.Drawing.Size(350, 53);
@@ -123,7 +124,7 @@ namespace DKClinic.EmployeeProgram
             // txbNewPwCheck
             // 
             this.txbNewPwCheck.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbNewPwCheck.Location = new System.Drawing.Point(466, 455);
+            this.txbNewPwCheck.Location = new System.Drawing.Point(466, 480);
             this.txbNewPwCheck.Name = "txbNewPwCheck";
             this.txbNewPwCheck.PasswordChar = '*';
             this.txbNewPwCheck.Size = new System.Drawing.Size(350, 53);
@@ -132,17 +133,28 @@ namespace DKClinic.EmployeeProgram
             // txbOldPw
             // 
             this.txbOldPw.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbOldPw.Location = new System.Drawing.Point(466, 215);
+            this.txbOldPw.Location = new System.Drawing.Point(466, 240);
             this.txbOldPw.Name = "txbOldPw";
             this.txbOldPw.PasswordChar = '*';
             this.txbOldPw.Size = new System.Drawing.Size(350, 53);
             this.txbOldPw.TabIndex = 2;
             // 
-            // empChangePw
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(236, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(491, 53);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "PW 수정";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EmployeeChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txbOldPw);
             this.Controls.Add(this.txbNewPwCheck);
             this.Controls.Add(this.txbNewPw);
@@ -153,7 +165,7 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "empChangePw";
+            this.Name = "EmployeeChangePasswordForm";
             this.Text = "패스워드 변경";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,5 +184,6 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.TextBox txbNewPw;
         private System.Windows.Forms.TextBox txbNewPwCheck;
         private System.Windows.Forms.TextBox txbOldPw;
+        private System.Windows.Forms.Label label5;
     }
 }

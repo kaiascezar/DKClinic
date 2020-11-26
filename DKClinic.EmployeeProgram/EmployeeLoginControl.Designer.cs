@@ -42,7 +42,7 @@ namespace DKClinic.EmployeeProgram
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(405, 117);
+            this.label1.Location = new System.Drawing.Point(405, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 50);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace DKClinic.EmployeeProgram
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbName.Location = new System.Drawing.Point(541, 114);
+            this.txbName.Location = new System.Drawing.Point(541, 134);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(350, 53);
             this.txbName.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace DKClinic.EmployeeProgram
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(405, 241);
+            this.label2.Location = new System.Drawing.Point(405, 261);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 50);
             this.label2.TabIndex = 2;
@@ -102,7 +102,7 @@ namespace DKClinic.EmployeeProgram
             // txbPassword
             // 
             this.txbPassword.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbPassword.Location = new System.Drawing.Point(541, 238);
+            this.txbPassword.Location = new System.Drawing.Point(541, 258);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(350, 53);
