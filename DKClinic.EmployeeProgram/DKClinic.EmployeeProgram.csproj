@@ -89,6 +89,7 @@
     <Compile Include="EmployeeModifyQuestionForm.Designer.cs">
       <DependentUpon>EmployeeModifyQuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeSelectDepartmentClass.cs" />
     <Compile Include="EmployeeUpdateCustomerInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>

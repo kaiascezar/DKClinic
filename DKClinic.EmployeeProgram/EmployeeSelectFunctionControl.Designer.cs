@@ -45,6 +45,7 @@ namespace DKClinic.EmployeeProgram
             this.btnManageQuestionare.TabIndex = 0;
             this.btnManageQuestionare.Text = "문진표 관리";
             this.btnManageQuestionare.UseVisualStyleBackColor = false;
+            this.btnManageQuestionare.Click += new System.EventHandler(this.btnManageQuestionare_Click);
             // 
             // btnManageEmp
             // 
@@ -56,6 +57,7 @@ namespace DKClinic.EmployeeProgram
             this.btnManageEmp.TabIndex = 1;
             this.btnManageEmp.Text = "직원 관리";
             this.btnManageEmp.UseVisualStyleBackColor = false;
+            this.btnManageEmp.Click += new System.EventHandler(this.btnManageEmp_Click);
             // 
             // btnManageCtm
             // 
@@ -67,6 +69,7 @@ namespace DKClinic.EmployeeProgram
             this.btnManageCtm.TabIndex = 2;
             this.btnManageCtm.Text = "환자 관리";
             this.btnManageCtm.UseVisualStyleBackColor = false;
+            this.btnManageCtm.Click += new System.EventHandler(this.btnManageCtm_Click);
             // 
             // btnManageQuestion
             // 
@@ -78,8 +81,9 @@ namespace DKClinic.EmployeeProgram
             this.btnManageQuestion.TabIndex = 3;
             this.btnManageQuestion.Text = "문진표 질문 관리";
             this.btnManageQuestion.UseVisualStyleBackColor = false;
+            this.btnManageQuestion.Click += new System.EventHandler(this.btnManageQuestion_Click);
             // 
-            // empSelectFunction
+            // EmployeeSelectFunctionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +91,7 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnManageCtm);
             this.Controls.Add(this.btnManageEmp);
             this.Controls.Add(this.btnManageQuestionare);
-            this.Name = "empSelectFunction";
+            this.Name = "EmployeeSelectFunctionControl";
             this.Size = new System.Drawing.Size(1262, 673);
             this.ResumeLayout(false);
 
