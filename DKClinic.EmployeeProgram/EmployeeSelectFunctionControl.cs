@@ -25,7 +25,7 @@ namespace DKClinic.EmployeeProgram
 
         private void btnFunction_Click(object sender, EventArgs e)
         {
-            BaseUC baseUC;
+            BaseUC baseUC = null;
 
             string buttonName = ((Button)sender).Name;
             if (buttonName == "btnManageQuestionnare")
