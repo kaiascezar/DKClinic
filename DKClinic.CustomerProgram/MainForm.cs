@@ -1,12 +1,5 @@
 ﻿using DKClinic.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DKClinic.CustomerProgram
@@ -87,10 +80,48 @@ namespace DKClinic.CustomerProgram
             CreatedQuestionnare.DepartmentID = e.Department.DepartmentID;
 
             // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
-            
+            e.CustQuestionnare.QuestionnareConfirm += CustomerQuestionnareControl_QuestionnareConfirm;
 
             // departmentChoice 불러오기
             CallUserControl(e.CustQuestionnare);
+        }
+
+        private void CustomerQuestionnareControl_QuestionnareConfirm(object sender, CustomerQuestionnareControl.QuestionnareConfirmEventArgs e)
+        {
+            int customerID;
+
+            // CustomerID 구하기
+            if (ConnectedCustomer.CustomerID == 0)
+                customerID = Dao.Customer.GetMaxKey() + 1;
+            else
+                customerID = ConnectedCustomer.CustomerID;
+
+            // questionnare 테이블에 CustomerID, Date저장
+            CreatedQuestionnare.CustomerID = customerID;
+            CreatedQuestionnare.Date = DateTime.Now;
+
+            // QuestionnareID 구하기
+            int questionnareID = Dao.Questionnare.GetMaxKey() + 1;
+
+            // 데이터 입력하기
+            using (var context = DKClinicEntities.Create())
+            {
+                context.Customers.Add(ConnectedCustomer);
+                context.Questionnares.Add(CreatedQuestionnare);
+                foreach(Response item in e.Responses)
+                {
+                    item.QuestionnareID = questionnareID;
+                    context.Responses.Add(item);
+                }
+                context.SaveChanges();
+            }
+
+            // 초기 화면으로 돌아가기
+            ConnectedCustomer = null;
+            CreatedQuestionnare = null;
+
+            CustomerLoginControl customerLoginControl = new CustomerLoginControl();
+            OpenLoginControl(customerLoginControl);
         }
 
         public void CallUserControl(BaseUC control)

@@ -61,9 +61,25 @@ namespace DKClinic.CustomerProgram
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             // 만일 값이 다 입력되지 않았다면 되돌린다
+            for(int i = 0; i < QuestionControls.Count; i++)
+            {
+                string answer = QuestionControls[i].CheckAnswer();
+
+                if (answer == null)
+                {
+                    MessageBox.Show("답안을 전부 입력해 주세요", "확인");
+                    return;
+                }
+
+                // 값을 responses에 저장한다
+                Responses[i].Answer = answer;
+            }
+
+            // 이벤트를 발생시켜서 response를 보낸다
+            OnQuestionnareConfirm(Responses);
         }
 
-        private void CreateQuestionControlList(int departmentId)
+        public void CreateQuestionControlList(int departmentId)
         {
             List<Question> questionList = Dao.Question.GetQuestions(departmentId);
 
@@ -78,7 +94,7 @@ namespace DKClinic.CustomerProgram
         }
 
         // 해당 문제 데이터를 이용해 UC를 생성한다
-        private void CreateQuestionControl(Question question)
+        public void CreateQuestionControl(Question question)
         {
             BaseQuestionControl baseQuestion;
 
@@ -104,7 +120,7 @@ namespace DKClinic.CustomerProgram
         }
 
         // 해당 번호의 문제들만 뽑아, version이 제일 높은 문제를 뽑는다
-        private Question CheckVersion(List<Question> questionList, int index)
+        public Question CheckVersion(List<Question> questionList, int index)
         {
             List<Question> list = questionList.FindAll(x => x.Index == index);
             return list.OrderByDescending(x => x.Version).ToList()[0];
@@ -116,5 +132,45 @@ namespace DKClinic.CustomerProgram
             pnlBoard.Controls.Add(question);
             QuestionControls.Add(question);
         }
+
+        #region QuestionnareConfirm event things for C# 3.0
+        public event EventHandler<QuestionnareConfirmEventArgs> QuestionnareConfirm;
+
+        protected virtual void OnQuestionnareConfirm(QuestionnareConfirmEventArgs e)
+        {
+            if (QuestionnareConfirm != null)
+                QuestionnareConfirm(this, e);
+        }
+
+        private QuestionnareConfirmEventArgs OnQuestionnareConfirm(List<Response> responses)
+        {
+            QuestionnareConfirmEventArgs args = new QuestionnareConfirmEventArgs(responses);
+            OnQuestionnareConfirm(args);
+
+            return args;
+        }
+
+        private QuestionnareConfirmEventArgs OnQuestionnareConfirmForOut()
+        {
+            QuestionnareConfirmEventArgs args = new QuestionnareConfirmEventArgs();
+            OnQuestionnareConfirm(args);
+
+            return args;
+        }
+
+        public class QuestionnareConfirmEventArgs : EventArgs
+        {
+            public List<Response> Responses { get; set; }
+
+            public QuestionnareConfirmEventArgs()
+            {
+            }
+
+            public QuestionnareConfirmEventArgs(List<Response> responses)
+            {
+                Responses = responses;
+            }
+        }
+        #endregion
     }
 }

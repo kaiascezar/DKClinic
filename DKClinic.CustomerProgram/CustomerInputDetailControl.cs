@@ -53,7 +53,7 @@ namespace DKClinic.CustomerProgram
         private void BirthdateValidationCheck(string date)
         {
             int transint = Convert.ToInt32(date);
-            if(transint)
+            //if(transint)
         }
 
         public CustomerInputDetailControl()
@@ -107,7 +107,7 @@ namespace DKClinic.CustomerProgram
             {
                 if (WinformUtility.AskSure("입력한 내용이 맞습니까?")) //확인 msgbox
                 {
-                    if () //유효성 검사 
+                    //if () //유효성 검사 
                     {
 
                     }
