@@ -86,6 +86,7 @@ namespace DKClinic.EmployeeProgram
             this.btnGoBack.TabIndex = 14;
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // btnDelete
             // 
