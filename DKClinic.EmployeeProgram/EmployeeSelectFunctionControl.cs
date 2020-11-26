@@ -17,5 +17,30 @@ namespace DKClinic.EmployeeProgram
         {
             InitializeComponent();
         }
+
+        
+        
+        
+        
+
+        private void btnManageQuestionare_Click(object sender, EventArgs e)
+        {
+            EmployeeManageQuestionareControl empmngQuestionnareCtrl = new EmployeeManageQuestionareControl();
+        }
+
+        private void btnManageQuestion_Click(object sender, EventArgs e)
+        {
+            EmployeeManageQuestionControl emplmngQuestionCtrl = new EmployeeManageQuestionControl();
+        }
+
+        private void btnManageCtm_Click(object sender, EventArgs e)
+        {
+            EmployeeManageCustomerControl emplmngCustomerCtrl = new EmployeeManageCustomerControl();
+        }
+
+        private void btnManageEmp_Click(object sender, EventArgs e)
+        {
+            EmployeeManageControl empmngCtrl = new EmployeeManageControl();
+        }
     }
 }
