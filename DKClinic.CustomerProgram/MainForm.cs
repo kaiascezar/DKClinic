@@ -118,11 +118,7 @@ namespace DKClinic.CustomerProgram
             }
 
             // 초기 화면으로 돌아가기
-            ConnectedCustomer = null;
-            CreatedQuestionnare = null;
-
-            CustomerLoginControl customerLoginControl = new CustomerLoginControl();
-            OpenLoginControl(customerLoginControl);
+            btnHome.PerformClick();
         }
 
         public void CallUserControl(BaseUC control)
@@ -137,8 +133,12 @@ namespace DKClinic.CustomerProgram
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (MainControl.Count > 0)
-                MainControl.Clear();
+            // 초기 화면으로 돌아가기
+            ConnectedCustomer = null;
+            CreatedQuestionnare = null;
+
+            CustomerLoginControl customerLoginControl = new CustomerLoginControl();
+            OpenLoginControl(customerLoginControl);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
