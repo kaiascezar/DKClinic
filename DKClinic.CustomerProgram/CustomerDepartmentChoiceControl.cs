@@ -18,26 +18,30 @@ namespace DKClinic.CustomerProgram
             InitializeComponent();
         }
 
-        CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl();
+        
 
         private void btnMG_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(1);
+            CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
         private void btnNU_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(2);
+            CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
         private void btnDR_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(3);
+            CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
         private void btnFM_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(4);
+            CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
 
