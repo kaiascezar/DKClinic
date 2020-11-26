@@ -101,10 +101,13 @@ namespace DKClinic.CustomerProgram
             // txbBirthdate
             // 
             this.txbBirthdate.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbBirthdate.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txbBirthdate.Location = new System.Drawing.Point(585, 326);
+            this.txbBirthdate.MaxLength = 6;
             this.txbBirthdate.Name = "txbBirthdate";
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
             this.txbBirthdate.TabIndex = 22;
+            this.txbBirthdate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBirthdate_KeyPress);
             // 
             // CustomerLoginControl
             // 

@@ -112,6 +112,10 @@ namespace DKClinic.CustomerProgram
 
                     }
                     InputItemSend();
+                    //{
+                    //
+                    //}
+                    //InputItemSend();
                 }
             }
             else //회원일때는 팝업 없이 전달
