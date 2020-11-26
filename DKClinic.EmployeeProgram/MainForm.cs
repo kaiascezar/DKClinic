@@ -56,8 +56,19 @@ namespace DKClinic.EmployeeProgram
             lblStatus.Text = $"{ConnectedEmployee.DepartmentTitle} {ConnectedEmployee.PositionName} {ConnectedEmployee.Name}님 로그인중...";
 
             // 이벤트 생성되면 핸들러 추가하기
-
+            e.EmpsltfunControl.SelectToFunction += EmployeeSelectFunctionControl_SelectToFunction;
             CallUserControl(e.EmpsltfunControl);
+        }
+
+        private void EmployeeSelectFunctionControl_SelectToFunction(object sender, EmployeeSelectFunctionControl.SelectToFunctionEventArgs e)
+        {
+            e.BaseUC.btnCancelClicked += BaseUC_btnCancelClicked;
+            CallUserControl(e.BaseUC);
+        }
+
+        private void BaseUC_btnCancelClicked(object sender, BaseUC.btnCancelClickedEventArgs e)
+        {
+            CallUserControl(e.BaseUC);
         }
 
         public void CallUserControl(BaseUC control)
