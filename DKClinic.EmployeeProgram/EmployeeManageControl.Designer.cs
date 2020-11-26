@@ -40,8 +40,8 @@ namespace DKClinic.EmployeeProgram
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -111,21 +111,23 @@ namespace DKClinic.EmployeeProgram
             // 
             // dgvEmpList
             // 
-            this.dgvEmpList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmpList.AllowUserToDeleteRows = false;
             this.dgvEmpList.AutoGenerateColumns = false;
+            this.dgvEmpList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.birthdateDataGridViewTextBoxColumn,
-            this.positionDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn});
+            this.PositionName,
+            this.DepartmentName});
             this.dgvEmpList.DataSource = this.employeeBindingSource;
             this.dgvEmpList.Location = new System.Drawing.Point(100, 10);
             this.dgvEmpList.Name = "dgvEmpList";
+            this.dgvEmpList.ReadOnly = true;
             this.dgvEmpList.RowHeadersWidth = 51;
             this.dgvEmpList.RowTemplate.Height = 27;
             this.dgvEmpList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvEmpList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpList.Size = new System.Drawing.Size(1062, 450);
             this.dgvEmpList.TabIndex = 11;
             // 
@@ -139,7 +141,7 @@ namespace DKClinic.EmployeeProgram
             this.nameDataGridViewTextBoxColumn.HeaderText = "이름";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // birthdateDataGridViewTextBoxColumn
             // 
@@ -147,23 +149,23 @@ namespace DKClinic.EmployeeProgram
             this.birthdateDataGridViewTextBoxColumn.HeaderText = "생년월일";
             this.birthdateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            this.birthdateDataGridViewTextBoxColumn.Width = 260;
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // positionDataGridViewTextBoxColumn
+            // PositionName
             // 
-            this.positionDataGridViewTextBoxColumn.DataPropertyName = "Position";
-            this.positionDataGridViewTextBoxColumn.HeaderText = "직급";
-            this.positionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
-            this.positionDataGridViewTextBoxColumn.Width = 270;
+            this.PositionName.DataPropertyName = "PositionName";
+            this.PositionName.HeaderText = "직급";
+            this.PositionName.MinimumWidth = 6;
+            this.PositionName.Name = "PositionName";
+            this.PositionName.ReadOnly = true;
             // 
-            // departmentDataGridViewTextBoxColumn
+            // DepartmentName
             // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "진료과";
-            this.departmentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            this.departmentDataGridViewTextBoxColumn.Width = 280;
+            this.DepartmentName.DataPropertyName = "DepartmentName";
+            this.DepartmentName.HeaderText = "진료과";
+            this.DepartmentName.MinimumWidth = 6;
+            this.DepartmentName.Name = "DepartmentName";
+            this.DepartmentName.ReadOnly = true;
             // 
             // EmployeeManageControl
             // 
@@ -194,10 +196,10 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvEmpList;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PositionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentName;
     }
 }
