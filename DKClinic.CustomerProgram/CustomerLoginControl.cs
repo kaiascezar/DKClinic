@@ -45,6 +45,8 @@ namespace DKClinic.CustomerProgram
             {
                 MessageBox.Show("환영합니다. 처음 방문하셨습니다.");      //신규 회원
             }
+
+            //이벤트 발생
             OnLoginToDetail(customer, ctmInputDetail);
         }
 
@@ -144,6 +146,7 @@ namespace DKClinic.CustomerProgram
                     return true;
                 }
             }
+
             return false;
         }
         private void ValidationFailMessage()
