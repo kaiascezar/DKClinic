@@ -16,8 +16,6 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageCustomerControl()
         {
             InitializeComponent();
-
-            //customerBindingSource.DataSource = Dao.Customer.GetAll();
         }
     }
 }

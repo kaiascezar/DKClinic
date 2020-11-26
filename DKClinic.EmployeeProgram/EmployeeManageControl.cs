@@ -16,6 +16,17 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageControl()
         {
             InitializeComponent();
+            Title = "직원 정보 관리";
+
+            employeeBindingSource.DataSource = Dao.Employee.GetWithDepartmentAndPositionName();
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show(((MainForm)ParentForm).ConnectedEmployee.Name);
+
+            EmployeeSelectFunctionControl emplselfunControl = new EmployeeSelectFunctionControl();
+            OnbtnCancelClicked(emplselfunControl);
         }
     }
 }
