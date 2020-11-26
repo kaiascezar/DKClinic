@@ -20,5 +20,13 @@ namespace DKClinic.EmployeeProgram
 
             employeeBindingSource.DataSource = Dao.Employee.GetWithDepartmentAndPositionName();
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show(((MainForm)ParentForm).ConnectedEmployee.Name);
+
+            EmployeeSelectFunctionControl emplselfunControl = new EmployeeSelectFunctionControl();
+            OnbtnCancelClicked(emplselfunControl);
+        }
     }
 }
