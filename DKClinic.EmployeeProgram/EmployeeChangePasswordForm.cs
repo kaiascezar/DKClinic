@@ -52,7 +52,6 @@ namespace DKClinic.EmployeeProgram
 
             Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
