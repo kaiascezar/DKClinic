@@ -8,7 +8,7 @@ namespace DKClinic.Data
 {
     public partial class Employee
     {
-        public string DepartmentTitle { get; set; }
+        public string DepartmentName { get; set; }
         public string PositionName { get; set; }
     }
 }

@@ -27,7 +27,6 @@ namespace DKClinic.Data
     
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Diagnosi> Diagnosis { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Position> Positions { get; set; }

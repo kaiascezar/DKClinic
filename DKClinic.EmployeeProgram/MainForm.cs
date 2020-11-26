@@ -51,9 +51,9 @@ namespace DKClinic.EmployeeProgram
             ConnectedEmployee = e.Employee;
 
             // 하단에 접속된 직원 이름 출력
-            ConnectedEmployee.DepartmentTitle = Dao.Department.GetByPK(ConnectedEmployee.DepartmentID).Title;
+            ConnectedEmployee.DepartmentName = Dao.Department.GetByPK(ConnectedEmployee.DepartmentID).Name;
             ConnectedEmployee.PositionName = Dao.Position.GetByPK(ConnectedEmployee.PositionID).Name;
-            lblStatus.Text = $"{ConnectedEmployee.DepartmentTitle} {ConnectedEmployee.PositionName} {ConnectedEmployee.Name}님 로그인중...";
+            lblStatus.Text = $"{ConnectedEmployee.DepartmentName} {ConnectedEmployee.PositionName} {ConnectedEmployee.Name}님 로그인중...";
 
             // 이벤트 생성되면 핸들러 추가하기
             e.EmpsltfunControl.SelectToFunction += EmployeeSelectFunctionControl_SelectToFunction;

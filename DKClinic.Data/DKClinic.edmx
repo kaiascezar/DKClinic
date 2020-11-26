@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DKClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DKClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -20,16 +20,8 @@
             <PropertyRef Name="DepartmentID" />
           </Key>
           <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Count" Type="int" />
-        </EntityType>
-        <EntityType Name="Diagnosis">
-          <Key>
-            <PropertyRef Name="QuestionnareID" />
-          </Key>
-          <Property Name="QuestionnareID" Type="int" Nullable="false" />
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="Comment" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -102,20 +94,6 @@
             </Principal>
             <Dependent Role="Customer">
               <PropertyRef Name="GenderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Diagnosis_Questionnare">
-          <End Role="Questionnare" Type="Self.Questionnare" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Diagnosis" Type="Self.Diagnosis" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Questionnare">
-              <PropertyRef Name="QuestionnareID" />
-            </Principal>
-            <Dependent Role="Diagnosis">
-              <PropertyRef Name="QuestionnareID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -244,7 +222,6 @@
         <EntityContainer Name="DKClinicModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Diagnosis" EntityType="Self.Diagnosis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
@@ -254,10 +231,6 @@
           <AssociationSet Name="FK_Customer_Gender" Association="Self.FK_Customer_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Customer" EntitySet="Customer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Diagnosis_Questionnare" Association="Self.FK_Diagnosis_Questionnare">
-            <End Role="Questionnare" EntitySet="Questionnare" />
-            <End Role="Diagnosis" EntitySet="Diagnosis" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Class" Association="Self.FK_Employee_Class">
             <End Role="Position" EntitySet="Position" />
@@ -296,7 +269,8 @@
             <End Role="Response" EntitySet="Response" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DKClinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -304,7 +278,7 @@
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
@@ -317,26 +291,17 @@
             <PropertyRef Name="DepartmentID" />
           </Key>
           <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Speciality" FromRole="Department" ToRole="Employee" />
           <NavigationProperty Name="Questions" Relationship="Self.FK_Question_Speciality" FromRole="Department" ToRole="Question" />
           <NavigationProperty Name="Questionnares" Relationship="Self.FK_Questionnare_Speciality" FromRole="Department" ToRole="Questionnare" />
         </EntityType>
-        <EntityType Name="Diagnosi">
-          <Key>
-            <PropertyRef Name="QuestionnareID" />
-          </Key>
-          <Property Name="QuestionnareID" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="Comment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Questionnare" Relationship="Self.FK_Diagnosis_Questionnare" FromRole="Diagnosis" ToRole="Questionnare" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
@@ -370,7 +335,7 @@
           <Key>
             <PropertyRef Name="QuestionID" />
           </Key>
-          <Property Name="QuestionID" Type="Int32" Nullable="false" />
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <Property Name="Index" Type="Int32" Nullable="false" />
           <Property Name="Type" Type="Int32" Nullable="false" />
@@ -385,7 +350,7 @@
           <Key>
             <PropertyRef Name="QuestionnareID" />
           </Key>
-          <Property Name="QuestionnareID" Type="Int32" Nullable="false" />
+          <Property Name="QuestionnareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <Property Name="DoctorID" Type="Int32" />
@@ -393,7 +358,6 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Questionnare_Customer" FromRole="Questionnare" ToRole="Customer" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Questionnare_Speciality" FromRole="Questionnare" ToRole="Department" />
-          <NavigationProperty Name="Diagnosi" Relationship="Self.FK_Diagnosis_Questionnare" FromRole="Questionnare" ToRole="Diagnosis" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Questionnare_Employee" FromRole="Questionnare" ToRole="Employee" />
           <NavigationProperty Name="Responses" Relationship="Self.FK_Response_Questionnare" FromRole="Questionnare" ToRole="Response" />
         </EntityType>
@@ -401,7 +365,7 @@
           <Key>
             <PropertyRef Name="ResponseID" />
           </Key>
-          <Property Name="ResponseID" Type="Int32" Nullable="false" />
+          <Property Name="ResponseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionnareID" Type="Int32" Nullable="false" />
           <Property Name="Answer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="QuestionID" Type="Int32" Nullable="false" />
@@ -478,20 +442,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Diagnosis_Questionnare">
-          <End Role="Questionnare" Type="Self.Questionnare" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Diagnosis" Type="Self.Diagnosi" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Questionnare">
-              <PropertyRef Name="QuestionnareID" />
-            </Principal>
-            <Dependent Role="Diagnosis">
-              <PropertyRef Name="QuestionnareID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Employee_Class">
           <End Role="Position" Type="Self.Position" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -561,7 +511,6 @@
         <EntityContainer Name="DKClinicEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
-          <EntitySet Name="Diagnosis" EntityType="Self.Diagnosi" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Genders" EntityType="Self.Gender" />
           <EntitySet Name="Positions" EntityType="Self.Position" />
@@ -587,10 +536,6 @@
           <AssociationSet Name="FK_Questionnare_Speciality" Association="Self.FK_Questionnare_Speciality">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Questionnare" EntitySet="Questionnares" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Diagnosis_Questionnare" Association="Self.FK_Diagnosis_Questionnare">
-            <End Role="Questionnare" EntitySet="Questionnares" />
-            <End Role="Diagnosis" EntitySet="Diagnosis" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Class" Association="Self.FK_Employee_Class">
             <End Role="Position" EntitySet="Positions" />
@@ -634,17 +579,8 @@
             <EntityTypeMapping TypeName="DKClinicModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Diagnosis">
-            <EntityTypeMapping TypeName="DKClinicModel.Diagnosi">
-              <MappingFragment StoreEntitySet="Diagnosis">
-                <ScalarProperty Name="QuestionnareID" ColumnName="QuestionnareID" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
