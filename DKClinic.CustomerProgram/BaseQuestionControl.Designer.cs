@@ -50,12 +50,13 @@ namespace DKClinic.CustomerProgram
             this.pnlAnswer.Size = new System.Drawing.Size(800, 100);
             this.pnlAnswer.TabIndex = 1;
             // 
-            // BaseQuestion
+            // BaseQuestionControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.Controls.Add(this.pnlAnswer);
             this.Controls.Add(this.lblQuestion);
-            this.Name = "BaseQuestion";
+            this.Name = "BaseQuestionControl";
             this.Size = new System.Drawing.Size(800, 200);
             this.ResumeLayout(false);
 

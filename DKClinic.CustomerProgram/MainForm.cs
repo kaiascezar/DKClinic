@@ -69,15 +69,15 @@ namespace DKClinic.CustomerProgram
             ConnectedCustomer = e.RefCustomerClass;
 
             // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
-            e.RefCtmDepChoice.DepartmentToQuestionare += CustomerDepartmentChoiceControl_DepartmentToQuestionare;
+            e.RefCtmDepChoice.DepartmentToQuestionnare += CustomerDepartmentChoiceControl_DepartmentToQuestionnare;
 
             // departmentChoice 불러오기
             CallUserControl(e.RefCtmDepChoice);
         }
 
-        private void CustomerDepartmentChoiceControl_DepartmentToQuestionare(object sender, CustomerDepartmentChoiceControl.DepartmentToQuestionareEventArgs e)
+        private void CustomerDepartmentChoiceControl_DepartmentToQuestionnare(object sender, CustomerDepartmentChoiceControl.DepartmentToQuestionnareEventArgs e)
         {
-            CreatedQuestionnare.DepartmentID = e.Department.DepartmentID;
+            CreatedQuestionnare.DepartmentID = e.DepartmentID;
 
             // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
             e.CustQuestionnare.QuestionnareConfirm += CustomerQuestionnareControl_QuestionnareConfirm;
@@ -106,7 +106,8 @@ namespace DKClinic.CustomerProgram
             // 데이터 입력하기
             using (var context = DKClinicEntities.Create())
             {
-                context.Customers.Add(ConnectedCustomer);
+                if (ConnectedCustomer.CustomerID == 0)
+                    context.Customers.Add(ConnectedCustomer);
                 context.Questionnares.Add(CreatedQuestionnare);
                 foreach(Response item in e.Responses)
                 {

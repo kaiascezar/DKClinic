@@ -1,4 +1,6 @@
 ﻿
+using DKClinic.Data;
+
 namespace DKClinic.CustomerProgram
 {
     partial class CustomerQuestionnareControl
@@ -29,7 +31,7 @@ namespace DKClinic.CustomerProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlBoard = new System.Windows.Forms.Panel();
+            this.pnlBoard = new CustomPanel();
             this.SuspendLayout();
             // 
             // pnlBoard
@@ -41,15 +43,16 @@ namespace DKClinic.CustomerProgram
             this.pnlBoard.Name = "pnlBoard";
             this.pnlBoard.Size = new System.Drawing.Size(1062, 653);
             this.pnlBoard.TabIndex = 0;
+            this.pnlBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlBoard_MouseClick);
             // 
-            // ctmQuestionnare
+            // CustomerQuestionnareControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlBoard);
-            this.Name = "ctmQuestionnare";
+            this.Name = "CustomerQuestionnareControl";
             this.Size = new System.Drawing.Size(1262, 673);
             this.ResumeLayout(false);
 
@@ -57,6 +60,6 @@ namespace DKClinic.CustomerProgram
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlBoard;
+        private CustomPanel pnlBoard;
     }
 }

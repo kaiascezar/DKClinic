@@ -18,6 +18,7 @@ namespace DKClinic.CustomerProgram
             txb.Location = new Point(5, 5);
             txb.Size = new Size(600, 60);
             txb.Font = new Font("Gulim", 14F);
+            txb.TabStop = false;
             pnlAnswer.Controls.Add(txb);
         }
 

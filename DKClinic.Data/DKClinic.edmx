@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DKClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DKClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Birthdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthdate" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GenderID" Type="int" Nullable="false" />
           <Property Name="Cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -42,7 +42,7 @@
           <Property Name="Cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PositionID" Type="int" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -75,7 +75,7 @@
           <Key>
             <PropertyRef Name="QuestionnareID" />
           </Key>
-          <Property Name="QuestionnareID" Type="int" Nullable="false" />
+          <Property Name="QuestionnareID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerID" Type="int" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
           <Property Name="DoctorID" Type="int" />
@@ -86,7 +86,7 @@
           <Key>
             <PropertyRef Name="ResponseID" />
           </Key>
-          <Property Name="ResponseID" Type="int" Nullable="false" />
+          <Property Name="ResponseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionnareID" Type="int" Nullable="false" />
           <Property Name="Answer" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="QuestionID" Type="int" Nullable="false" />
@@ -296,8 +296,7 @@
             <End Role="Response" EntitySet="Response" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DKClinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -307,7 +306,7 @@
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
           <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Customer_Gender" FromRole="Customer" ToRole="Gender" />
@@ -344,7 +343,7 @@
           <Property Name="Cellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PositionID" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Speciality" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Class" FromRole="Employee" ToRole="Position" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
