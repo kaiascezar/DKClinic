@@ -74,9 +74,6 @@
     <Compile Include="Department.cs">
       <DependentUpon>DKClinic.tt</DependentUpon>
     </Compile>
-    <Compile Include="Diagnosi.cs">
-      <DependentUpon>DKClinic.tt</DependentUpon>
-    </Compile>
     <Compile Include="DKClinic.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
