@@ -20,5 +20,12 @@ namespace DKClinic.CustomerProgram
             txb.Font = new Font("Gulim", 14F);
             pnlAnswer.Controls.Add(txb);
         }
+
+        public override string CheckAnswer()
+        {
+            RichTextBox txb = pnlAnswer.Controls[0] as RichTextBox;
+            if (txb.Text == "") return null;
+            return txb.Text;
+        }
     }
 }

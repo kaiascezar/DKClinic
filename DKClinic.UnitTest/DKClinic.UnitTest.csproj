@@ -56,6 +56,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerQuestionnareControlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DKClinic.CustomerProgram\DKClinic.CustomerProgram.csproj">
+      <Project>{712021E2-3966-4748-BC96-DB2322F857B7}</Project>
+      <Name>DKClinic.CustomerProgram</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DKClinic.Data\DKClinic.Data.csproj">
       <Project>{6a675453-7f64-4dae-a80e-fd53641495b4}</Project>
       <Name>DKClinic.Data</Name>

@@ -2,17 +2,17 @@
 
 namespace DKClinic.CustomerProgram
 {
-    public partial class BaseQuestionControl : BaseUC
+    public abstract partial class BaseQuestionControl : BaseUC
     {
         public BaseQuestionControl()
         {
             InitializeComponent();
 
-            lblQuestion.Text = "문제다아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ" +
-                "ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ" +
-                "ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ";
+            lblQuestion.Text = string.Empty;
         }
 
         public string Answer { get; set; }
+
+        public abstract string CheckAnswer();
     }
 }

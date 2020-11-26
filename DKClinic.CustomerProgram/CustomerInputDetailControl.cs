@@ -108,6 +108,10 @@ namespace DKClinic.CustomerProgram
                 if (WinformUtility.AskSure("입력한 내용이 맞습니까?")) //확인 msgbox
                 {
                     //if () //유효성 검사 
+                    {
+
+                    }
+                    InputItemSend();
                     //{
                     //
                     //}
