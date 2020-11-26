@@ -24,40 +24,32 @@ namespace DKClinic.CustomerProgram
             _questionCount = Dao.Department.GetQuestionCount(departmentId);
             
             CreateQuestionControlList(departmentId);
-        }
-
-        // 테스트용
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            if (DesignMode)
-                return;
-
-            _questionCount = Dao.Department.GetQuestionCount(1);
-
-            CreateQuestionControlList(1);
 
             CreateConfirmButton();
         }
 
+        // 패널 안에 입력완료 버튼을 만들어준다
         private void CreateConfirmButton()
         {
-            Panel panel = new Panel();
-            panel.Dock = DockStyle.Bottom;
+            Panel panel = new Panel
+            {
+                Dock = DockStyle.Bottom
+            };
             pnlBoard.Controls.Add(panel);
 
-            Button button = new Button();
-            button.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button.Location = new System.Drawing.Point(700, 0);
-            button.Size = new System.Drawing.Size(200, 80);
-            button.TabIndex = 3;
-            button.Text = "입력완료";
+            Button button = new Button
+            {
+                Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129))),
+                Location = new System.Drawing.Point(700, 0),
+                Size = new System.Drawing.Size(200, 80),
+                TabIndex = 3,
+                Text = "입력완료"
+            };
             button.Click += new EventHandler(btnConfirm_Click);
-            
             panel.Controls.Add(button);
         }
 
+        // 입력완료 버튼 클릭시 답안 입력을 검사하고 이벤트를 발동한다
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             // 만일 값이 다 입력되지 않았다면 되돌린다
@@ -79,6 +71,7 @@ namespace DKClinic.CustomerProgram
             OnQuestionnareConfirm(Responses);
         }
 
+        // 문제 컨트롤 리스트를 생성한다
         public void CreateQuestionControlList(int departmentId)
         {
             List<Question> questionList = Dao.Question.GetQuestions(departmentId);
@@ -93,7 +86,7 @@ namespace DKClinic.CustomerProgram
             }
         }
 
-        // 해당 문제 데이터를 이용해 UC를 생성한다
+        // 해당 문제 데이터를 이용해 문제 컨트롤을 생성한다
         public void CreateQuestionControl(Question question)
         {
             BaseQuestionControl baseQuestion;
@@ -125,7 +118,8 @@ namespace DKClinic.CustomerProgram
             List<Question> list = questionList.FindAll(x => x.Index == index);
             return list.OrderByDescending(x => x.Version).ToList()[0];
         }
-
+        
+        // 생성한 문제 컨트롤을 패널에 넣어준다
         public void AddQuestionControl(BaseQuestionControl question)
         {
             question.Dock = DockStyle.Bottom;
@@ -172,25 +166,5 @@ namespace DKClinic.CustomerProgram
             }
         }
         #endregion
-
-        private void pnlBoard_MouseDown(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(pnlBoard.Focused.ToString());
-        }
-
-        private void pnlBoard_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(pnlBoard.Focused.ToString());
-        }
-
-        private void pnlBoard_Scroll(object sender, ScrollEventArgs e)
-        {
-            MessageBox.Show(pnlBoard.Focused.ToString());
-        }
-
-        private void pnlBoard_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(pnlBoard.Focused.ToString());
-        }
     }
 }

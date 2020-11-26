@@ -43,7 +43,6 @@ namespace DKClinic.CustomerProgram
             this.pnlBoard.Name = "pnlBoard";
             this.pnlBoard.Size = new System.Drawing.Size(1062, 653);
             this.pnlBoard.TabIndex = 0;
-            this.pnlBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlBoard_MouseClick);
             // 
             // CustomerQuestionnareControl
             // 
