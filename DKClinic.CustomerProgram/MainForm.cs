@@ -64,7 +64,7 @@ namespace DKClinic.CustomerProgram
             OpenLoginControl((CustomerLoginControl)e.BaseUC);
         }
 
-        private void CustomerInputDetailControl_ctmDetail(object sender, CustomerInputDetailControl.ctmDetailEventArgs e)
+        private void CustomerInputDetailControl_ctmDetail(object sender, CustomerInputDetailControl.DetailToDepartmentEventArgs e)
         {
             ConnectedCustomer = e.RefCustomerClass;
 
