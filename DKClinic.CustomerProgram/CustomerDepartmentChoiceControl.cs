@@ -19,6 +19,13 @@ namespace DKClinic.CustomerProgram
             Title = "진료과 선택";
         }
 
+//        private void btnDepartment_Click(object sender, EventArgs e)
+//        {
+//            BaseUC baseUC = null;
+//
+//            string buttonName;
+//        }
+
         private void btnMG_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(1);
@@ -85,6 +92,7 @@ namespace DKClinic.CustomerProgram
             }
         }
         #endregion
+
     }
 
 }
