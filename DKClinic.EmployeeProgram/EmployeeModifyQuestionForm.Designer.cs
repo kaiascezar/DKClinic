@@ -44,7 +44,7 @@ namespace DKClinic.EmployeeProgram
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gulim", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(32, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 33);
@@ -58,6 +58,7 @@ namespace DKClinic.EmployeeProgram
             this.txbIndexNum.Size = new System.Drawing.Size(60, 40);
             this.txbIndexNum.TabIndex = 1;
             this.txbIndexNum.Text = "";
+            this.txbIndexNum.TextChanged += new System.EventHandler(this.txbIndexNum_TextChanged);
             // 
             // txbItem
             // 
@@ -75,7 +76,7 @@ namespace DKClinic.EmployeeProgram
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gulim", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(485, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 33);
@@ -84,17 +85,23 @@ namespace DKClinic.EmployeeProgram
             // 
             // cmbSelectType
             // 
-            this.cmbSelectType.Font = new System.Drawing.Font("Gulim", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cmbSelectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectType.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cmbSelectType.FormattingEnabled = true;
+            this.cmbSelectType.Items.AddRange(new object[] {
+            "주관식",
+            "객관식",
+            "다중선택"});
             this.cmbSelectType.Location = new System.Drawing.Point(39, 263);
             this.cmbSelectType.Name = "cmbSelectType";
-            this.cmbSelectType.Size = new System.Drawing.Size(130, 41);
+            this.cmbSelectType.Size = new System.Drawing.Size(130, 35);
             this.cmbSelectType.TabIndex = 4;
+            this.cmbSelectType.SelectedIndexChanged += new System.EventHandler(this.cmbSelectType_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gulim", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(33, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 33);
@@ -106,7 +113,7 @@ namespace DKClinic.EmployeeProgram
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gulim", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(275, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(583, 33);
@@ -127,26 +134,28 @@ namespace DKClinic.EmployeeProgram
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.Location = new System.Drawing.Point(755, 596);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(181, 95);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.Location = new System.Drawing.Point(445, 596);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(181, 95);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // empModifyQuestion
+            // EmployeeModifyQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +170,7 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbIndexNum);
             this.Controls.Add(this.label1);
-            this.Name = "empModifyQuestion";
+            this.Name = "EmployeeModifyQuestionForm";
             this.Text = "질문 추가 및 수정";
             this.ResumeLayout(false);
             this.PerformLayout();

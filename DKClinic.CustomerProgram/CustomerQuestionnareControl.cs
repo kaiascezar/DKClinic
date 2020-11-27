@@ -74,7 +74,7 @@ namespace DKClinic.CustomerProgram
         // 문제 컨트롤 리스트를 생성한다
         public void CreateQuestionControlList(int departmentId)
         {
-            List<Question> questionList = Dao.Question.GetQuestions(departmentId);
+            List<Question> questionList = Dao.Question.GetByDepartmentID(departmentId);
 
             // 불러온 문제 중에서 버전이 제일 높은 문제를 UC로 출력
             // 1-주관식, 2-객관식, 3-객관식다중선택

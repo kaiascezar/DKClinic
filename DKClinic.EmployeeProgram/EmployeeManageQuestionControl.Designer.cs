@@ -34,15 +34,15 @@ namespace DKClinic.EmployeeProgram
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
+            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsQuestion = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuestion)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGoBack
@@ -55,6 +55,7 @@ namespace DKClinic.EmployeeProgram
             this.btnGoBack.TabIndex = 7;
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // btnSave
             // 
@@ -66,6 +67,7 @@ namespace DKClinic.EmployeeProgram
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "일괄저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -77,26 +79,67 @@ namespace DKClinic.EmployeeProgram
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvQuestionList
             // 
             this.dgvQuestionList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQuestionList.AutoGenerateColumns = false;
+            this.dgvQuestionList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.departmentIDDataGridViewTextBoxColumn,
+            this.DepartmentName,
             this.indexDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
+            this.TypeName,
             this.itemDataGridViewTextBoxColumn});
-            this.dgvQuestionList.DataSource = this.questionBindingSource;
+            this.dgvQuestionList.DataSource = this.bdsQuestion;
             this.dgvQuestionList.Location = new System.Drawing.Point(100, 10);
+            this.dgvQuestionList.MultiSelect = false;
             this.dgvQuestionList.Name = "dgvQuestionList";
+            this.dgvQuestionList.ReadOnly = true;
             this.dgvQuestionList.RowHeadersWidth = 51;
             this.dgvQuestionList.RowTemplate.Height = 27;
             this.dgvQuestionList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvQuestionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestionList.Size = new System.Drawing.Size(1062, 500);
             this.dgvQuestionList.TabIndex = 4;
+            // 
+            // DepartmentName
+            // 
+            this.DepartmentName.DataPropertyName = "DepartmentName";
+            this.DepartmentName.HeaderText = "DepartmentName";
+            this.DepartmentName.MinimumWidth = 6;
+            this.DepartmentName.Name = "DepartmentName";
+            this.DepartmentName.ReadOnly = true;
+            // 
+            // indexDataGridViewTextBoxColumn
+            // 
+            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
+            this.indexDataGridViewTextBoxColumn.HeaderText = "Index";
+            this.indexDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
+            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // TypeName
+            // 
+            this.TypeName.DataPropertyName = "TypeName";
+            this.TypeName.HeaderText = "TypeName";
+            this.TypeName.MinimumWidth = 6;
+            this.TypeName.Name = "TypeName";
+            this.TypeName.ReadOnly = true;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bdsQuestion
+            // 
+            this.bdsQuestion.DataSource = typeof(DKClinic.Data.Question);
             // 
             // btnDelete
             // 
@@ -108,6 +151,7 @@ namespace DKClinic.EmployeeProgram
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -119,42 +163,7 @@ namespace DKClinic.EmployeeProgram
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // questionBindingSource
-            // 
-            this.questionBindingSource.DataSource = typeof(DKClinic.Data.Question);
-            // 
-            // departmentIDDataGridViewTextBoxColumn
-            // 
-            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "DepartmentID";
-            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "DepartmentID";
-            this.departmentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
-            this.departmentIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // indexDataGridViewTextBoxColumn
-            // 
-            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
-            this.indexDataGridViewTextBoxColumn.HeaderText = "Index";
-            this.indexDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
-            this.indexDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // itemDataGridViewTextBoxColumn
-            // 
-            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
-            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
-            this.itemDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
-            this.itemDataGridViewTextBoxColumn.Width = 125;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // EmployeeManageQuestionControl
             // 
@@ -169,7 +178,7 @@ namespace DKClinic.EmployeeProgram
             this.Name = "EmployeeManageQuestionControl";
             this.Size = new System.Drawing.Size(1262, 673);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuestion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,10 +191,10 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.DataGridView dgvQuestionList;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bdsQuestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn indexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource questionBindingSource;
     }
 }

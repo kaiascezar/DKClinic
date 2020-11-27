@@ -135,7 +135,7 @@ namespace DKClinic.CustomerProgram
         {
             // 초기 화면으로 돌아가기
             ConnectedCustomer = null;
-            CreatedQuestionnare = null;
+            CreatedQuestionnare = new Questionnare();
 
             CustomerLoginControl customerLoginControl = new CustomerLoginControl();
             OpenLoginControl(customerLoginControl);
