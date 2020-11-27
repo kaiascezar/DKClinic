@@ -7,7 +7,7 @@ namespace DKClinic.CustomerProgram
     public partial class MainForm : Form
     {
         public Customer ConnectedCustomer { get; set; }
-        public Questionnare CreatedQuestionnare { get; set; } = new Questionnare();
+        public Questionnare CreatedQuestionnare { get; set; }
         public Control.ControlCollection MainControl { get; set; }
 
         public MainForm()
@@ -77,6 +77,7 @@ namespace DKClinic.CustomerProgram
 
         private void CustomerDepartmentChoiceControl_DepartmentToQuestionnare(object sender, CustomerDepartmentChoiceControl.DepartmentToQuestionnareEventArgs e)
         {
+            CreatedQuestionnare = new Questionnare { Customer = ConnectedCustomer };
             CreatedQuestionnare.DepartmentID = e.DepartmentID;
 
             // CustomerDepartmentChoiceControl 이벤트 핸들러 등록
@@ -88,32 +89,41 @@ namespace DKClinic.CustomerProgram
 
         private void CustomerQuestionnareControl_QuestionnareConfirm(object sender, CustomerQuestionnareControl.QuestionnareConfirmEventArgs e)
         {
-            int customerID;
+            //int customerID;
 
-            // CustomerID 구하기
-            if (ConnectedCustomer.CustomerID == 0)
-                customerID = Dao.Customer.GetMaxKey() + 1;
-            else
-                customerID = ConnectedCustomer.CustomerID;
+            //// CustomerID 구하기
+            //if (ConnectedCustomer.CustomerID == 0)
+            //    customerID = Dao.Customer.GetMaxKey() + 1;
+            //else
+            //    customerID = ConnectedCustomer.CustomerID;
 
             // questionnare 테이블에 CustomerID, Date저장
-            CreatedQuestionnare.CustomerID = customerID;
-            CreatedQuestionnare.Date = DateTime.Now;
+            //CreatedQuestionnare.CustomerID = customerID;
+            
 
             // QuestionnareID 구하기
-            int questionnareID = Dao.Questionnare.GetMaxKey() + 1;
+            // int questionnareID = Dao.Questionnare.GetMaxKey() + 1;
 
             // 데이터 입력하기
             using (var context = DKClinicEntities.Create())
             {
+                // Customer
                 if (ConnectedCustomer.CustomerID == 0)
                     context.Customers.Add(ConnectedCustomer);
+
+                // Questionnare
+                CreatedQuestionnare.Date = DateTime.Now;
                 context.Questionnares.Add(CreatedQuestionnare);
+
+                // Response
                 foreach(Response item in e.Responses)
                 {
-                    item.QuestionnareID = questionnareID;
-                    context.Responses.Add(item);
+                    Response response = new Response { Questionnare = CreatedQuestionnare };
+                    response.Answer = item.Answer;
+                    response.QuestionID = item.QuestionID;
+                    context.Responses.Add(response);
                 }
+
                 context.SaveChanges();
             }
 
