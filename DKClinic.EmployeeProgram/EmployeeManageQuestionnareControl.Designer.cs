@@ -55,7 +55,9 @@ namespace DKClinic.EmployeeProgram
             this.DepartmentName});
             this.dgvQuestionnareList.DataSource = this.bdsQuestionnare;
             this.dgvQuestionnareList.Location = new System.Drawing.Point(100, 10);
+            this.dgvQuestionnareList.MultiSelect = false;
             this.dgvQuestionnareList.Name = "dgvQuestionnareList";
+            this.dgvQuestionnareList.ReadOnly = true;
             this.dgvQuestionnareList.RowHeadersWidth = 51;
             this.dgvQuestionnareList.RowTemplate.Height = 27;
             this.dgvQuestionnareList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -70,7 +72,7 @@ namespace DKClinic.EmployeeProgram
             // btnOpenResponse
             // 
             this.btnOpenResponse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOpenResponse.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOpenResponse.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOpenResponse.Location = new System.Drawing.Point(100, 550);
             this.btnOpenResponse.Name = "btnOpenResponse";
             this.btnOpenResponse.Size = new System.Drawing.Size(365, 95);
@@ -82,18 +84,19 @@ namespace DKClinic.EmployeeProgram
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDelete.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.Location = new System.Drawing.Point(533, 550);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(280, 95);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnGoBack
             // 
             this.btnGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGoBack.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoBack.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnGoBack.Location = new System.Drawing.Point(882, 550);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(280, 95);
@@ -105,23 +108,26 @@ namespace DKClinic.EmployeeProgram
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "작성일자";
             this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CustomerName
             // 
             this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "CustomerName";
+            this.CustomerName.HeaderText = "환자이름";
             this.CustomerName.MinimumWidth = 6;
             this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
             // 
             // DepartmentName
             // 
             this.DepartmentName.DataPropertyName = "DepartmentName";
-            this.DepartmentName.HeaderText = "DepartmentName";
+            this.DepartmentName.HeaderText = "진료과";
             this.DepartmentName.MinimumWidth = 6;
             this.DepartmentName.Name = "DepartmentName";
+            this.DepartmentName.ReadOnly = true;
             // 
             // EmployeeManageQuestionnareControl
             // 
