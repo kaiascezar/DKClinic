@@ -199,7 +199,6 @@ namespace DKClinic.CustomerProgram
         {
             CustomerLoginControl customerlogin = new CustomerLoginControl();
 
-            //MessageBox.Show($"Canceled");
             OnbtnCancelClicked(customerlogin);
 
             // 이전 화면으로 돌아가는 새로운 이벤트 추가
