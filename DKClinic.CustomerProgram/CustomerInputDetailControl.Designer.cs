@@ -140,6 +140,7 @@ namespace DKClinic.CustomerProgram
             // 
             this.txbBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbBirthdate.Location = new System.Drawing.Point(601, 188);
+            this.txbBirthdate.MaxLength = 6;
             this.txbBirthdate.Name = "txbBirthdate";
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
             this.txbBirthdate.TabIndex = 13;
@@ -148,11 +149,12 @@ namespace DKClinic.CustomerProgram
             // 
             this.txbCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbCellphone.Location = new System.Drawing.Point(601, 370);
+            this.txbCellphone.MaxLength = 11;
             this.txbCellphone.Name = "txbCellphone";
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
             this.txbCellphone.TabIndex = 14;
             // 
-            // ctmInputDetail
+            // CustomerInputDetailControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +170,7 @@ namespace DKClinic.CustomerProgram
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
-            this.Name = "ctmInputDetail";
+            this.Name = "CustomerInputDetailControl";
             this.Size = new System.Drawing.Size(1260, 670);
             this.ResumeLayout(false);
             this.PerformLayout();

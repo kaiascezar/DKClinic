@@ -35,12 +35,14 @@ namespace DKClinic.EmployeeProgram
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
             this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsQuestion = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsQuestion)).BeginInit();
             this.SuspendLayout();

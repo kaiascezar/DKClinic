@@ -95,6 +95,7 @@
     <Compile Include="Gender.cs">
       <DependentUpon>DKClinic.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\Customer.cs" />
     <Compile Include="Partials\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -25,8 +25,8 @@ namespace DKClinic.EmployeeProgram
                 return;
 
             //Employee 클래스에 입력값 임시 저장
-            Employee employee = Dao.Employee.Find(txbName.Text);
-
+            Employee employee = Dao.Employee.GetByName(txbName.Text);
+                
             //미등록 이름 입력시
             if (employee == null)
             {
