@@ -193,6 +193,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DKClinic.Data.Customer.datasource" />
+    <None Include="Properties\DataSources\DKClinic.Data.Question.datasource" />
     <None Include="Properties\DataSources\DKClinic.Data.Questionnare.datasource" />
     <None Include="Properties\DataSources\DKClinic.Data.Employee.datasource" />
     <None Include="Properties\Settings.settings">

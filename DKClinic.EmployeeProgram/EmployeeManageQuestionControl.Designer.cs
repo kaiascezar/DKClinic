@@ -29,16 +29,20 @@ namespace DKClinic.EmployeeProgram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGoBack
@@ -78,11 +82,14 @@ namespace DKClinic.EmployeeProgram
             // 
             this.dgvQuestionList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvQuestionList.AutoGenerateColumns = false;
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.departmentIDDataGridViewTextBoxColumn,
+            this.indexDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.itemDataGridViewTextBoxColumn});
+            this.dgvQuestionList.DataSource = this.questionBindingSource;
             this.dgvQuestionList.Location = new System.Drawing.Point(100, 10);
             this.dgvQuestionList.Name = "dgvQuestionList";
             this.dgvQuestionList.RowHeadersWidth = 51;
@@ -113,28 +120,43 @@ namespace DKClinic.EmployeeProgram
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // questionBindingSource
             // 
-            this.Column1.HeaderText = "진료과";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.questionBindingSource.DataSource = typeof(DKClinic.Data.Question);
             // 
-            // Column2
+            // departmentIDDataGridViewTextBoxColumn
             // 
-            this.Column2.HeaderText = "No.";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 162;
+            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "DepartmentID";
+            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "DepartmentID";
+            this.departmentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
+            this.departmentIDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Column3
+            // indexDataGridViewTextBoxColumn
             // 
-            this.Column3.HeaderText = "질문";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 650;
+            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
+            this.indexDataGridViewTextBoxColumn.HeaderText = "Index";
+            this.indexDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
+            this.indexDataGridViewTextBoxColumn.Width = 125;
             // 
-            // empManageQuestion
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // EmployeeManageQuestionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,9 +166,10 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvQuestionList);
-            this.Name = "empManageQuestion";
+            this.Name = "EmployeeManageQuestionControl";
             this.Size = new System.Drawing.Size(1262, 673);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,8 +182,10 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.DataGridView dgvQuestionList;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn indexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource questionBindingSource;
     }
 }
