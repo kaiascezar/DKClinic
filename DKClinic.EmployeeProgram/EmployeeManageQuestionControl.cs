@@ -40,7 +40,7 @@ namespace DKClinic.EmployeeProgram
         private void ReloadGridView()
         {
             bdsQuestion.DataSource = Dao.Question.SelectionNewestVersionByDepartmentID(
-                Dao.Question.ConvertDepartmentAndTypeName(AfterQuestions), ParentEmployee.DepartmentID);
+                Dao.Question.ConvertDepartmentAndTypeName(AfterQuestions), Department);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -57,15 +57,21 @@ namespace DKClinic.EmployeeProgram
 
             if(employeeModifyQuestionForm.IsChaneged)
             {
-                // version붙이기
                 employeeModifyQuestionForm.Question.Version =
-                    Dao.Question.GetNewestVersionNumber(employeeModifyQuestionForm.Question.DepartmentID,
+                    Dao.Question.GetNewestVersionNumber(AfterQuestions, employeeModifyQuestionForm.Question.DepartmentID,
                     employeeModifyQuestionForm.Question.Index) + 1;
-                // 추가
+
+                employeeModifyQuestionForm.Question.DepartmentID = Department.DepartmentID;
+
                 AfterQuestions.Add(employeeModifyQuestionForm.Question);
-                
-                if(employeeModifyQuestionForm.Question.Index != Department.Count)
+
+                Department.Count++;
+
+                // 깊은 복사를 구현해야 한다
+                if (employeeModifyQuestionForm.Question.Index != Department.Count)
                 {
+                    List<Question> questions = new List<Question>();
+
                     for(int i = employeeModifyQuestionForm.Question.Index + 1;
                         i <= Department.Count;i++ )
                     {
@@ -73,12 +79,14 @@ namespace DKClinic.EmployeeProgram
                             AfterQuestions.FindAll(x => x.Index == i)
                                 .OrderByDescending(x => x.Version)
                                 .FirstOrDefault();
-                        question.Version++;
-                        AfterQuestions.Add(question);
+                        question.Index++;
+                        question.Version = Dao.Question.GetNewestVersionNumber(AfterQuestions, question.DepartmentID, question.Index) + 1;
+                        questions.Add(question);
                     }
-                }
 
-                Department.Count++;
+                    foreach (Question item in questions)
+                        AfterQuestions.Add(item);
+                }
             }
 
             ReloadGridView();
@@ -86,6 +94,7 @@ namespace DKClinic.EmployeeProgram
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int beforeQuestionIndex = ((Question)bdsQuestion.Current).Index;
             EmployeeModifyQuestionForm employeeModifyQuestionForm = new EmployeeModifyQuestionForm((Question)bdsQuestion.Current, (int)Department.Count);
             employeeModifyQuestionForm.ShowDialog();
 
@@ -96,21 +105,78 @@ namespace DKClinic.EmployeeProgram
             // 변화된 값 + Version+1 + 변화된 index add
             // 바뀐 번호값에 대해 나머지 문제들은 변화된 index + Version+1 add
 
+            if (employeeModifyQuestionForm.IsChaneged)
+            {
+                employeeModifyQuestionForm.Question.Version =
+                    Dao.Question.GetNewestVersionNumber(AfterQuestions, employeeModifyQuestionForm.Question.DepartmentID,
+                    employeeModifyQuestionForm.Question.Index) + 1;
+
+                AfterQuestions.Add(employeeModifyQuestionForm.Question);
+
+                List<Question> questions = new List<Question>();
+
+                if (employeeModifyQuestionForm.Question.Index < beforeQuestionIndex)
+                {
+                    for (int i = employeeModifyQuestionForm.Question.Index;
+                        i <= beforeQuestionIndex - 1; i++)
+                    {
+                        Question question =
+                            AfterQuestions.FindAll(x => x.Index == i)
+                                .OrderByDescending(x => x.Version)
+                                .FirstOrDefault();
+                        question.Index++;
+                        question.Version = Dao.Question.GetNewestVersionNumber(AfterQuestions, question.DepartmentID, question.Index) + 1;
+                        questions.Add(question);
+                    }
+                }
+                else
+                {
+                    for (int i = beforeQuestionIndex + 1;
+                        i <= employeeModifyQuestionForm.Question.Index; i++)
+                    {
+                        Question question =
+                            AfterQuestions.FindAll(x => x.Index == i)
+                                .OrderByDescending(x => x.Version)
+                                .FirstOrDefault();
+                        question.Index--;
+                        question.Version = Dao.Question.GetNewestVersionNumber(AfterQuestions, question.DepartmentID, question.Index) + 1;
+                        questions.Add(question);
+                    }
+                }
+
+                foreach (Question item in questions)
+                    AfterQuestions.Add(item);
+            }
+
             ReloadGridView();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if ((Question)bdsQuestion.Current == null)
+                return;
+
             if (WinformUtility.AskSure("정말 삭제하시겠습니까? (실제 반영은 일괄저장을 누를 때 반영됩니다)") == false)
                 return;
             
             // delete
             // 삭제된 번호값에 대해 나머지 문제들 변화된 index + version+1 add
             // department count-1
-            
 
-            //AfterQuestions.Remove((Question)bdsQuestion.Current);
-            
+            for(int i = ((Question)bdsQuestion.Current).Index + 1;
+                i <= (int)Department.Count; i++)
+            {
+                Question question = 
+                    AfterQuestions.FindAll(x => x.Index == i)
+                    .OrderByDescending(x => x.Version)
+                    .FirstOrDefault();
+                question.Index--;
+                question.Version = Dao.Question.GetNewestVersionNumber(AfterQuestions, question.DepartmentID, question.Index) + 1;
+                AfterQuestions.Add(question);
+            }
+
+            Department.Count--;
+
             ReloadGridView();
         }
 
@@ -130,11 +196,18 @@ namespace DKClinic.EmployeeProgram
                 btnGoBack.PerformClick();
             }
 
-            // department 업데이트
-            Dao.Department.Update(Department);
+            // 트랜잭션
+            using (var context = DKClinicEntities.Create())
+            {
+                // department 업데이트
+                context.Entry(Department).State = System.Data.Entity.EntityState.Modified;
 
-            // afterQuestion 업데이트(Insert)
-            
+                // afterQuestion 업데이트(Insert)
+                for (int i = BeforeQuestions.Count; i < AfterQuestions.Count; i++)
+                    context.Questions.Add(AfterQuestions[i]);
+
+                context.SaveChanges();
+            }   
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
