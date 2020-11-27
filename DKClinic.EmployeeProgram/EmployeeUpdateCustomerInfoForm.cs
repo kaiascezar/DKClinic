@@ -13,14 +13,8 @@ namespace DKClinic.EmployeeProgram
 {
     public partial class EmployeeUpdateCustomerInfoForm : Form
     {
-        //생년월일 빈칸일 시 메세지 출력
-        private void ValidationFailMessage()
-        {
-            MessageBox.Show("생년월일을 정확하게 입력해 주세요", "Warning");
-        }
-
         //이름, 생년월일 tbx 중 빈칸 있을 시 입력요청 메세지 박스 호출, 생년월일 유효성 검사
-        private bool IsValidationError(string text1, string text2)
+        private bool IsAnyBlankTextbox(string text1, string text2)
         {
             //입력값 없을 경우
             if (text1 == "" || text2 == "")
@@ -29,52 +23,11 @@ namespace DKClinic.EmployeeProgram
                 return true;
             }
 
-            if (text2.Length < 6)
-            {
-                ValidationFailMessage();
-                return true;
-            }
-
-            int month = int.Parse(text2) % 10000 / 100;
-            int day = int.Parse(text2) % 100;
-
-            //월,일이 틀릴 경우
-            if (month < 1 || month > 12 || day < 1 || day > 31)
-            {
-                ValidationFailMessage();
-                return true;
-            }
-            //일이 틀릴 경우
-            if (month % 2 == 0 && month < 7)
-            {
-                if (month == 2)
-                {
-                    if (day > 28)
-                    {
-                        ValidationFailMessage();
-                        return true;
-                    }
-                }
-                else if (day > 30)
-                {
-                    ValidationFailMessage();
-                    return true;
-                }
-            }
-            else if (month == 9 && month == 11)
-            {
-                if (day > 30)
-                {
-                    ValidationFailMessage();
-                    return true;
-                }
-            }
-
             return false;
         }
 
-        //성별과 연락처 빈칸일 때 오류 매새지 출력
-        private bool IsBlankGenderAndCellphone(RadioButton rbtMale, RadioButton rbtFemale, string text)
+        //성별과 연락처 빈칸일 때 오류 메세지 출력
+        private bool IsAnyBlankGenderAndCellphone(RadioButton rbtMale, RadioButton rbtFemale, string text)
         {
             if ((rbtMale.Checked == false && rbtFemale.Checked == false) || txbCellphone.Text == "")
             {
@@ -112,9 +65,13 @@ namespace DKClinic.EmployeeProgram
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (IsValidationError(txbName.Text, txbBirthdate.Text))
+            if (WinformUtility.IsBirthdateValidationError(txbBirthdate.Text))
                 return;
-            else if (IsBlankGenderAndCellphone(rbtMale, rbtFemale, txbCellphone.Text))
+            if (WinformUtility.IsCellphoneValidationError(txbCellphone.Text))
+                return;
+            if (IsAnyBlankTextbox(txbName.Text, txbBirthdate.Text))
+                return;
+            else if (IsAnyBlankGenderAndCellphone(rbtMale, rbtFemale, txbCellphone.Text))
                 return;
 
             ChangedCustomerInfo.Name = txbName.Text;
@@ -138,5 +95,23 @@ namespace DKClinic.EmployeeProgram
         {
             Close();
         }
+
+        //이름에는 숫자 입력 불가능
+        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        //생년월일에는 숫자만 입력 가능
+        private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
+

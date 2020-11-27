@@ -40,6 +40,10 @@ namespace DKClinic.EmployeeProgram
             //입력 유효성 검사
             if (IsValidationError(txbName.Text, txbBirthdate.Text, txbCellphone.Text, txbPosition.Text, txbDepartment.Text))
                 return;
+            else if (WinformUtility.IsBirthdateValidationError(txbBirthdate.Text))
+                return;
+            else if (WinformUtility.IsCellphoneValidationError(txbCellphone.Text))
+                return;
             //성별 체크 안되있을시
             if (rbtMale.Checked == false && rbtFemale.Checked == false)
             {
@@ -54,8 +58,8 @@ namespace DKClinic.EmployeeProgram
             else if (rbtFemale.Checked == true)
                 employee.GenderID = 2;
             employee.Cellphone = txbCellphone.Text;
-            SetPosition(txbPosition.Text);
-            SetDepartment(txbDepartment.Text);
+            SetPosition(txbPosition.Text);          // 직급 ID 입력
+            SetDepartment(txbDepartment.Text);      // 진료과 ID 입력
 
             if (employee.EmployeeID == 0)     //추가
             {
@@ -95,6 +99,22 @@ namespace DKClinic.EmployeeProgram
             }
 
             return false;
+        }
+        //이름에는 숫자 입력 불가능
+        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        //생년월일에는 숫자만 입력 가능
+        private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
         private void SetPosition(string text)
         {

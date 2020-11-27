@@ -96,7 +96,8 @@ namespace DKClinic.CustomerProgram
             this.txbName.Location = new System.Drawing.Point(585, 234);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(300, 53);
-            this.txbName.TabIndex = 21;
+            this.txbName.TabIndex = 1;
+            this.txbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbName_KeyPress);
             // 
             // txbBirthdate
             // 
@@ -106,7 +107,7 @@ namespace DKClinic.CustomerProgram
             this.txbBirthdate.MaxLength = 6;
             this.txbBirthdate.Name = "txbBirthdate";
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
-            this.txbBirthdate.TabIndex = 22;
+            this.txbBirthdate.TabIndex = 2;
             this.txbBirthdate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBirthdate_KeyPress);
             // 
             // CustomerLoginControl

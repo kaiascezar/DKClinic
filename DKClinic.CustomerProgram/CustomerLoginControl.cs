@@ -21,7 +21,9 @@ namespace DKClinic.CustomerProgram
         private void btnOK_Click(object sender, EventArgs e)
         {
             //입력 유효성 검사
-            if (IsValidationError(txbName.Text, txbBirthdate.Text))
+            if (IsAnyBlankTextbox(txbName.Text, txbBirthdate.Text))
+                return;
+            if (WinformUtility.IsBirthdateValidationError(txbBirthdate.Text))
                 return;
             //Customer 클래스에 입력값 임시 저장
             Customer customer = Dao.Customer.Find(txbName.Text, txbBirthdate.Text);
@@ -97,7 +99,8 @@ namespace DKClinic.CustomerProgram
             txbName.Clear();
             txbBirthdate.Clear();
         }
-        private bool IsValidationError(string text1, string text2)
+        //입력값이 없는 경우
+        private bool IsAnyBlankTextbox(string text1, string text2)
         {
             //입력값 없을 경우
             if (text1 == "" || text2 == "")
@@ -106,52 +109,15 @@ namespace DKClinic.CustomerProgram
                 return true;
             }
 
-            if (text2.Length < 6)
-            {
-                ValidationFailMessage();
-                return true;
-            }
-
-            int month = int.Parse(text2) % 10000 / 100;
-            int day = int.Parse(text2) % 100;
-
-            //월,일이 틀릴 경우
-            if (month < 1 || month > 12 || day < 1 || day > 31)
-            {
-                ValidationFailMessage();
-                return true;
-            }
-            //일이 틀릴 경우
-            if (month %2 == 0 && month < 7)
-            {
-                if (month == 2)
-                {
-                    if (day > 28)
-                    {
-                        ValidationFailMessage();
-                        return true;
-                    }
-                }
-                else if (day > 30)
-                {
-                    ValidationFailMessage();
-                    return true;
-                }
-            }
-            else if (month == 9 && month == 11)
-            {
-                if (day > 30)
-                {
-                    ValidationFailMessage();
-                    return true;
-                }
-            }
-
             return false;
         }
-        private void ValidationFailMessage()
+        //이름에는 숫자 입력 불가능
+        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
-            MessageBox.Show("생년월일을 정확하게 입력해 주세요", "Warning");
+            if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
         //생년월일에는 숫자만 입력 가능
         private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
