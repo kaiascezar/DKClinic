@@ -14,12 +14,29 @@ namespace DKClinic.Data
             return x => x.EmployeeID == key;
         }
 
-        public Employee Find(string name)
+        public Employee GetByName(string name)
         {
             using (var context = DKClinicEntities.Create())
             {
                 return context.Employees.Where(x => x.Name == name)
                                         .FirstOrDefault();
+            }
+        }
+
+        public Employee GetWithDepartmentAndPositionNameByName(string name)
+        {
+            using (var context = DKClinicEntities.Create())
+            {
+                var query = from x in context.Employees.Where(x => x.Name == name)
+                            select new { Employee = x, DepartmentName = x.Department.Name, PositionName = x.Position.Name };
+                var item = query.ToList().FirstOrDefault();
+
+                if (item == null) return null;
+                
+                item.Employee.DepartmentName = item.DepartmentName;
+                item.Employee.PositionName = item.PositionName;
+
+                return item.Employee;
             }
         }
 

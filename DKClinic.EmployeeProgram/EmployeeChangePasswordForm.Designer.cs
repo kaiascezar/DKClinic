@@ -142,7 +142,7 @@ namespace DKClinic.EmployeeProgram
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(236, 23);
+            this.label5.Location = new System.Drawing.Point(263, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(491, 53);
             this.label5.TabIndex = 7;

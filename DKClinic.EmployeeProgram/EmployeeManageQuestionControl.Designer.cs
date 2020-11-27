@@ -34,6 +34,13 @@ namespace DKClinic.EmployeeProgram
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
+
+            //this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.btnDelete = new System.Windows.Forms.Button();
+            //this.btnUpdate = new System.Windows.Forms.Button();
+
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -41,6 +48,7 @@ namespace DKClinic.EmployeeProgram
             this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +63,7 @@ namespace DKClinic.EmployeeProgram
             this.btnGoBack.TabIndex = 7;
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // btnSave
             // 
@@ -98,6 +107,27 @@ namespace DKClinic.EmployeeProgram
             this.dgvQuestionList.Size = new System.Drawing.Size(1062, 500);
             this.dgvQuestionList.TabIndex = 4;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "진료과";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "No.";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 162;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "질문";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 650;
+            // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -120,6 +150,7 @@ namespace DKClinic.EmployeeProgram
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
+
             // questionBindingSource
             // 
             this.questionBindingSource.DataSource = typeof(DKClinic.Data.Question);
@@ -156,6 +187,7 @@ namespace DKClinic.EmployeeProgram
             this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
             this.itemDataGridViewTextBoxColumn.Width = 125;
             // 
+
             // EmployeeManageQuestionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
