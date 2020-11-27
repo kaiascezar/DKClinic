@@ -21,7 +21,7 @@ namespace DKClinic.EmployeeProgram
         private void btnOK_Click(object sender, EventArgs e)
         {
             //입력 유효성 검사
-            if (IsValidationError(txbName.Text, txbPassword.Text))
+            if (IsAnyBlankTextbox(txbName.Text, txbPassword.Text))
                return;
 
             //Employee 클래스에 입력값 임시 저장
@@ -99,7 +99,7 @@ namespace DKClinic.EmployeeProgram
             txbName.Clear();
             txbPassword.Clear();
         }
-        private bool IsValidationError(string text1, string text2)
+        private bool IsAnyBlankTextbox(string text1, string text2)
         {
             //입력값 없을 경우
             if (text1 == "" || text2 == "")

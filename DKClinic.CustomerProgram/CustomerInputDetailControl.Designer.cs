@@ -39,16 +39,16 @@ namespace DKClinic.CustomerProgram
             this.rbtFemale = new System.Windows.Forms.RadioButton();
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbBirthdate = new System.Windows.Forms.TextBox();
-            this.txbCellphone = new System.Windows.Forms.TextBox();
+            this.txbCellphone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnOK
             // 
-            this.btnOK.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.Location = new System.Drawing.Point(400, 490);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(181, 95);
-            this.btnOK.TabIndex = 0;
+            this.btnOK.TabIndex = 6;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -56,20 +56,20 @@ namespace DKClinic.CustomerProgram
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(422, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 40);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "이 름";
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.Location = new System.Drawing.Point(710, 490);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(181, 95);
-            this.btnCancel.TabIndex = 2;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -77,41 +77,41 @@ namespace DKClinic.CustomerProgram
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(393, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 40);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "생년월일";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(422, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 40);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 0;
             this.label3.Text = "성 별";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(410, 373);
+            this.label4.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(409, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 40);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 0;
             this.label4.Text = "연락처";
             // 
             // rbtMale
             // 
             this.rbtMale.AutoSize = true;
-            this.rbtMale.Font = new System.Drawing.Font("Gulim", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbtMale.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbtMale.Location = new System.Drawing.Point(636, 280);
             this.rbtMale.Name = "rbtMale";
             this.rbtMale.Size = new System.Drawing.Size(76, 42);
-            this.rbtMale.TabIndex = 10;
+            this.rbtMale.TabIndex = 3;
             this.rbtMale.TabStop = true;
             this.rbtMale.Text = "남";
             this.rbtMale.UseVisualStyleBackColor = true;
@@ -119,40 +119,41 @@ namespace DKClinic.CustomerProgram
             // rbtFemale
             // 
             this.rbtFemale.AutoSize = true;
-            this.rbtFemale.Font = new System.Drawing.Font("Gulim", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbtFemale.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbtFemale.Location = new System.Drawing.Point(779, 280);
             this.rbtFemale.Name = "rbtFemale";
             this.rbtFemale.Size = new System.Drawing.Size(76, 42);
-            this.rbtFemale.TabIndex = 11;
+            this.rbtFemale.TabIndex = 4;
             this.rbtFemale.TabStop = true;
             this.rbtFemale.Text = "여";
             this.rbtFemale.UseVisualStyleBackColor = true;
             // 
             // txbName
             // 
-            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbName.Location = new System.Drawing.Point(601, 96);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(300, 53);
-            this.txbName.TabIndex = 12;
+            this.txbName.TabIndex = 1;
             // 
             // txbBirthdate
             // 
-            this.txbBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbBirthdate.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbBirthdate.Location = new System.Drawing.Point(601, 188);
             this.txbBirthdate.MaxLength = 6;
             this.txbBirthdate.Name = "txbBirthdate";
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
-            this.txbBirthdate.TabIndex = 13;
+            this.txbBirthdate.TabIndex = 2;
             // 
             // txbCellphone
             // 
-            this.txbCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbCellphone.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbCellphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txbCellphone.Location = new System.Drawing.Point(601, 370);
-            this.txbCellphone.MaxLength = 11;
+            this.txbCellphone.Mask = "000-0000-0000";
             this.txbCellphone.Name = "txbCellphone";
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
-            this.txbCellphone.TabIndex = 14;
+            this.txbCellphone.TabIndex = 5;
             // 
             // CustomerInputDetailControl
             // 
@@ -189,6 +190,6 @@ namespace DKClinic.CustomerProgram
         private System.Windows.Forms.RadioButton rbtFemale;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.TextBox txbBirthdate;
-        private System.Windows.Forms.TextBox txbCellphone;
+        private System.Windows.Forms.MaskedTextBox txbCellphone;
     }
 }

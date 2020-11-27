@@ -21,7 +21,7 @@ namespace DKClinic.EmployeeProgram
         private void btnOK_Click(object sender, EventArgs e)
         {
             //입력 유효성 검사
-            if (IsValidationError(txbName.Text, txbOldPw.Text, txbNewPw.Text, txbNewPwCheck.Text))
+            if (IsAnyBlankTextbox(txbName.Text, txbOldPw.Text, txbNewPw.Text, txbNewPwCheck.Text))
                 return;
 
             //Employee 클래스에 입력값 임시 저장
@@ -56,7 +56,7 @@ namespace DKClinic.EmployeeProgram
         {
             Close();
         }
-        private bool IsValidationError(string text1, string text2, string text3, string text4)
+        private bool IsAnyBlankTextbox(string text1, string text2, string text3, string text4)
         {
             //입력값 없을 경우
             if (text1 == "" || text2 == "" || text3 == "" || text4 == "")
@@ -66,6 +66,14 @@ namespace DKClinic.EmployeeProgram
             }
 
             return false;
+        }
+        //이름에는 숫자 입력 불가능
+        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
