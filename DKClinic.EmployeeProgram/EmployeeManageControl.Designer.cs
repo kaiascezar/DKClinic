@@ -37,11 +37,12 @@ namespace DKClinic.EmployeeProgram
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvEmpList = new System.Windows.Forms.DataGridView();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@ namespace DKClinic.EmployeeProgram
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txbName
             // 
@@ -92,27 +94,31 @@ namespace DKClinic.EmployeeProgram
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDelete.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDelete.Location = new System.Drawing.Point(496, 550);
+            this.btnDelete.Location = new System.Drawing.Point(625, 550);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(280, 95);
+            this.btnDelete.Size = new System.Drawing.Size(200, 95);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUpdate.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(100, 550);
+            this.btnUpdate.Location = new System.Drawing.Point(365, 550);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(280, 95);
+            this.btnUpdate.Size = new System.Drawing.Size(200, 95);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvEmpList
             // 
             this.dgvEmpList.AllowUserToDeleteRows = false;
+            this.dgvEmpList.AllowUserToResizeColumns = false;
+            this.dgvEmpList.AllowUserToResizeRows = false;
             this.dgvEmpList.AutoGenerateColumns = false;
             this.dgvEmpList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -123,6 +129,7 @@ namespace DKClinic.EmployeeProgram
             this.DepartmentName});
             this.dgvEmpList.DataSource = this.employeeBindingSource;
             this.dgvEmpList.Location = new System.Drawing.Point(100, 10);
+            this.dgvEmpList.MultiSelect = false;
             this.dgvEmpList.Name = "dgvEmpList";
             this.dgvEmpList.ReadOnly = true;
             this.dgvEmpList.RowHeadersWidth = 51;
@@ -131,10 +138,6 @@ namespace DKClinic.EmployeeProgram
             this.dgvEmpList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpList.Size = new System.Drawing.Size(1062, 450);
             this.dgvEmpList.TabIndex = 11;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(DKClinic.Data.Employee);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -168,10 +171,27 @@ namespace DKClinic.EmployeeProgram
             this.DepartmentName.Name = "DepartmentName";
             this.DepartmentName.ReadOnly = true;
             // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(DKClinic.Data.Employee);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdd.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.Location = new System.Drawing.Point(100, 550);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(200, 95);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // EmployeeManageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.label1);
@@ -202,5 +222,6 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PositionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentName;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

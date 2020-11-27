@@ -17,5 +17,11 @@ namespace DKClinic.EmployeeProgram
         {
             InitializeComponent();
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            OnbtnCancelClicked(employeeSelectFunctionControl);
+        }
     }
 }
