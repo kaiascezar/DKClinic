@@ -34,9 +34,9 @@ namespace DKClinic.EmployeeProgram
             this.label2 = new System.Windows.Forms.Label();
             this.pnlBoard = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbDiagnosis = new System.Windows.Forms.RichTextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txbDiagnosis = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -103,15 +103,16 @@ namespace DKClinic.EmployeeProgram
             this.panel2.Size = new System.Drawing.Size(1000, 67);
             this.panel2.TabIndex = 3;
             // 
-            // txbDiagnosis
+            // btnCancel
             // 
-            this.txbDiagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbDiagnosis.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbDiagnosis.Location = new System.Drawing.Point(3, 435);
-            this.txbDiagnosis.Name = "txbDiagnosis";
-            this.txbDiagnosis.Size = new System.Drawing.Size(1000, 210);
-            this.txbDiagnosis.TabIndex = 4;
-            this.txbDiagnosis.Text = "";
+            this.btnCancel.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Location = new System.Drawing.Point(814, 18);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(150, 40);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -123,15 +124,15 @@ namespace DKClinic.EmployeeProgram
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // btnCancel
+            // txbDiagnosis
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(814, 18);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 40);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "취소";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.txbDiagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbDiagnosis.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbDiagnosis.Location = new System.Drawing.Point(3, 435);
+            this.txbDiagnosis.Name = "txbDiagnosis";
+            this.txbDiagnosis.Size = new System.Drawing.Size(1000, 210);
+            this.txbDiagnosis.TabIndex = 4;
+            this.txbDiagnosis.Text = "";
             // 
             // EmployeeCheckResponseDiagnosisForm
             // 

@@ -47,6 +47,7 @@ namespace DKClinic.EmployeeProgram
             // 
             this.txbCellphone.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbCellphone.Location = new System.Drawing.Point(457, 423);
+            this.txbCellphone.MaxLength = 11;
             this.txbCellphone.Name = "txbCellphone";
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
             this.txbCellphone.TabIndex = 25;
@@ -55,6 +56,7 @@ namespace DKClinic.EmployeeProgram
             // 
             this.txbBirthdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbBirthdate.Location = new System.Drawing.Point(457, 241);
+            this.txbBirthdate.MaxLength = 6;
             this.txbBirthdate.Name = "txbBirthdate";
             this.txbBirthdate.Size = new System.Drawing.Size(300, 53);
             this.txbBirthdate.TabIndex = 24;
@@ -130,6 +132,7 @@ namespace DKClinic.EmployeeProgram
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -150,6 +153,7 @@ namespace DKClinic.EmployeeProgram
             this.btnOK.TabIndex = 15;
             this.btnOK.Text = "수정하기";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label5
             // 
@@ -161,7 +165,7 @@ namespace DKClinic.EmployeeProgram
             this.label5.TabIndex = 26;
             this.label5.Text = "환자정보 수정";
             // 
-            // empUpdateCtmInfo
+            // EmployeeUpdateCustomerInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +182,7 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
-            this.Name = "empUpdateCtmInfo";
+            this.Name = "EmployeeUpdateCustomerInfoForm";
             this.Text = "환자정보 수정";
             this.ResumeLayout(false);
             this.PerformLayout();
