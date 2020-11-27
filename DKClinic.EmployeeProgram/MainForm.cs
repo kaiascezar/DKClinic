@@ -63,6 +63,7 @@ namespace DKClinic.EmployeeProgram
         private void EmployeeSelectFunctionControl_SelectToFunction(object sender, EmployeeSelectFunctionControl.SelectToFunctionEventArgs e)
         {
             e.BaseUC.btnCancelClicked += BaseUC_btnCancelClicked;
+            (e.BaseUC).Parent = this;
             CallUserControl(e.BaseUC);
         }
 

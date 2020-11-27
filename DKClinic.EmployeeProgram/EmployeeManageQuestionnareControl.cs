@@ -34,11 +34,6 @@ namespace DKClinic.EmployeeProgram
             //employeeModifyQuestionnareForm.ShowDialog();
         }
 
-        private void connectedeventhandler(object sender, EventArgs e)
-        {
-            ReloadGridView();
-        }
-
         private void ReloadGridView()
         {
             bdsQuestionnare.DataSource = Dao.Questionnare.GetWithDepartmentAndCustomerName();
