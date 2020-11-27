@@ -19,24 +19,45 @@ namespace DKClinic.EmployeeProgram
             ReloadGridView();
         }
 
+        public Questionnare CurrentQuestionnare { get; set; }
+        public Employee CurrentEmployee { get; }
+
+
+        //뒤로가기버튼
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }
 
+
+        //문진표 열람 & 진단서 작성
         private void btnOpenResponse_Click(object sender, EventArgs e)
         {
-            Questionnare questionnare = bdsQuestionnare.Current as Questionnare;
-            //EmployeeModifyQuestionnareForm employeeModifyQuestionnareForm = new EmployeeModifyQuestionnareForm(questionnare.QuestionnareID);
-            // 이벤트 핸들러 연결
-            // 필요한거 하자
-            //employeeModifyQuestionnareForm.ShowDialog();
+            CurrentQuestionnare = bdsQuestionnare.Current as Questionnare;
+            
+            //문진표 열람 & 진단서 작성 폼 호출 및 gridview 내 선택된 값 전달용 변수
+            EmployeeCheckResponseDiagnosis employeeModifyQuestionnareForm = new EmployeeCheckResponseDiagnosis(CurrentQuestionnare);
+            employeeModifyQuestionnareForm.ShowDialog();
         }
 
+        //삭제버튼
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            CurrentQuestionnare = bdsQuestionnare.Current as Questionnare;
+            //Dao.Questionnare.Delete(CurrentQuestionnare); <- 문진표 추가기능 완성 시 테스트 할 것
+            ReloadGridView();
+        }
+
+
+
+        //gridview refresh 함수
         private void ReloadGridView()
         {
             bdsQuestionnare.DataSource = Dao.Questionnare.GetWithDepartmentAndCustomerName();
         }
+
+        
     }
 }

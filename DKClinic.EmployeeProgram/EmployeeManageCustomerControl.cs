@@ -50,7 +50,7 @@ namespace DKClinic.EmployeeProgram
             EmployeeUpdateCustomerInfoForm OpenUpdateCustomerInfo = new EmployeeUpdateCustomerInfoForm(SelectedCustomerData);//수정 폼 열기 위한 변수선언과 전달값(선택된 행 값)전달
             OpenUpdateCustomerInfo.ShowDialog();//수정 창 열기
 
-            //데이터 수정 후 gridview reflash
+            //데이터 수정 후 gridview refresh
             customerBindingSource.DataSource = Dao.Customer.GetWithGenderName();
         }
 
