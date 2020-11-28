@@ -94,28 +94,25 @@ namespace DKClinic.Data
 
         public List<Question> GetByDepartmentIDAndIndex(List<Question> questions, int departmentID, int index)
         {
-            using (var context = DKClinicEntities.Create())
-            {
-                var query = questions
-                    .Where(x => x.DepartmentID == departmentID && x.Index == index)
-                    .Select(x => x);
+            var query = questions
+                .Where(x => x.DepartmentID == departmentID && x.Index == index)
+                .Select(x => x);
 
-                return query.ToList();
-            }
+            return query.ToList();
         }
 
         public int GetNewestVersionNumber(int departmentId, int index)
         {
             List<Question> questions = GetByDepartmentIDAndIndex(departmentId, index);
             if (questions.Count == 0) return 0;
-            return questions.OrderByDescending(x => x.Version).ToList()[0].Index;
+            return questions.OrderByDescending(x => x.Version).ToList()[0].Version;
         }
 
         public int GetNewestVersionNumber(List<Question> questions, int departmentId, int index)
         {
             List<Question> questionsList = GetByDepartmentIDAndIndex(questions, departmentId, index);
             if (questionsList.Count == 0) return 0;
-            return questionsList.OrderByDescending(x => x.Version).ToList()[0].Index;
+            return questionsList.OrderByDescending(x => x.Version).ToList()[0].Version;
         }
 
         public List<Question> SelectionNewestVersion(List<Question> questions, int departmentID = 0)
