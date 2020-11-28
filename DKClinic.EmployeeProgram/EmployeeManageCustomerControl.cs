@@ -18,6 +18,7 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageCustomerControl()
         {
             InitializeComponent();
+            Title = "환자 정보 관리";
             customerBindingSource.DataSource = Dao.Customer.GetWithGenderName();
         }
 

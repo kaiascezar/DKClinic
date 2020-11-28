@@ -19,6 +19,7 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageQuestionControl()
         {
             InitializeComponent();
+            Title = "문진표 질문 관리";
         }
 
         public EmployeeManageQuestionControl(Employee employee) : this()
