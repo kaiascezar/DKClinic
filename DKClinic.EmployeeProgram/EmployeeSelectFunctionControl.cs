@@ -37,13 +37,16 @@ namespace DKClinic.EmployeeProgram
                 btnManageQuestion.Enabled = true;
                 btnManageCtm.Enabled = true;
                 btnManageEmp.Enabled = false;
+                btnManageEmp.BackColor = Color.Gray;
             }
             else if (employee.PositionID == 3) // 간호사 : 문진표(진단X), 환자
             {
                 btnManageQuestionnare.Enabled = true;
                 btnManageQuestion.Enabled = false;
+                btnManageQuestion.BackColor = Color.Gray;
                 btnManageCtm.Enabled = true;
                 btnManageEmp.Enabled = false;
+                btnManageEmp.BackColor = Color.Gray;
             }
         }
 

@@ -50,10 +50,11 @@ namespace DKClinic.EmployeeProgram
             // btnSearch
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSearch.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(605, 485);
+            this.btnSearch.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(529, 388);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(117, 53);
+            this.btnSearch.Size = new System.Drawing.Size(102, 42);
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -61,19 +62,20 @@ namespace DKClinic.EmployeeProgram
             // 
             // txbName
             // 
-            this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbName.Location = new System.Drawing.Point(245, 485);
+            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbName.Location = new System.Drawing.Point(214, 388);
+            this.txbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(334, 53);
+            this.txbName.Size = new System.Drawing.Size(293, 44);
             this.txbName.TabIndex = 16;
             this.txbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(100, 485);
+            this.label1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(88, 388);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 50);
+            this.label1.Size = new System.Drawing.Size(114, 40);
             this.label1.TabIndex = 15;
             this.label1.Text = "이름 : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,10 +83,11 @@ namespace DKClinic.EmployeeProgram
             // btnGoBack
             // 
             this.btnGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGoBack.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnGoBack.Location = new System.Drawing.Point(882, 550);
+            this.btnGoBack.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoBack.Location = new System.Drawing.Point(772, 440);
+            this.btnGoBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(280, 95);
+            this.btnGoBack.Size = new System.Drawing.Size(245, 76);
             this.btnGoBack.TabIndex = 14;
             this.btnGoBack.Text = "뒤로가기";
             this.btnGoBack.UseVisualStyleBackColor = true;
@@ -93,10 +96,11 @@ namespace DKClinic.EmployeeProgram
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDelete.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDelete.Location = new System.Drawing.Point(625, 550);
+            this.btnDelete.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Location = new System.Drawing.Point(547, 440);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(200, 95);
+            this.btnDelete.Size = new System.Drawing.Size(175, 76);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -105,10 +109,11 @@ namespace DKClinic.EmployeeProgram
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUpdate.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(365, 550);
+            this.btnUpdate.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Location = new System.Drawing.Point(319, 440);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(200, 95);
+            this.btnUpdate.Size = new System.Drawing.Size(175, 76);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -128,7 +133,8 @@ namespace DKClinic.EmployeeProgram
             this.PositionName,
             this.DepartmentName});
             this.dgvEmpList.DataSource = this.employeeBindingSource;
-            this.dgvEmpList.Location = new System.Drawing.Point(100, 10);
+            this.dgvEmpList.Location = new System.Drawing.Point(88, 8);
+            this.dgvEmpList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEmpList.MultiSelect = false;
             this.dgvEmpList.Name = "dgvEmpList";
             this.dgvEmpList.ReadOnly = true;
@@ -136,7 +142,7 @@ namespace DKClinic.EmployeeProgram
             this.dgvEmpList.RowTemplate.Height = 27;
             this.dgvEmpList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEmpList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpList.Size = new System.Drawing.Size(1062, 450);
+            this.dgvEmpList.Size = new System.Drawing.Size(929, 360);
             this.dgvEmpList.TabIndex = 11;
             // 
             // nameDataGridViewTextBoxColumn
@@ -178,10 +184,11 @@ namespace DKClinic.EmployeeProgram
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnAdd.Location = new System.Drawing.Point(100, 550);
+            this.btnAdd.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.Location = new System.Drawing.Point(88, 440);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(200, 95);
+            this.btnAdd.Size = new System.Drawing.Size(175, 76);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -189,8 +196,9 @@ namespace DKClinic.EmployeeProgram
             // 
             // EmployeeManageControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txbName);
@@ -199,8 +207,9 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvEmpList);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EmployeeManageControl";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1104, 538);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
