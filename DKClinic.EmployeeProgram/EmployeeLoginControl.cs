@@ -23,7 +23,6 @@ namespace DKClinic.EmployeeProgram
             //입력 유효성 검사
             if (IsAnyBlankTextbox(txbName.Text, txbPassword.Text))
                return;
-
             //Employee 클래스에 입력값 임시 저장
             Employee employee = Dao.Employee.GetByName(txbName.Text);
             

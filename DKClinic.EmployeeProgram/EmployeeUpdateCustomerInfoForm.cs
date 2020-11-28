@@ -112,6 +112,14 @@ namespace DKClinic.EmployeeProgram
                 e.Handled = true;
             }
         }
+        //연락처에는 숫자만 입력 가능
+        private void txbCellphone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 

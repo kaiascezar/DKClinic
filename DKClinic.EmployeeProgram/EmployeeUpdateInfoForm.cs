@@ -63,7 +63,7 @@ namespace DKClinic.EmployeeProgram
 
             if (employee.EmployeeID == 0)     //추가
             {
-                employee.Password = "password";
+                employee.Password = "password";    //신규 생성 default password
                 MessageBox.Show("신규 직원이 추가되었습니다.");
                 Dao.Employee.Insert(employee);
             }
@@ -110,6 +110,14 @@ namespace DKClinic.EmployeeProgram
         }
         //생년월일에는 숫자만 입력 가능
         private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        //연락처에는 숫자만 입력 가능
+        private void txbCellphone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != 8)
             {
