@@ -41,29 +41,31 @@ namespace DKClinic.EmployeeProgram
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(405, 137);
+            this.label1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(354, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 50);
+            this.label1.Size = new System.Drawing.Size(88, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "이름";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbName
             // 
-            this.txbName.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbName.Location = new System.Drawing.Point(541, 134);
+            this.txbName.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbName.Location = new System.Drawing.Point(473, 107);
+            this.txbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(350, 53);
+            this.txbName.Size = new System.Drawing.Size(307, 44);
             this.txbName.TabIndex = 1;
             this.txbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbName_KeyPress);
             // 
             // btnOK
             // 
-            this.btnOK.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOK.Location = new System.Drawing.Point(400, 490);
+            this.btnOK.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Location = new System.Drawing.Point(350, 392);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(180, 95);
+            this.btnOK.Size = new System.Drawing.Size(158, 76);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -71,10 +73,11 @@ namespace DKClinic.EmployeeProgram
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(690, 490);
+            this.btnCancel.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Location = new System.Drawing.Point(604, 392);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(201, 95);
+            this.btnCancel.Size = new System.Drawing.Size(176, 76);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "입력취소";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -82,19 +85,20 @@ namespace DKClinic.EmployeeProgram
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(405, 261);
+            this.label2.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(354, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 50);
+            this.label2.Size = new System.Drawing.Size(88, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "PW";
             // 
             // btnChangePw
             // 
-            this.btnChangePw.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnChangePw.Location = new System.Drawing.Point(400, 414);
+            this.btnChangePw.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChangePw.Location = new System.Drawing.Point(350, 331);
+            this.btnChangePw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChangePw.Name = "btnChangePw";
-            this.btnChangePw.Size = new System.Drawing.Size(491, 54);
+            this.btnChangePw.Size = new System.Drawing.Size(430, 43);
             this.btnChangePw.TabIndex = 4;
             this.btnChangePw.Text = "비밀번호 변경";
             this.btnChangePw.UseVisualStyleBackColor = true;
@@ -102,28 +106,30 @@ namespace DKClinic.EmployeeProgram
             // 
             // txbPassword
             // 
-            this.txbPassword.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txbPassword.Location = new System.Drawing.Point(541, 258);
+            this.txbPassword.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txbPassword.Location = new System.Drawing.Point(473, 206);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
-            this.txbPassword.Size = new System.Drawing.Size(350, 53);
+            this.txbPassword.Size = new System.Drawing.Size(307, 44);
             this.txbPassword.TabIndex = 3;
             this.txbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPassword_KeyPress);
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(400, 50);
+            this.label3.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(350, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(491, 54);
+            this.label3.Size = new System.Drawing.Size(430, 43);
             this.label3.TabIndex = 7;
             this.label3.Text = "직원 로그인";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EmployeeLoginControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.btnChangePw);
@@ -132,8 +138,9 @@ namespace DKClinic.EmployeeProgram
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EmployeeLoginControl";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1104, 538);
             this.ResumeLayout(false);
             this.PerformLayout();
 
