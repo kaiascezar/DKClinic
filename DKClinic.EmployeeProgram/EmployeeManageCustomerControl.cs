@@ -13,17 +13,24 @@ namespace DKClinic.EmployeeProgram
 {
     public partial class EmployeeManageCustomerControl : BaseUC
     {
+        public Employee CurrentEmployeeInHere { get; set; }
+
         public EmployeeManageCustomerControl()
         {
             InitializeComponent();
             customerBindingSource.DataSource = Dao.Customer.GetWithGenderName();
         }
 
+        public EmployeeManageCustomerControl(Employee employee) : this()
+        {
+            CurrentEmployeeInHere = employee;
+        }
+
         public Customer SelectedCustomerData { get; set; }
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            EmployeeSelectFunctionControl esfc = new EmployeeSelectFunctionControl();
+            EmployeeSelectFunctionControl esfc = new EmployeeSelectFunctionControl(CurrentEmployeeInHere);
             OnbtnCancelClicked(esfc);
         }
 

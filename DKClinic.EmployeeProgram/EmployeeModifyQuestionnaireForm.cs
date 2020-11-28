@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DKClinic.EmployeeProgram
 {
-    public partial class EmployeeCheckResponseDiagnosis : Form
+    public partial class EmployeeModifyQuestionnareForm : Form
     {
-        public EmployeeCheckResponseDiagnosis(Questionnare questionnaire, Employee employee)
+        public EmployeeModifyQuestionnareForm(Questionnare questionnaire, Employee employee)
         {
             InitializeComponent();
             currentEmployeeInHere = employee;
@@ -51,7 +51,7 @@ namespace DKClinic.EmployeeProgram
         private string printQuestionnaires(Questionnare currentQuestionnare)
         {
             Questionnare questionnairesForPrint = currentQuestionnare;
-            string unionQuestions;
+            string unionQuestions = "";
             //int responseQuestionIndex;
 
 
@@ -67,16 +67,21 @@ namespace DKClinic.EmployeeProgram
                                          questionResponse = x };
 
                 var list = query.ToList();
-                //foreach (var item in list)
-                //{
-                //    responseQuestionIndex = item.questionIndex;
-                //}
 
-                //for (int i = 0; i < list.Count; i++)
-                //{
-                //    unionQusetions = $"{responseQuestionIndex}\n";
-                //}
+                foreach (var item in list)
+                {
+                    unionQuestions += $" {item.questionIndex}. {item.questionItem}\n";
 
+                    if (item.questionType != 1)
+                    {
+                        string[] choices = item.questionChoices.Split(',');
+                        for (int i = 0; i < choices.Length; i++)
+                            unionQuestions += $" {i + 1}) {choices[i]}\n";
+                    }
+                    unionQuestions += "\n";
+
+                    unionQuestions += $" 답안 => {item.questionResponse.Answer}\n\n";
+                }    
 
                 return unionQuestions;
             }
@@ -85,7 +90,6 @@ namespace DKClinic.EmployeeProgram
         //취소버튼
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show($"PositionID : {ConnectedEmployee.PositionID}");
             Close();
         }
     }

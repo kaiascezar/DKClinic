@@ -1,7 +1,7 @@
 ﻿
 namespace DKClinic.EmployeeProgram
 {
-    partial class EmployeeCheckResponseDiagnosis
+    partial class EmployeeModifyQuestionnareForm
     {
         /// <summary>
         /// Required designer variable.

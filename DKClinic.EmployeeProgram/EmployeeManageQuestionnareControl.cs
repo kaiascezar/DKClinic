@@ -27,7 +27,7 @@ namespace DKClinic.EmployeeProgram
         //뒤로가기버튼
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(currentEmployeeInHere);
             
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }
@@ -42,7 +42,7 @@ namespace DKClinic.EmployeeProgram
                 return;
             }
             //문진표 열람 & 진단서 작성 폼 호출 및 gridview 내 선택된 값 전달용 변수
-            EmployeeCheckResponseDiagnosis employeeModifyQuestionnareForm = new EmployeeCheckResponseDiagnosis(currentQuestionnare, currentEmployeeInHere);
+            EmployeeModifyQuestionnareForm employeeModifyQuestionnareForm = new EmployeeModifyQuestionnareForm(currentQuestionnare, currentEmployeeInHere);
             employeeModifyQuestionnareForm.ShowDialog();
         }
 

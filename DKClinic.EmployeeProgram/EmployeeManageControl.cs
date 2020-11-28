@@ -13,12 +13,19 @@ namespace DKClinic.EmployeeProgram
 {
     public partial class EmployeeManageControl : BaseUC
     {
+        public Employee CurrentEmployeeInHere { get; set; }
+
         public EmployeeManageControl()
         {
             InitializeComponent();
             Title = "직원 정보 관리";
 
             employeeBindingSource.DataSource = Dao.Employee.GetWithDepartmentAndPositionName();
+        }
+
+        public EmployeeManageControl(Employee employee) : this()
+        {
+            CurrentEmployeeInHere = employee;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -65,7 +72,7 @@ namespace DKClinic.EmployeeProgram
         {
             // MessageBox.Show(((MainForm)ParentForm).ConnectedEmployee.Name);
 
-            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(CurrentEmployeeInHere);
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }
 

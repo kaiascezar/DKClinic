@@ -14,9 +14,16 @@ namespace DKClinic.EmployeeProgram
 
         public Employee ParentEmployee { get; set; }
 
+        public Employee currentEmployeeInHere { get; set; }
+
         public EmployeeManageQuestionControl()
         {
             InitializeComponent();
+        }
+
+        public EmployeeManageQuestionControl(Employee employee) : this()
+        {
+            currentEmployeeInHere = employee;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -227,7 +234,7 @@ namespace DKClinic.EmployeeProgram
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl();
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(currentEmployeeInHere);
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }
     }

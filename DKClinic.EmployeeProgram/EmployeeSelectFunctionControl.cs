@@ -56,11 +56,11 @@ namespace DKClinic.EmployeeProgram
             if (buttonName == "btnManageQuestionnare")
                 baseUC = new EmployeeManageQuestionnareControl(currentEmployeeInHere);
             else if (buttonName == "btnManageQuestion")
-                baseUC = new EmployeeManageQuestionControl();
+                baseUC = new EmployeeManageQuestionControl(currentEmployeeInHere);
             else if (buttonName == "btnManageCtm")
-                baseUC = new EmployeeManageCustomerControl();
+                baseUC = new EmployeeManageCustomerControl(currentEmployeeInHere);
             else if (buttonName == "btnManageEmp")
-                baseUC = new EmployeeManageControl();
+                baseUC = new EmployeeManageControl(currentEmployeeInHere);
 
             OnSelectToFunction(baseUC);
         }
