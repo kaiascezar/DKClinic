@@ -112,7 +112,7 @@ namespace DKClinic.CustomerProgram
             return false;
         }
         //이름에는 숫자 입력 불가능
-        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        private void txbName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
             {
