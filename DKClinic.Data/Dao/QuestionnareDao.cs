@@ -14,11 +14,12 @@ namespace DKClinic.Data
             return x => x.QuestionnareID == key;
         }
 
-        public List<Questionnare> GetWithDepartmentAndCustomerName()
+        public List<Questionnare> GetWithDepartmentAndCustomerName(Employee employee)
         {
             using (var context = DKClinicEntities.Create())
             {
                 var query = from x in context.Questionnares
+                            where x.DepartmentID == employee.DepartmentID
                             select new { Questionnare = x, DepartmentName = x.Department.Name, 
                                 CustomerName = x.Customer.Name };
                 var list = query.ToList();
