@@ -67,9 +67,9 @@ namespace DKClinic.CustomerProgram
         }
 
 
-        public CustomerInputDetailControl(Customer returnedcustomer) : this()
+        public CustomerInputDetailControl(Customer returnedCustomer) : this()
         {
-            customer = returnedcustomer;
+            customer = returnedCustomer;
             // 초기 화면출력
             txbName.Text = customer.Name; // 이름 띄우기
             txbBirthdate.Text = customer.Birthdate; // 생년월일 띄우기
@@ -140,9 +140,9 @@ namespace DKClinic.CustomerProgram
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            CustomerLoginControl customerlogin = new CustomerLoginControl();
+            CustomerLoginControl customerLogin = new CustomerLoginControl();
 
-            OnbtnCancelClicked(customerlogin);
+            OnbtnCancelClicked(customerLogin);
 
             // 이전 화면으로 돌아가는 새로운 이벤트 추가
         }

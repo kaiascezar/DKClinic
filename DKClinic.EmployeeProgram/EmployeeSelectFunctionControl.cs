@@ -18,9 +18,12 @@ namespace DKClinic.EmployeeProgram
             InitializeComponent();
             Title = "작업 선택";
         }
-        
+
+        private Employee currentEmployeeInHere { get; }
         public EmployeeSelectFunctionControl(Employee employee) : this()
         {
+            currentEmployeeInHere = employee;
+
             if (employee.PositionID == 1) // 관리자 : all
             {
                 btnManageQuestionnare.Enabled = true;
@@ -51,7 +54,7 @@ namespace DKClinic.EmployeeProgram
 
             string buttonName = ((Button)sender).Name;
             if (buttonName == "btnManageQuestionnare")
-                baseUC = new EmployeeManageQuestionnareControl();
+                baseUC = new EmployeeManageQuestionnareControl(currentEmployeeInHere);
             else if (buttonName == "btnManageQuestion")
                 baseUC = new EmployeeManageQuestionControl();
             else if (buttonName == "btnManageCtm")
