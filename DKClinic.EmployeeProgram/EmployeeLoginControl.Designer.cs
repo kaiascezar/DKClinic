@@ -108,6 +108,7 @@ namespace DKClinic.EmployeeProgram
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(350, 53);
             this.txbPassword.TabIndex = 3;
+            this.txbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPassword_KeyPress);
             // 
             // label3
             // 

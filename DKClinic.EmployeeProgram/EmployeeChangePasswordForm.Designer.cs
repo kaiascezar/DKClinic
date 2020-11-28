@@ -121,6 +121,7 @@ namespace DKClinic.EmployeeProgram
             this.txbNewPw.PasswordChar = '*';
             this.txbNewPw.Size = new System.Drawing.Size(350, 53);
             this.txbNewPw.TabIndex = 3;
+            this.txbNewPw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_KeyPress);
             // 
             // txbNewPwCheck
             // 
@@ -130,6 +131,7 @@ namespace DKClinic.EmployeeProgram
             this.txbNewPwCheck.PasswordChar = '*';
             this.txbNewPwCheck.Size = new System.Drawing.Size(350, 53);
             this.txbNewPwCheck.TabIndex = 4;
+            this.txbNewPwCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_KeyPress);
             // 
             // txbOldPw
             // 
@@ -139,6 +141,7 @@ namespace DKClinic.EmployeeProgram
             this.txbOldPw.PasswordChar = '*';
             this.txbOldPw.Size = new System.Drawing.Size(350, 53);
             this.txbOldPw.TabIndex = 2;
+            this.txbOldPw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_KeyPress);
             // 
             // label5
             // 
