@@ -99,9 +99,9 @@ namespace DKClinic.EmployeeProgram
             txbName.Clear();
             txbPassword.Clear();
         }
+        //입력값이 없는 경우
         private bool IsAnyBlankTextbox(string text1, string text2)
         {
-            //입력값 없을 경우
             if (text1 == "" || text2 == "")
             {
                 MessageBox.Show("항목을 입력해주세요", "Warning");
@@ -109,6 +109,14 @@ namespace DKClinic.EmployeeProgram
             }
 
             return false;
+        }
+        //이름에는 숫자 입력 불가능
+        private void txbName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -56,6 +56,7 @@ namespace DKClinic.EmployeeProgram
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(350, 53);
             this.txbName.TabIndex = 1;
+            this.txbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbName_KeyPress);
             // 
             // btnOK
             // 

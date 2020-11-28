@@ -152,6 +152,7 @@ namespace DKClinic.CustomerProgram
             this.txbCellphone.Location = new System.Drawing.Point(601, 370);
             this.txbCellphone.Mask = "000-0000-0000";
             this.txbCellphone.Name = "txbCellphone";
+            this.txbCellphone.ResetOnSpace = false;
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
             this.txbCellphone.TabIndex = 5;
             // 
