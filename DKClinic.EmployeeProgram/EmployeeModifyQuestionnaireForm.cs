@@ -19,8 +19,7 @@ namespace DKClinic.EmployeeProgram
             currentEmployeeInHere = employee;
 
             //판넬에 문진표 작성 내용 출력, 문진표 출력 내용은 CustomerQustionnareControl.cs 참고            
-            
-            Questionnare currentQuestionnaireInHere = questionnaire;
+            currentQuestionnaireInHere = questionnaire;
 
             txbBoard.Text = 
                 $"환자이름: {currentQuestionnaireInHere.CustomerName}\n\n" +
@@ -40,25 +39,21 @@ namespace DKClinic.EmployeeProgram
             {
                 txbDiagnosis.Text = questionnaire.Diagnosis;
             }
-
-            
         }
         private Employee currentEmployeeInHere { get; }
-        private Questionnare currentQuestionnaire { get; }
-        
-        
+        private Questionnare currentQuestionnaireInHere { get; set; }
+        public Questionnare questionnairesForQuery { get; set; }
+
         //문제 출력 함수
         private string printQuestionnaires(Questionnare currentQuestionnare)
         {
-            Questionnare questionnairesForPrint = currentQuestionnare;
+            questionnairesForQuery = currentQuestionnare;
             string unionQuestions = "";
-            //int responseQuestionIndex;
-
-
+            
             using (var context = DKClinicEntities.Create())
             {
                 var query = from x in context.Responses
-                            where x.QuestionnareID == questionnairesForPrint.QuestionnareID
+                            where x.QuestionnareID == questionnairesForQuery.QuestionnareID
                             orderby x.Question.Index
                             select new { questionIndex = x.Question.Index, 
                                          questionItem = x.Question.Item, 
@@ -91,6 +86,40 @@ namespace DKClinic.EmployeeProgram
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        //저장버튼
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            currentQuestionnaireInHere.Diagnosis = txbDiagnosis.Text;
+
+            if (WinformUtility.AskSure("저장하시겠습니까?"))
+            {
+                if(txbDiagnosis == null)
+                {
+                    Dao.Questionnare.Insert(currentQuestionnaireInHere);
+                    Close();
+                }
+                else
+                {
+                    Dao.Questionnare.Update(currentQuestionnaireInHere);
+                    Close();
+                }
+                //using (var context = DKClinicEntities.Create())
+                //{
+                //    var query = from x in context.Questionnares
+                //                where x.QuestionnareID == questionnairesForQuery.QuestionnareID
+                //                select new { diagnosis = x.Diagnosis}
+                //    var list = query.ToList();
+                //    foreach (var item in list)
+                //    {
+                //        item.diagnosis = txbDiagnosis.Text;
+                //    }
+
+                //}
+            }
+            else
+                return;
         }
     }
 }

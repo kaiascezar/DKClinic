@@ -131,6 +131,7 @@ namespace DKClinic.EmployeeProgram
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txbBoard
             // 
@@ -143,14 +144,14 @@ namespace DKClinic.EmployeeProgram
             this.txbBoard.TabIndex = 5;
             this.txbBoard.Text = "";
             // 
-            // EmployeeCheckResponseDiagnosis
+            // EmployeeModifyQuestionnareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 577);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "EmployeeCheckResponseDiagnosis";
+            this.Name = "EmployeeModifyQuestionnareForm";
             this.Text = "문진표 확인 및 진단서 작성 메뉴";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

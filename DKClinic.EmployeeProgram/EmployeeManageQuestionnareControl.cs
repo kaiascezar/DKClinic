@@ -16,13 +16,15 @@ namespace DKClinic.EmployeeProgram
         public EmployeeManageQuestionnareControl(Employee currentEmployee)
         {
             InitializeComponent();
-            ReloadGridView();
             currentEmployeeInHere = currentEmployee;
+            ReloadGridViewWithDepartment();
+            
         }
+
+        
 
         public Questionnare currentQuestionnare { get; set; }
         private Employee currentEmployeeInHere { get; }
-
 
         //뒤로가기버튼
         private void btnGoBack_Click(object sender, EventArgs e)
@@ -54,16 +56,14 @@ namespace DKClinic.EmployeeProgram
             {
                 return;
             }
-            //Dao.Questionnare.Delete(CurrentQuestionnare); <- 문진표 추가기능 완성 시 테스트 할 것
-            ReloadGridView();
+            Dao.Questionnare.Delete(currentQuestionnare);
+            ReloadGridViewWithDepartment();
         }
 
-
-
         //gridview refresh 함수
-        private void ReloadGridView()
+        private void ReloadGridViewWithDepartment()
         {
-            bdsQuestionnare.DataSource = Dao.Questionnare.GetWithDepartmentAndCustomerName();
+            bdsQuestionnare.DataSource = Dao.Questionnare.GetWithDepartmentAndCustomerName(currentEmployeeInHere);
         }
 
         
