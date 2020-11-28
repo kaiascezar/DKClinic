@@ -39,7 +39,7 @@ namespace DKClinic.CustomerProgram
             this.rbtFemale = new System.Windows.Forms.RadioButton();
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbBirthdate = new System.Windows.Forms.TextBox();
-            this.txbCellphone = new System.Windows.Forms.MaskedTextBox();
+            this.txbCellphone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnOK
@@ -150,11 +150,11 @@ namespace DKClinic.CustomerProgram
             this.txbCellphone.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbCellphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txbCellphone.Location = new System.Drawing.Point(601, 370);
-            this.txbCellphone.Mask = "000-0000-0000";
+            this.txbCellphone.MaxLength = 11;
             this.txbCellphone.Name = "txbCellphone";
-            this.txbCellphone.ResetOnSpace = false;
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
             this.txbCellphone.TabIndex = 5;
+            this.txbCellphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCellphone_KeyPress);
             // 
             // CustomerInputDetailControl
             // 
@@ -191,6 +191,6 @@ namespace DKClinic.CustomerProgram
         private System.Windows.Forms.RadioButton rbtFemale;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.TextBox txbBirthdate;
-        private System.Windows.Forms.MaskedTextBox txbCellphone;
+        private System.Windows.Forms.TextBox txbCellphone;
     }
 }

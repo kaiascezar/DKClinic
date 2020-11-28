@@ -40,7 +40,7 @@ namespace DKClinic.EmployeeProgram
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txbCellphone = new System.Windows.Forms.MaskedTextBox();
+            this.txbCellphone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txbBirthdate
@@ -164,10 +164,11 @@ namespace DKClinic.EmployeeProgram
             this.txbCellphone.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbCellphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txbCellphone.Location = new System.Drawing.Point(457, 423);
-            this.txbCellphone.Mask = "000-0000-0000";
+            this.txbCellphone.MaxLength = 11;
             this.txbCellphone.Name = "txbCellphone";
             this.txbCellphone.Size = new System.Drawing.Size(300, 53);
-            this.txbCellphone.TabIndex = 5;
+            this.txbCellphone.TabIndex = 21;
+            this.txbCellphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCellphone_KeyPress);
             // 
             // EmployeeUpdateCustomerInfoForm
             // 
@@ -206,6 +207,6 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox txbCellphone;
+        private System.Windows.Forms.TextBox txbCellphone;
     }
 }

@@ -44,7 +44,7 @@ namespace DKClinic.EmployeeProgram
             this.txbDepartment = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txbCellphone = new System.Windows.Forms.MaskedTextBox();
+            this.txbCellphone = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // rbtFemale
@@ -214,10 +214,13 @@ namespace DKClinic.EmployeeProgram
             this.txbCellphone.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbCellphone.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txbCellphone.Location = new System.Drawing.Point(466, 342);
-            this.txbCellphone.Mask = "000-0000-0000";
+            this.txbCellphone.MaxLength = 11;
+            this.txbCellphone.Multiline = false;
             this.txbCellphone.Name = "txbCellphone";
             this.txbCellphone.Size = new System.Drawing.Size(350, 53);
-            this.txbCellphone.TabIndex = 5;
+            this.txbCellphone.TabIndex = 10;
+            this.txbCellphone.Text = "";
+            this.txbCellphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCellphone_KeyPress);
             // 
             // EmployeeUpdateInfoForm
             // 
@@ -264,6 +267,6 @@ namespace DKClinic.EmployeeProgram
         private System.Windows.Forms.RichTextBox txbDepartment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txbCellphone;
+        private System.Windows.Forms.RichTextBox txbCellphone;
     }
 }

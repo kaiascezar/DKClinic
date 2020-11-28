@@ -64,7 +64,7 @@ namespace DKClinic.Data
 
         public static bool IsCellphoneValidationError(string cellphone)
         {
-            if (cellphone.Length < 13)
+            if (cellphone.Length < 11)
             {
                 MessageBox.Show("전화번호를 양식에 맞게 입력해 주세요", "Warning");
                 return true;
