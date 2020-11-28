@@ -42,7 +42,7 @@ namespace DKClinic.CustomerProgram
             this.btnMG.Location = new System.Drawing.Point(60, 60);
             this.btnMG.Name = "btnMG";
             this.btnMG.Size = new System.Drawing.Size(500, 200);
-            this.btnMG.TabIndex = 0;
+            this.btnMG.TabIndex = 1;
             this.btnMG.Text = "내과";
             this.btnMG.UseVisualStyleBackColor = false;
             this.btnMG.Click += new System.EventHandler(this.btnMG_Click);
@@ -54,7 +54,7 @@ namespace DKClinic.CustomerProgram
             this.btnNU.Location = new System.Drawing.Point(670, 60);
             this.btnNU.Name = "btnNU";
             this.btnNU.Size = new System.Drawing.Size(500, 200);
-            this.btnNU.TabIndex = 1;
+            this.btnNU.TabIndex = 2;
             this.btnNU.Text = "신경과";
             this.btnNU.UseVisualStyleBackColor = false;
             this.btnNU.Click += new System.EventHandler(this.btnNU_Click);
@@ -66,7 +66,7 @@ namespace DKClinic.CustomerProgram
             this.btnFM.Location = new System.Drawing.Point(670, 380);
             this.btnFM.Name = "btnFM";
             this.btnFM.Size = new System.Drawing.Size(500, 200);
-            this.btnFM.TabIndex = 3;
+            this.btnFM.TabIndex = 4;
             this.btnFM.Text = "가정의학과";
             this.btnFM.UseVisualStyleBackColor = false;
             this.btnFM.Click += new System.EventHandler(this.btnFM_Click);
@@ -78,7 +78,7 @@ namespace DKClinic.CustomerProgram
             this.btnDR.Location = new System.Drawing.Point(60, 380);
             this.btnDR.Name = "btnDR";
             this.btnDR.Size = new System.Drawing.Size(500, 200);
-            this.btnDR.TabIndex = 2;
+            this.btnDR.TabIndex = 3;
             this.btnDR.Text = "피부과";
             this.btnDR.UseVisualStyleBackColor = false;
             this.btnDR.Click += new System.EventHandler(this.btnDR_Click);

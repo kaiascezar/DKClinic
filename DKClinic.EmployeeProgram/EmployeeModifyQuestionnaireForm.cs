@@ -43,7 +43,7 @@ namespace DKClinic.EmployeeProgram
         //취소버튼
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"PositionID : {ConnectedEmployee.PositionID}");
+            //MessageBox.Show($"PositionID : {ConnectedEmployee.PositionID}");
             Close();
         }
     }
