@@ -170,6 +170,8 @@
 - 그래서, EntityFramework 다이어그램에서 우클릭으로 제공하는 '데이터베이스에서 모델 업데이트'메뉴를 실행, 업데이트 마법사를 이용해 DB의 정보를 업데이트하여 문제를 해결함
 ![update](https://user-images.githubusercontent.com/69996028/100321023-6b69d600-3005-11eb-8bb2-52bb1a5326c3.png)
 
+---
+
 # 외래키로 연결된 여러 테이블의 값을 동시에 삽입하는 트랜잭션 진행중에 에러가 발생하는 문제 [#24](https://github.com/dlehd333/DKClinic/issues/24)
 
 ## 증상
@@ -193,6 +195,8 @@ CreateQuestionnare = new Questionnare();
 // after
 CreatedQuestionnare = new Questionnare { Customer = ConnectedCustomer };
 ```
+
+---
 
 # 포커스 변화에 따라 강제로 스크롤이 조절되는 문제 [#26](https://github.com/dlehd333/DKClinic/issues/26)
 
@@ -220,6 +224,8 @@ public class CustomPanel : System.Windows.Forms.Panel
 - 출처
 https://blog.naver.com/raon_pgm/150185087803
 https://nickstips.wordpress.com/2010/03/03/c-panel-resets-scroll-position-after-focus-is-lost-and-regained/
+
+---
 
 # 클래스 단위로 데이터 관리 중 얕은 복사로 인해 데이터의 손실이 일어난 문제 [#61](https://github.com/dlehd333/DKClinic/issues/61)
 
@@ -261,7 +267,9 @@ Question question = (Question)data.Clone();
 question.Index++;
 ```
 
-# 간헐적으로 접속중인 직원의 정보가 사라지는 문제
+---
+
+# 간헐적으로 접속중인 직원의 정보가 사라지는 문제 [#74](https://github.com/dlehd333/DKClinic/issues/74)
 
 ## 증상
 - 접속하여 작업 후 다른 id로 로그인 시 간헐적으로 오류 발생
