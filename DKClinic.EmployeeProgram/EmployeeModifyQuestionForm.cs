@@ -27,29 +27,30 @@ namespace DKClinic.EmployeeProgram
         public EmployeeModifyQuestionForm(Question qusetion, int questionCount) : this(questionCount)
         {
             // Update
-            Question = qusetion;
+            Question = (Question)qusetion.Clone();
 
             txbIndexNum.Text = Question.Index.ToString();
             txbItem.Text = Question.Item;
-            string[] choices = (Question.Choices).Split(',');
-            foreach(var choice in choices)
-                txbChoices.Text += $"{choice}\n";
+            if (Question.Type != 1)
+            {
+                string[] choices = (Question.Choices).Split(',');
+                foreach (var choice in choices)
+                    txbChoices.Text += $"{choice}\n";
+            }
             cmbSelectType.SelectedIndex = Question.Type - 1;
         }
 
         private void txbIndexNum_TextChanged(object sender, EventArgs e)
         {
-            if(int.Parse(txbIndexNum.Text) > QuestionCount && Question.QuestionID != 0)
+            if (txbIndexNum.Text == "")
+                return;
+
+            if((int.Parse(txbIndexNum.Text) > QuestionCount && Question.QuestionID != 0) ||
+                (int.Parse(txbIndexNum.Text) > QuestionCount + 1 && Question.QuestionID == 0))
             {
                 // 수정의 경우, 문제 개수를 넘어갈 수 없다
                 MessageBox.Show("문제의 범위가 초과되었습니다");
-                txbIndexNum.Text = Question.QuestionID.ToString();
-            }
-            else if(int.Parse(txbIndexNum.Text) > QuestionCount + 1 && Question.QuestionID == 0)
-            {
-                // 추가의 경우, 문제 개수 +1 을 넘어갈 수 없다
-                MessageBox.Show("문제의 범위가 초과되었습니다");
-                txbIndexNum.Text = (QuestionCount + 1).ToString();
+                txbIndexNum.Text = "";
             }
         }
 
