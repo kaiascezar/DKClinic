@@ -31,13 +31,13 @@ namespace DKClinic.EmployeeProgram
         {
             this.components = new System.ComponentModel.Container();
             this.dgvQuestionnareList = new System.Windows.Forms.DataGridView();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsQuestionnare = new System.Windows.Forms.BindingSource(this.components);
             this.btnOpenResponse = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsQuestionnare)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,8 @@ namespace DKClinic.EmployeeProgram
             this.CustomerName,
             this.DepartmentName});
             this.dgvQuestionnareList.DataSource = this.bdsQuestionnare;
-            this.dgvQuestionnareList.Location = new System.Drawing.Point(100, 10);
+            this.dgvQuestionnareList.Location = new System.Drawing.Point(88, 8);
+            this.dgvQuestionnareList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvQuestionnareList.MultiSelect = false;
             this.dgvQuestionnareList.Name = "dgvQuestionnareList";
             this.dgvQuestionnareList.ReadOnly = true;
@@ -62,48 +63,8 @@ namespace DKClinic.EmployeeProgram
             this.dgvQuestionnareList.RowTemplate.Height = 27;
             this.dgvQuestionnareList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvQuestionnareList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuestionnareList.Size = new System.Drawing.Size(1062, 500);
+            this.dgvQuestionnareList.Size = new System.Drawing.Size(929, 400);
             this.dgvQuestionnareList.TabIndex = 0;
-            // 
-            // bdsQuestionnare
-            // 
-            this.bdsQuestionnare.DataSource = typeof(DKClinic.Data.Questionnare);
-            // 
-            // btnOpenResponse
-            // 
-            this.btnOpenResponse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOpenResponse.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOpenResponse.Location = new System.Drawing.Point(100, 550);
-            this.btnOpenResponse.Name = "btnOpenResponse";
-            this.btnOpenResponse.Size = new System.Drawing.Size(365, 95);
-            this.btnOpenResponse.TabIndex = 1;
-            this.btnOpenResponse.Text = "열람 / 진단서 작성";
-            this.btnOpenResponse.UseVisualStyleBackColor = true;
-            this.btnOpenResponse.Click += new System.EventHandler(this.btnOpenResponse_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDelete.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDelete.Location = new System.Drawing.Point(533, 550);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(280, 95);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "삭제";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnGoBack
-            // 
-            this.btnGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGoBack.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnGoBack.Location = new System.Drawing.Point(882, 550);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(280, 95);
-            this.btnGoBack.TabIndex = 3;
-            this.btnGoBack.Text = "뒤로가기";
-            this.btnGoBack.UseVisualStyleBackColor = true;
-            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -129,16 +90,61 @@ namespace DKClinic.EmployeeProgram
             this.DepartmentName.Name = "DepartmentName";
             this.DepartmentName.ReadOnly = true;
             // 
+            // bdsQuestionnare
+            // 
+            this.bdsQuestionnare.DataSource = typeof(DKClinic.Data.Questionnare);
+            // 
+            // btnOpenResponse
+            // 
+            this.btnOpenResponse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOpenResponse.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOpenResponse.Location = new System.Drawing.Point(88, 440);
+            this.btnOpenResponse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOpenResponse.Name = "btnOpenResponse";
+            this.btnOpenResponse.Size = new System.Drawing.Size(319, 76);
+            this.btnOpenResponse.TabIndex = 1;
+            this.btnOpenResponse.Text = "열람 / 진단서 작성";
+            this.btnOpenResponse.UseVisualStyleBackColor = true;
+            this.btnOpenResponse.Click += new System.EventHandler(this.btnOpenResponse_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDelete.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Location = new System.Drawing.Point(466, 440);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(245, 76);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnGoBack
+            // 
+            this.btnGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGoBack.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoBack.Location = new System.Drawing.Point(772, 440);
+            this.btnGoBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(245, 76);
+            this.btnGoBack.TabIndex = 3;
+            this.btnGoBack.Text = "뒤로가기";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
+            // 
             // EmployeeManageQuestionnareControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOpenResponse);
             this.Controls.Add(this.dgvQuestionnareList);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EmployeeManageQuestionnareControl";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1104, 538);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionnareList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsQuestionnare)).EndInit();
             this.ResumeLayout(false);

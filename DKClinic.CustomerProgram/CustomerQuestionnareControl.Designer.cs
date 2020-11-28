@@ -31,28 +31,30 @@ namespace DKClinic.CustomerProgram
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlBoard = new CustomPanel();
+            this.pnlBoard = new DKClinic.Data.CustomPanel();
             this.SuspendLayout();
             // 
             // pnlBoard
             // 
             this.pnlBoard.AutoScroll = true;
             this.pnlBoard.AutoScrollMinSize = new System.Drawing.Size(0, 1);
-            this.pnlBoard.BackColor = System.Drawing.Color.Silver;
-            this.pnlBoard.Location = new System.Drawing.Point(100, 10);
+            this.pnlBoard.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBoard.Location = new System.Drawing.Point(88, 8);
+            this.pnlBoard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBoard.Name = "pnlBoard";
-            this.pnlBoard.Size = new System.Drawing.Size(1062, 653);
+            this.pnlBoard.Size = new System.Drawing.Size(929, 522);
             this.pnlBoard.TabIndex = 0;
             // 
             // CustomerQuestionnareControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlBoard);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CustomerQuestionnareControl";
-            this.Size = new System.Drawing.Size(1262, 673);
+            this.Size = new System.Drawing.Size(1104, 538);
             this.ResumeLayout(false);
 
         }
