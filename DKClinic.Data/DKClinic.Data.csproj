@@ -52,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseUC.cs">
+    <Compile Include="CustomControl\BaseUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BaseUC.Designer.cs">
+    <Compile Include="CustomControl\BaseUC.Designer.cs">
       <DependentUpon>BaseUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\DbContextCreator.cs" />
@@ -96,7 +96,7 @@
       <DependentUpon>DKClinic.tt</DependentUpon>
     </Compile>
     <Compile Include="Partials\Customer.cs" />
-    <Compile Include="Partials\CustomPanel.cs">
+    <Compile Include="CustomControl\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Partials\DKClinicEntities.cs" />

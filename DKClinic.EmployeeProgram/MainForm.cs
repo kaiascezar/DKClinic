@@ -30,6 +30,7 @@ namespace DKClinic.EmployeeProgram
             OpenLoginControl(employeeLoginControl);
         }
 
+        // EmployeeLoginControl 로드
         private void OpenLoginControl(EmployeeLoginControl employeeLoginControl)
         {
             // 처음 시작시에는 Top, Bottom툴바 출력 안하게
@@ -41,6 +42,7 @@ namespace DKClinic.EmployeeProgram
             CallUserControl(employeeLoginControl);
         }
 
+        // EmployeeLoginControl에서 EmployeeSelectFunctionControl을 로드하는 이벤트 핸들러
         private void EmployeeLoginControl_LoginToFunction(object sender, EmployeeLoginControl.LoginToFunctionEventArgs e)
         {
             // Top, Bottom툴바 출력
@@ -60,19 +62,21 @@ namespace DKClinic.EmployeeProgram
             CallUserControl(e.EmpsltfunControl);
         }
 
+        // EmployeeSelectFunctionControl에서 선택된 컨트롤을 로드하는 이벤트 핸들러
         private void EmployeeSelectFunctionControl_SelectToFunction(object sender, EmployeeSelectFunctionControl.SelectToFunctionEventArgs e)
         {
             e.BaseUC.btnCancelClicked += BaseUC_btnCancelClicked;
-            (e.BaseUC).Parent = this;
             CallUserControl(e.BaseUC);
         }
 
+        // Manage 컨트롤에서 뒤로가기 버튼을 누를 시 작동하는 이벤트 핸들러
         private void BaseUC_btnCancelClicked(object sender, BaseUC.btnCancelClickedEventArgs e)
         {
             ((EmployeeSelectFunctionControl)e.BaseUC).SelectToFunction += EmployeeSelectFunctionControl_SelectToFunction;
             CallUserControl(e.BaseUC);
         }
 
+        // 패널 pnlMain에 입력받은 컨트롤 로드
         public void CallUserControl(BaseUC control)
         {
             if (MainControl.Count > 0)
@@ -83,6 +87,7 @@ namespace DKClinic.EmployeeProgram
             lblTitle.Text = control.Title;
         }
 
+        // 상단 패널(툴바) 홈버튼 클릭 이벤트
         private void btnHome_Click(object sender, EventArgs e)
         {
             // 초기 화면으로 돌아가기
@@ -92,11 +97,13 @@ namespace DKClinic.EmployeeProgram
             OpenLoginControl(employeeLoginControl);
         }
 
+        // 상단 패널(툴바) 종료 버튼 클릭 이벤트
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        // 하단 패널(툴바) 시간 표시하는 타이머
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString();

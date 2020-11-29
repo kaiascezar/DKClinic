@@ -13,13 +13,14 @@ namespace DKClinic.EmployeeProgram
 {
     public partial class EmployeeSelectFunctionControl : BaseUC
     {
+        private Employee currentEmployeeInHere { get; }
+
         public EmployeeSelectFunctionControl()
         {
             InitializeComponent();
             Title = "작업 선택";
         }
 
-        private Employee currentEmployeeInHere { get; }
         public EmployeeSelectFunctionControl(Employee employee) : this()
         {
             currentEmployeeInHere = employee;

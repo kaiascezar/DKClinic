@@ -1,13 +1,5 @@
 ﻿using DKClinic.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DKClinic.CustomerProgram
 {
@@ -19,31 +11,36 @@ namespace DKClinic.CustomerProgram
             Title = "진료과 선택";
         }
 
-//        private void btnDepartment_Click(object sender, EventArgs e)
-//        {
-//            BaseUC baseUC = null;
-//
-//            string buttonName;
-//        }
-
+        /// <summary>
+        /// 내과 - MG(Medicus Gratus)
+        /// </summary>
         private void btnMG_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(1);
             CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
+        /// <summary>
+        /// 신경과 - NU(NeUrology)
+        /// </summary>
         private void btnNU_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(2);
             CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
+        /// <summary>
+        /// 피부과 - DR(DeRmatology)
+        /// </summary>
         private void btnDR_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(3);
             CustomerQuestionnareControl custQuestionnare = new CustomerQuestionnareControl(department.DepartmentID);
             OnDepartmentToQuestionnare(department.DepartmentID, custQuestionnare);
         }
+        /// <summary>
+        /// 가정의학과 - FM(Family Medicine)
+        /// </summary>
         private void btnFM_Click(object sender, EventArgs e)
         {
             Department department = Dao.Department.GetByPK(4);

@@ -11,10 +11,7 @@ namespace DKClinic.EmployeeProgram
         public List<Question> BeforeQuestions { get; set; }
         public List<Question> AfterQuestions { get; set; }
         public Department Department { get; set; }
-
-        public Employee ParentEmployee { get; set; }
-
-        public Employee currentEmployeeInHere { get; set; }
+        public Employee CurrentEmployeeInHere { get; set; }
 
         public EmployeeManageQuestionControl()
         {
@@ -24,7 +21,7 @@ namespace DKClinic.EmployeeProgram
 
         public EmployeeManageQuestionControl(Employee employee) : this()
         {
-            currentEmployeeInHere = employee;
+            CurrentEmployeeInHere = employee;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -34,11 +31,9 @@ namespace DKClinic.EmployeeProgram
             if (DesignMode)
                 return;
 
-            ParentEmployee = ((MainForm)ParentForm).ConnectedEmployee;
+            Department = Dao.Department.GetByPK(CurrentEmployeeInHere.DepartmentID);
 
-            Department = Dao.Department.GetByPK(ParentEmployee.DepartmentID);
-
-            BeforeQuestions = Dao.Question.GetByNewestVersionByDepartmentID(ParentEmployee.DepartmentID);
+            BeforeQuestions = Dao.Question.GetByNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
 
             AfterQuestions = new List<Question>(BeforeQuestions);
 
@@ -58,12 +53,9 @@ namespace DKClinic.EmployeeProgram
 
             // Insert
             // 맨 뒤에 추가할 경우
-            // add + department count+1
-            // 중간에 추가할 경우
-            // add + Version+1 + department count+1
-            // 바뀐 번호값에 대해 나머지 문제들 변화된 index + Version+1 add
-
-            // 제 1 철칙! 최종 저장 전까지는 절대 DB에 접근하지 않는다!
+            // Version갱신 후 Add + Department테이블 Count값+1
+            // 중간에 추가할 경우 추가로
+            // 바뀌는(밀리는) 문제들에 대해 변화되는 Index변화 + Version갱신 후 Add
 
             if (addedQuestion.IsChaneged)
             {
@@ -111,11 +103,11 @@ namespace DKClinic.EmployeeProgram
             modifyQuestion.ShowDialog();
 
             // Update
-            // index가 안변할경우
-            // 변화된 값 + Version+1 add
-            // index가 변할경우
-            // 변화된 값 + Version+1 + 변화된 index add
-            // 바뀐 번호값에 대해 나머지 문제들은 변화된 index + Version+1 add
+            // Index가 안변할경우
+            // Version갱신 후 Add
+            // Index가 변할경우
+            // 변한 Index에 대하여 Version갱신 후 Add 및
+            // 바뀌는(밀리거나 당겨지는) 문제들에 대해 변화되는 Index변화 + Version갱신 후 Add
 
             if (modifyQuestion.IsChaneged)
             {
@@ -171,9 +163,9 @@ namespace DKClinic.EmployeeProgram
             if (WinformUtility.AskSure("정말 삭제하시겠습니까? (실제 반영은 일괄저장을 누를 때 반영됩니다)") == false)
                 return;
 
-            // delete
-            // 삭제된 번호값에 대해 나머지 문제들 변화된 index + version+1 add
-            // department count-1
+            // Delete
+            // 바뀌는(당겨지는) 문제들에 대해 변화되는 Index변화 + Version갱신 후 Add
+            // Department테이블 Count값-1
 
             List<Question> questions = new List<Question>();
 
@@ -199,16 +191,16 @@ namespace DKClinic.EmployeeProgram
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // 작업하는 사이에 데이터베이스에 변화가 있었나?
-            List<Question> questions = Dao.Question.GetByNewestVersionByDepartmentID(ParentEmployee.DepartmentID);
-            
-            var firstNotSecond = questions.Except(BeforeQuestions).ToList();
-            var secondNotFirst = BeforeQuestions.Except(questions).ToList();
+            // 작업하는 사이에 데이터베이스에 변화가 있었나 검사하기 위해 데이터를 가져온다
+            List<Question> questions = Dao.Question.GetByNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
 
-
+            // 사용한 클래스 간 비교 로직
             //var firstNotSecond = list1.Except(list2).ToList();
             //var secondNotFirst = list2.Except(list1).ToList();
             //return !firstNotSecond.Any() && !secondNotFirst.Any();
+
+            var firstNotSecond = questions.Except(BeforeQuestions).ToList();
+            var secondNotFirst = BeforeQuestions.Except(questions).ToList();
 
             // 있었다면 보내버린다(응?)
             if (!firstNotSecond.Any() && !secondNotFirst.Any() == false)
@@ -218,13 +210,13 @@ namespace DKClinic.EmployeeProgram
                 return;
             }
 
-            // 트랜잭션
+            // 트랜잭션 방식으로 수정된 데이터들을 데이베이스에 저장
             using (var context = DKClinicEntities.Create())
             {
-                // department 업데이트
+                // Department 테이블 업데이트
                 context.Entry(Department).State = System.Data.Entity.EntityState.Modified;
 
-                // afterQuestion 업데이트(Insert)
+                // Question 테이블에 afterQuestion에 추가된 값을 업데이트(Insert)
                 for (int i = BeforeQuestions.Count; i < AfterQuestions.Count; i++)
                     context.Questions.Add(AfterQuestions[i]);
 
@@ -235,7 +227,7 @@ namespace DKClinic.EmployeeProgram
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(currentEmployeeInHere);
+            EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(CurrentEmployeeInHere);
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }
     }

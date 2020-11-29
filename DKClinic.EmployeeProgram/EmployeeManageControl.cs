@@ -1,13 +1,5 @@
 ﻿using DKClinic.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DKClinic.EmployeeProgram
 {
@@ -70,8 +62,6 @@ namespace DKClinic.EmployeeProgram
         }
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            // MessageBox.Show(((MainForm)ParentForm).ConnectedEmployee.Name);
-
             EmployeeSelectFunctionControl employeeSelectFunctionControl = new EmployeeSelectFunctionControl(CurrentEmployeeInHere);
             OnbtnCancelClicked(employeeSelectFunctionControl);
         }

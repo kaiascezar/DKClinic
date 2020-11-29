@@ -44,6 +44,7 @@ namespace DKClinic.EmployeeProgram
                 return;
             else if (WinformUtility.IsCellphoneValidationError(txbCellphone.Text))
                 return;
+
             //성별 체크 안되있을시
             if (rbtMale.Checked == false && rbtFemale.Checked == false)
             {
@@ -75,6 +76,7 @@ namespace DKClinic.EmployeeProgram
             
             Close();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -100,6 +102,7 @@ namespace DKClinic.EmployeeProgram
 
             return false;
         }
+
         //이름에는 숫자 입력 불가능
         private void txbName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -108,6 +111,7 @@ namespace DKClinic.EmployeeProgram
                 e.Handled = true;
             }
         }
+
         //생년월일에는 숫자만 입력 가능
         private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -116,6 +120,7 @@ namespace DKClinic.EmployeeProgram
                 e.Handled = true;
             }
         }
+
         //연락처에는 숫자만 입력 가능
         private void txbCellphone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -124,6 +129,7 @@ namespace DKClinic.EmployeeProgram
                 e.Handled = true;
             }
         }
+
         private void SetPosition(string text)
         {
             if (text == "관리자")
@@ -133,6 +139,7 @@ namespace DKClinic.EmployeeProgram
             else if (text == "간호사")
                 employee.PositionID = 3;
         }
+
         private void SetDepartment(string text)
         {
             if (text == "내과")

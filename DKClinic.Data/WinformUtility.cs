@@ -11,11 +11,6 @@ namespace DKClinic.Data
                 MessageBoxDefaultButton.Button2) == DialogResult.Yes;
         }
 
-        public static bool AskDelete()
-        {
-            return false;
-        }
-
         public static bool IsBirthdateValidationError(string birthdate)
         {
             if (birthdate.Length < 6)

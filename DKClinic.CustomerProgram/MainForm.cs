@@ -30,6 +30,7 @@ namespace DKClinic.CustomerProgram
             OpenLoginControl(customerLoginControl);
         }
 
+        // CustomerLoginControl 로드
         private void OpenLoginControl(CustomerLoginControl customerLoginControl)
         {
             // 처음 시작시에는 Top, Bottom툴바 출력 안하게
@@ -41,6 +42,7 @@ namespace DKClinic.CustomerProgram
             CallUserControl(customerLoginControl);
         }
 
+        // CustomerLoginControl에서 CustomerInputDetailControl 로드하는 이벤트 핸들러
         private void CustomerLoginControl_LoginToDetail(object sender, CustomerLoginControl.LoginToDetailEventArgs e)
         {
             // 고객 정보를 저장하자
@@ -59,11 +61,13 @@ namespace DKClinic.CustomerProgram
             CallUserControl(e.CtmInputDetail);
         }
 
+        // CustomerInputDetailControl에서 Cancel로 CustomerLoginControl 로드하는 이벤트 핸들러
         private void CustomerInputDetailControl_btnCancelClicked(object sender, BaseUC.btnCancelClickedEventArgs e)
         {
             OpenLoginControl((CustomerLoginControl)e.BaseUC);
         }
 
+        // CustomerInputDetailControl에서 CustomDepartmentChoiceControl 로드하는 이벤트 핸들러
         private void CustomerInputDetailControl_ctmDetail(object sender, CustomerInputDetailControl.DetailToDepartmentEventArgs e)
         {
             ConnectedCustomer = e.RefCustomerClass;
@@ -75,6 +79,7 @@ namespace DKClinic.CustomerProgram
             CallUserControl(e.RefCtmDepChoice);
         }
 
+        // CustomerDepartmentChoiceControl에서 CustomerQuestionnareControl 로드하는 이벤트 핸들러
         private void CustomerDepartmentChoiceControl_DepartmentToQuestionnare(object sender, CustomerDepartmentChoiceControl.DepartmentToQuestionnareEventArgs e)
         {
             CreatedQuestionnare = new Questionnare { Customer = ConnectedCustomer };
@@ -87,23 +92,9 @@ namespace DKClinic.CustomerProgram
             CallUserControl(e.CustQuestionnare);
         }
 
+        // CustomerQuestionnareControl에서 작성 완료 이벤트 및 초기 화면으로 돌아가는 이벤트 핸들러
         private void CustomerQuestionnareControl_QuestionnareConfirm(object sender, CustomerQuestionnareControl.QuestionnareConfirmEventArgs e)
         {
-            //int customerID;
-
-            //// CustomerID 구하기
-            //if (ConnectedCustomer.CustomerID == 0)
-            //    customerID = Dao.Customer.GetMaxKey() + 1;
-            //else
-            //    customerID = ConnectedCustomer.CustomerID;
-
-            // questionnare 테이블에 CustomerID, Date저장
-            //CreatedQuestionnare.CustomerID = customerID;
-            
-
-            // QuestionnareID 구하기
-            // int questionnareID = Dao.Questionnare.GetMaxKey() + 1;
-
             // 데이터 입력하기
             using (var context = DKClinicEntities.Create())
             {
@@ -131,6 +122,7 @@ namespace DKClinic.CustomerProgram
             btnHome.PerformClick();
         }
 
+        // 유저 컨트롤을 패널 pnlMain에 로드
         public void CallUserControl(BaseUC control)
         {
             if (MainControl.Count > 0)
@@ -141,6 +133,7 @@ namespace DKClinic.CustomerProgram
             lblTitle.Text = control.Title;
         }
 
+        // 상단 패널(툴바) 홈버튼 클릭 이벤트
         private void btnHome_Click(object sender, EventArgs e)
         {
             // 초기 화면으로 돌아가기
@@ -151,11 +144,13 @@ namespace DKClinic.CustomerProgram
             OpenLoginControl(customerLoginControl);
         }
 
+        // 상단 패널(툴바) 종료 버튼 클릭 이벤트
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        // 하단 패널(툴바) 시간 표시하는 타이머
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString();

@@ -61,6 +61,7 @@ namespace DKClinic.EmployeeProgram
             InitializeComponent();
             CurrentStatus(customer);
         }
+
         private Customer ChangedCustomerInfo { get; set; }
 
         private void btnOK_Click(object sender, EventArgs e)

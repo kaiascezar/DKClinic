@@ -21,7 +21,7 @@ namespace DKClinic.CustomerProgram
         {
             lblQuestion.Text += question;
 
-            this.Size = new Size(800, count * 40 + 110);
+            Size = new Size(800, count * 40 + 110);
             pnlAnswer.Size = new Size(800, count * 40 + 10);
 
             string[] texts = choices.Split(',');
@@ -35,8 +35,7 @@ namespace DKClinic.CustomerProgram
                     Font = new Font("Gulim", 14F),
                     Text = texts[i],
                     Tag = i + 1,
-                    TabStop = false,
-                    
+                    TabStop = false
                 };
                 pnlAnswer.Controls.Add(rb);
             }

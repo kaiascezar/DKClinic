@@ -93,12 +93,14 @@ namespace DKClinic.CustomerProgram
             }
         }
         #endregion
+        
         //취소버튼 = 입력칸초기화
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txbName.Clear();
             txbBirthdate.Clear();
         }
+        
         //입력값이 없는 경우
         private bool IsAnyBlankTextbox(string text1, string text2)
         {
@@ -111,6 +113,7 @@ namespace DKClinic.CustomerProgram
 
             return false;
         }
+        
         //이름에는 숫자 입력 불가능
         private void txbName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -119,6 +122,7 @@ namespace DKClinic.CustomerProgram
                 e.Handled = true;
             }
         }
+        
         //생년월일에는 숫자만 입력 가능
         private void txbBirthdate_KeyPress(object sender, KeyPressEventArgs e)
         {

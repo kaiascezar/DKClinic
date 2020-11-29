@@ -19,6 +19,7 @@ namespace DKClinic.EmployeeProgram
         {
             InitializeComponent();
             Title = "환자 정보 관리";
+
             customerBindingSource.DataSource = Dao.Customer.GetWithGenderName();
         }
 
@@ -65,9 +66,7 @@ namespace DKClinic.EmployeeProgram
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if(txbName.Text == "")
-            {
                 customerBindingSource.DataSource = Dao.Customer.GetWithGenderName();
-            }
             else
                 customerBindingSource.DataSource = Dao.Customer.GetByName(txbName.Text);
         }

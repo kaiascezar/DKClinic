@@ -43,7 +43,7 @@ namespace DKClinic.CustomerProgram
         }
 
         // 입력값 전달 함수
-        private void InputItemSend ()
+        private void InputItemSend()
         {
                 CustomerDepartmentChoiceControl ctmDepChoice = new CustomerDepartmentChoiceControl(); // create ctmDepChoice obj
 

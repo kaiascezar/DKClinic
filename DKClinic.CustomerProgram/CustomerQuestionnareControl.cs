@@ -127,6 +127,7 @@ namespace DKClinic.CustomerProgram
             QuestionControls.Add(question);
         }
 
+        // 작성 완료 버튼 이벤트
         #region QuestionnareConfirm event things for C# 3.0
         public event EventHandler<QuestionnareConfirmEventArgs> QuestionnareConfirm;
 
