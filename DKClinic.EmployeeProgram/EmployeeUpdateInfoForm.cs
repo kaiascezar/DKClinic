@@ -87,7 +87,7 @@ namespace DKClinic.EmployeeProgram
                 MessageBox.Show("항목을 입력해주세요", "Warning");
                 return true;
             }
-            if (position != "관리자" && position != "의사" && position != "간호사")
+            if (position != "병원장" && position != "의사" && position != "간호사")
             {
                 MessageBox.Show("존재하지 않는 직급입니다.", "Warning");
                 return true;
@@ -126,7 +126,7 @@ namespace DKClinic.EmployeeProgram
         }
         private void SetPosition(string text)
         {
-            if (text == "관리자")
+            if (text == "병원장")
                 employee.PositionID = 1;
             else if (text == "의사")
                 employee.PositionID = 2;
