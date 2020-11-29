@@ -33,7 +33,7 @@ namespace DKClinic.EmployeeProgram
 
             Department = Dao.Department.GetByPK(CurrentEmployeeInHere.DepartmentID);
 
-            BeforeQuestions = Dao.Question.GetByNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
+            BeforeQuestions = Dao.Question.GetNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
 
             AfterQuestions = new List<Question>(BeforeQuestions);
 
@@ -42,8 +42,8 @@ namespace DKClinic.EmployeeProgram
 
         private void ReloadGridView()
         {
-            bdsQuestion.DataSource = Dao.Question.SelectionNewestVersionByDepartmentID(
-                Dao.Question.ConvertDepartmentAndTypeName(AfterQuestions), Department);
+            bdsQuestion.DataSource = Dao.Question.SelectionNewestVersionByLocalDepartment(
+                Dao.Question.AddDepartmentNameAndTypeName(AfterQuestions), Department);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace DKClinic.EmployeeProgram
         private void btnSave_Click(object sender, EventArgs e)
         {
             // 작업하는 사이에 데이터베이스에 변화가 있었나 검사하기 위해 데이터를 가져온다
-            List<Question> questions = Dao.Question.GetByNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
+            List<Question> questions = Dao.Question.GetNewestVersionByDepartmentID(CurrentEmployeeInHere.DepartmentID);
 
             // 사용한 클래스 간 비교 로직
             //var firstNotSecond = list1.Except(list2).ToList();
