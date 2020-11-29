@@ -67,6 +67,7 @@ namespace DKClinic.CustomerProgram
                 Responses[i].Answer = answer;
             }
 
+            MessageBox.Show("작성이 완료되었습니다.", "확인");
             // 이벤트를 발생시켜서 response를 보낸다
             OnQuestionnareConfirm(Responses);
         }

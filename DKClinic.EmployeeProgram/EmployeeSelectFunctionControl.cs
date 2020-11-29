@@ -25,7 +25,7 @@ namespace DKClinic.EmployeeProgram
         {
             currentEmployeeInHere = employee;
 
-            if (employee.PositionID == 1) // 관리자 : all
+            if (employee.PositionID == 1) // 병원장 : all
             {
                 btnManageQuestionnare.Enabled = true;
                 btnManageQuestion.Enabled = true;
