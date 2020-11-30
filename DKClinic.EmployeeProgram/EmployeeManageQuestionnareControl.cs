@@ -9,12 +9,16 @@ namespace DKClinic.EmployeeProgram
         {
             InitializeComponent();
             Title = "문진표 관리";
-            ReloadGridViewWithDepartment();
-
         }
         public EmployeeManageQuestionnareControl(Employee currentEmployee) : this()
         {
             currentEmployeeInHere = currentEmployee;  
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            ReloadGridViewWithDepartment();
         }
 
         public Questionnare currentQuestionnare { get; set; }
