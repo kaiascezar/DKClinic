@@ -30,7 +30,6 @@ namespace DKClinic.EmployeeProgram
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -54,17 +53,17 @@ namespace DKClinic.EmployeeProgram
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1104, 40);
+            this.pnlTop.Size = new System.Drawing.Size(1262, 50);
             this.pnlTop.TabIndex = 1;
             // 
             // lblTitle
             // 
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitle.Font = new System.Drawing.Font("Gulim", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTitle.Location = new System.Drawing.Point(115, 4);
+            this.lblTitle.Font = new System.Drawing.Font("굴림", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.Location = new System.Drawing.Point(131, 5);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(873, 32);
+            this.lblTitle.Size = new System.Drawing.Size(999, 40);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "label1";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,13 +75,13 @@ namespace DKClinic.EmployeeProgram
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Image = global::DKClinic.EmployeeProgram.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.Location = new System.Drawing.Point(1050, 0);
+            this.btnExit.Location = new System.Drawing.Point(1201, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnExit.Size = new System.Drawing.Size(52, 38);
+            this.btnExit.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnExit.Size = new System.Drawing.Size(59, 48);
             this.btnExit.TabIndex = 1;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -94,13 +93,13 @@ namespace DKClinic.EmployeeProgram
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Image = global::DKClinic.EmployeeProgram.Properties.Resources.Home;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(51, 38);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(58, 48);
             this.btnHome.TabIndex = 0;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -111,21 +110,21 @@ namespace DKClinic.EmployeeProgram
             this.pnlBottom.Controls.Add(this.lblTime);
             this.pnlBottom.Controls.Add(this.lblStatus);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 578);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 722);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1104, 40);
+            this.pnlBottom.Size = new System.Drawing.Size(1262, 50);
             this.pnlBottom.TabIndex = 2;
             // 
             // lblTime
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTime.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.lblTime.Location = new System.Drawing.Point(575, 2);
+            this.lblTime.Location = new System.Drawing.Point(657, 2);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(523, 32);
+            this.lblTime.Size = new System.Drawing.Size(599, 40);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "label1";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -134,10 +133,10 @@ namespace DKClinic.EmployeeProgram
             // 
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblStatus.Location = new System.Drawing.Point(4, 2);
+            this.lblStatus.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblStatus.Location = new System.Drawing.Point(5, 2);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(523, 32);
+            this.lblStatus.Size = new System.Drawing.Size(599, 40);
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "김대근 회장님 로그인중...";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -147,10 +146,10 @@ namespace DKClinic.EmployeeProgram
             this.pnlMain.BackgroundImage = global::DKClinic.EmployeeProgram.Properties.Resources.DKClinicbackground1;
             this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 40);
+            this.pnlMain.Location = new System.Drawing.Point(0, 50);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1104, 538);
+            this.pnlMain.Size = new System.Drawing.Size(1262, 672);
             this.pnlMain.TabIndex = 3;
             // 
             // timer1
@@ -160,16 +159,16 @@ namespace DKClinic.EmployeeProgram
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DKClinic.EmployeeProgram.Properties.Resources.DKClinicbackground1;
-            this.ClientSize = new System.Drawing.Size(1104, 618);
+            this.ClientSize = new System.Drawing.Size(1262, 772);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "전자 문진표 관리 프로그램";
             this.pnlTop.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
