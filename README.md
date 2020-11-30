@@ -41,16 +41,16 @@
 
 ### 1. 기본 정보 입력
 
-<a href="./Document/고객스크린샷/1_기본정보_입력.jpg">
+<a href="./Document/고객스크린샷/1_기본정보_입력.jpg" target="_blank">
 <img src="./Document/고객스크린샷/1_기본정보_입력.jpg" width="32%">
 </a>
 
 ### 2. 추가 정보 입력
 
 <div>
-<a href="./Document/고객스크린샷/2_추가정보_입력.jpg">
+<a href="./Document/고객스크린샷/2_추가정보_입력.jpg" target="_blank">
 <img src="./Document/고객스크린샷/2_추가정보_입력.jpg" width="32%">
-</a><a href="./Document/고객스크린샷/2-1_추가정보_입력_기입력자.jpg">
+</a><a href="./Document/고객스크린샷/2-1_추가정보_입력_기입력자.jpg" target="_blank">
 <img src="./Document/고객스크린샷/2-1_추가정보_입력_기입력자.jpg" width="32%">
 </a></div>
 
@@ -59,16 +59,16 @@
 
 ### 3. 진료과 선택
 
-<a href="./Document/고객스크린샷/3_진료과_선택.jpg">
+<a href="./Document/고객스크린샷/3_진료과_선택.jpg" target="_blank">
 <img src="./Document/고객스크린샷/3_진료과_선택.jpg" width="32%">
 </a>
 
 ### 4. 문진표 작성
 
 <div>
-<a href="./Document/고객스크린샷/4_문진표_작성.jpg">
+<a href="./Document/고객스크린샷/4_문진표_작성.jpg" target="_blank">
 <img src="./Document/고객스크린샷/4_문진표_작성.jpg" width="32%">
-</a><a href="./Document/고객스크린샷/4-1_문진표_작성_하단부.jpg">
+</a><a href="./Document/고객스크린샷/4-1_문진표_작성_하단부.jpg" target="_blank">
 <img src="./Document/고객스크린샷/4-1_문진표_작성_하단부.jpg" width="32%">
 </a></div>
 
@@ -80,20 +80,20 @@
 ### 1. 직원 로그인
 
 <div>
-<a href="./Document/직원스크린샷/1_직원_로그인.jpg">
+<a href="./Document/직원스크린샷/1_직원_로그인.jpg" target="_blank">
 <img src="./Document/직원스크린샷/1_직원_로그인.jpg" width="32%">
-</a><a href="./Document/고객스크린샷/4-1_문진표_작성_하단부.jpg">
-<img src="./Document/고객스크린샷/4-1_문진표_작성_하단부.jpg" width="32%">
+</a><a href="./Document/고객스크린샷/1-1_비밀번호_변경.jpg" target="_blank">
+<img src="./Document/고객스크린샷/1-1_비밀번호_변경.jpg" width="32%">
 </a></div>
 
 ### 2. 작업 선택
 
 <div>
-<a href="./Document/직원스크린샷/2-1_작업_선택(병원장).jpg">
+<a href="./Document/직원스크린샷/2-1_작업_선택(병원장).jpg" target="_blank">
 <img src="./Document/직원스크린샷/2-1_작업_선택(병원장).jpg" width="32%">
-</a><a href="./Document/직원스크린샷/2-2_작업_선택(의사).jpg">
+</a><a href="./Document/직원스크린샷/2-2_작업_선택(의사).jpg" target="_blank">
 <img src="./Document/직원스크린샷/2-2_작업_선택(의사).jpg" width="32%">
-</a><a href="./Document/직원스크린샷/2-3_작업_선택(간호사).jpg">
+</a><a href="./Document/직원스크린샷/2-3_작업_선택(간호사).jpg" target="_blank">
 <img src="./Document/직원스크린샷/2-3_작업_선택(간호사).jpg" width="32%">
 </a></div>
 
@@ -102,11 +102,11 @@
 ### 3. 문진표 관리
 
 <div>
-<a href="./Document/직원스크린샷/3_문진표_관리.jpg">
+<a href="./Document/직원스크린샷/3_문진표_관리.jpg" target="_blank">
 <img src="./Document/직원스크린샷/3_문진표_관리.jpg" width="32%">
-</a><a href="./Document/직원스크린샷/3-1_문진표_진단내용_작성.jpg">
+</a><a href="./Document/직원스크린샷/3-1_문진표_진단내용_작성.jpg" target="_blank">
 <img src="./Document/직원스크린샷/3-1_문진표_진단내용_작성.jpg" width="32%">
-</a><a href="./Document/직원스크린샷/3-2_문진표_진단내용_비활성.jpg">
+</a><a href="./Document/직원스크린샷/3-2_문진표_진단내용_비활성.jpg" target="_blank">
 <img src="./Document/직원스크린샷/3-2_문진표_진단내용_비활성.jpg" width="32%">
 </a></div>
 
@@ -115,11 +115,11 @@
 ### 4. 문진표 질문 관리
 
 <div>
-<a href="./Document/직원스크린샷/4_문진표_질문_관리.jpg">
+<a href="./Document/직원스크린샷/4_문진표_질문_관리.jpg" target="_blank">
 <img src="./Document/직원스크린샷/4_문진표_질문_관리.jpg" width="32%">
-</a><a href="./Document/직원스크린샷/4-1_질문_추가_및_수정(추가버튼).jpg">
+</a><a href="./Document/직원스크린샷/4-1_질문_추가_및_수정(추가버튼).jpg" target="_blank">
 <img src="./Document/직원스크린샷/4-1_질문_추가_및_수정(추가버튼).jpg" width="32%">
-</a><a href="./Document/직원스크린샷/4-2_질문_추가_및_수정(수정버튼).jpg">
+</a><a href="./Document/직원스크린샷/4-2_질문_추가_및_수정(수정버튼).jpg" target="_blank">
 <img src="./Document/직원스크린샷/4-2_질문_추가_및_수정(수정버튼).jpg" width="32%">
 </a></div>
 
@@ -130,9 +130,9 @@
 ### 5. 환자 정보 관리
 
 <div>
-<a href="./Document/직원스크린샷/5_환자_정보_관리.jpg">
+<a href="./Document/직원스크린샷/5_환자_정보_관리.jpg" target="_blank">
 <img src="./Document/직원스크린샷/5_환자_정보_관리.jpg" width="32%">
-</a><a href="./Document/직원스크린샷/5-1_환자_정보_수정.jpg">
+</a><a href="./Document/직원스크린샷/5-1_환자_정보_수정.jpg" target="_blank">
 <img src="./Document/직원스크린샷/5-1_환자_정보_수정.jpg" width="32%">
 </a></div>
 
@@ -141,11 +141,11 @@
 ### 6. 직원 정보 관리
 
 <div>
-<a href="./Document/직원스크린샷/6_직원_정보_관리.jpg">
+<a href="./Document/직원스크린샷/6_직원_정보_관리.jpg" target="_blank">
 <img src="./Document/직원스크린샷/6_직원_정보_관리.jpg" width="32%">
-</a><a href="./Document/직원스크린샷/6-1_직원_정보_추가_및_수정(추가버튼).jpg">
+</a><a href="./Document/직원스크린샷/6-1_직원_정보_추가_및_수정(추가버튼).jpg" target="_blank">
 <img src="./Document/직원스크린샷/6-1_직원_정보_추가_및_수정(추가버튼).jpg" width="32%">
-</a><a href="./Document/직원스크린샷/6-2_직원_정보_추가_및_수정(수정버튼).jpg">
+</a><a href="./Document/직원스크린샷/6-2_직원_정보_추가_및_수정(수정버튼).jpg" target="_blank">
 <img src="./Document/직원스크린샷/6-2_직원_정보_추가_및_수정(수정버튼).jpg" width="32%">
 </a></div>
 
