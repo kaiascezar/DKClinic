@@ -41,7 +41,7 @@
 
 ### 1. 기본 정보 입력
 
-[<img src="./Document/고객스크린샷/1_기본정보_입력.jpg" width="32%">](./Document/고객스크린샷/1_기본정보_입력.jpg)
+[<a href="./Document/고객스크린샷/2_추가정보_입력.jpg" target="_blank"><img src="./Document/고객스크린샷/1_기본정보_입력.jpg" width="32%"></a>](./Document/고객스크린샷/1_기본정보_입력.jpg)
 
 ### 2. 추가 정보 입력
 
