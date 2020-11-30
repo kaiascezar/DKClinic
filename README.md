@@ -41,7 +41,7 @@
 
 ### 1. 기본 정보 입력
 
-<a href="./Document/고객스크린샷/1_기본정보_입력.jpg" target="_blank">
+<a target="_blank" rel="noopener noreferrer" href="./Document/고객스크린샷/1_기본정보_입력.jpg">
 <img src="./Document/고객스크린샷/1_기본정보_입력.jpg" width="32%">
 </a>
 
