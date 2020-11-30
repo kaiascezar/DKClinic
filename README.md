@@ -82,8 +82,8 @@
 <div>
 <a href="./Document/직원스크린샷/1_직원_로그인.jpg" target="_blank">
 <img src="./Document/직원스크린샷/1_직원_로그인.jpg" width="32%">
-</a><a href="./Document/고객스크린샷/1-1_비밀번호_변경.jpg" target="_blank">
-<img src="./Document/고객스크린샷/1-1_비밀번호_변경.jpg" width="32%">
+</a><a href="./Document/직원스크린샷/1-1_비밀번호_변경.jpg" target="_blank">
+<img src="./Document/직원스크린샷/1-1_비밀번호_변경.jpg" width="32%">
 </a></div>
 
 ### 2. 작업 선택
