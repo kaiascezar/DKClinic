@@ -124,6 +124,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DKClinic.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DaoDiagram.cd" />
     <None Include="DKClinic.edmx.diagram">
       <DependentUpon>DKClinic.edmx</DependentUpon>
     </None>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DKClinic.EmployeeProgram.EmployeeChangePasswordForm" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACIAABFAQACAAMACAAABAEAAABAAAAAAAAQ=</HashCode>
+      <FileName>EmployeeChangePasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeLoginControl" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEgAgAAAACIAABEAAACAAMASAAABAEAAAQABAAAAAAY=</HashCode>
+      <FileName>EmployeeLoginControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeManageControl" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBABCAACBAQAACAAAACBAAAgAAgAQAAIEwAAQY=</HashCode>
+      <FileName>EmployeeManageControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeManageCustomerControl" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAABGAACBAQAACAAAACJAAAAAAgAAAACAwEAQc=</HashCode>
+      <FileName>EmployeeManageCustomerControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeManageQuestionControl" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAABCIAEAAQAACBAAACFAAAgBAAAQQACAYBAQY=</HashCode>
+      <FileName>EmployeeManageQuestionControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeManageQuestionnareControl" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQiAACAUAIAAAACAAAACZAAAAAAAAQAAIAgAAQQ=</HashCode>
+      <FileName>EmployeeManageQuestionnareControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.EmployeeProgram.EmployeeSelectFunctionControl" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAEAAEAAACAABACAAAAAAAAAAIAAAYEAIA=</HashCode>
+      <FileName>EmployeeSelectFunctionControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.BaseUC" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

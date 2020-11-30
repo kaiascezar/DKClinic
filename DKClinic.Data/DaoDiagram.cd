@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DKClinic.Data.CustomerDao" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACAAAAAABAAAAAAAAAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Dao\CustomerDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.DepartmentDao" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\DepartmentDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.EmployeeDao" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAIAEAg=</HashCode>
+      <FileName>Dao\EmployeeDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.GenderDao" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\GenderDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.PositionDao" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\PositionDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.QuestionDao" Collapsed="true">
+    <Position X="5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAFBAAAAAAAAAAAAAAAGAAAAAGAAAgAEA=</HashCode>
+      <FileName>Dao\QuestionDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.QuestionnareDao" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\QuestionnareDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.ResponseDao" Collapsed="true">
+    <Position X="5" Y="2.75" Width="2" />
+    <InheritanceLine Type="DKClinic.Data.SingleKeyDao&lt;T, K&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="3.625" Y="1.191" />
+        <Point X="3.625" Y="1.45" />
+        <Point X="4.852" Y="1.45" />
+        <Point X="4.852" Y="2.596" />
+        <Point X="6" Y="2.596" />
+        <Point X="6" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\ResponseDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.BaseDao&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Base\BaseDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.SingleKeyDao&lt;T, K&gt;" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAABAAAAAEAAAAAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Base\SingleKeyDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

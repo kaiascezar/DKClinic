@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DKClinic.CustomerProgram.BaseQuestionControl" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACCAAACAAAAEAAgAAAAAgAAAAA=</HashCode>
+      <FileName>BaseQuestionControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.CustomerDepartmentChoiceControl" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAQAABBCAAAQAACAaAAAACAAAAAAABAgAAAAAAIAA=</HashCode>
+      <FileName>CustomerDepartmentChoiceControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.CustomerInputDetailControl" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAFACAASBEBAAiAAMiCAAAAAFQAAAAAAQAAAAQ=</HashCode>
+      <FileName>CustomerInputDetailControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.CustomerLoginControl" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBCIAQBEAAACAAMACAAgBAEAQAAAAAAAAAAQ=</HashCode>
+      <FileName>CustomerLoginControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.CustomerQuestionnareControl" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIBACBAAAkgAACAACgCAAQAABAAAACAAAAEAAA=</HashCode>
+      <FileName>CustomerQuestionnareControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.MultipleChoiceControl" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAAAAAAACCAAACAAAAAAAAAAAAAEAgAAA=</HashCode>
+      <FileName>MultipleChoiceControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.CustomerProgram.ShortAnswerControl" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACCAIACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShortAnswerControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DKClinic.Data.BaseUC" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

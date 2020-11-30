@@ -173,6 +173,7 @@
     <EmbeddedResource Include="EmployeeSelectFunctionControl.resx">
       <DependentUpon>EmployeeSelectFunctionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EmployeeDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DKClinic.Data.Customer.datasource" />
     <None Include="Properties\DataSources\DKClinic.Data.Question.datasource" />
